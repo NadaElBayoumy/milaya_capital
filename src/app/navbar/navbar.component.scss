@@ -1,0 +1,52 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-nav {
+    display: flex;
+    flex: 100%;
+    justify-content: space-between;
+    /* Style the navigation menu container */
+    .navbar {
+        background-color: #FFF;
+        /* Background color */
+        display: flex;
+        /* Make the items display inline (in a row) */
+        // margin-left: 20px;
+        // margin-right: 20px;
+        
+    }
+
+    /* Style the navigation links */
+    .navbar a {
+        color: #2C55F1;
+        /* Text color */
+        text-decoration: none;
+        /* Remove underlines from links */
+        padding: 16px;
+        /* Spacing around each link */
+    }
+
+    /* Apply styles to the active link */
+    .navbar a.active {
+        background-color: rgba(#2C55F1, .2);
+        color: #2C55F1;
+        border-radius: 47px;
+    }
+
+
+    /* Apply styles to the active link */
+    .navbar a:hover {
+        background-color: rgba(#2C55F1, .2);
+        color: #2C55F1;
+        border-radius: 47px;
+    }
+
+    .contact-btn{
+        width: 148px !important;
+        border-radius: 47px;
+    }
+}
