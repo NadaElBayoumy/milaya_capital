@@ -13,4 +13,14 @@
         margin-left: auto;
 
     }
+    .clients-logos{
+        display: flex;
+        flex-wrap: wrap;
+        .logo-img{
+            flex: 0 0 calc(20% - 10px); 
+            margin: 5px; 
+            box-sizing: border-box;
+        }
+        
+    }
 }

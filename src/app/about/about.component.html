@@ -1,11 +1,9 @@
 
 <div class="container about">
     <app-overview [pageTitle]="'About Us'"  [pageOverviewText]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'"></app-overview>
-    
     <div class="spacer-div"></div>
     
-    <app-we-are-card></app-we-are-card>
-    
+    <app-we-are-card></app-we-are-card>    
     <div class="spacer-div"></div>
     
     <div class="we-are-cards row container">
@@ -16,26 +14,26 @@
             <app-we-are-img-text-card  [WeAreTitleCard]="'OUR VISION'"   [WeAreDescriptionCard]="'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.'"  ></app-we-are-img-text-card>
         </div>
     </div>
-
     <div class="spacer-div"></div>
 
     <div class="counter-cards row container">
-        <app-counter-card class="col counter-border">
-
-        </app-counter-card>
-        <app-counter-card class="col counter-border">
-
-        </app-counter-card>
-        <app-counter-card class="col">
-
-        </app-counter-card>
+        <app-counter-card class="col counter-border"></app-counter-card>
+        <app-counter-card class="col counter-border"></app-counter-card>
+        <app-counter-card class="col"></app-counter-card>
     </div>
     <div class="spacer-div"></div>
     
     <div class="divider"></div>
-
     <div class="spacer-div"></div>
-    <app-clients>
-        
-    </app-clients>
+
+   
+    <app-clients></app-clients>
+    <div class="spacer-div"></div>
+
+    <app-media [mediaType]="'video'" [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
+    <!-- <app-media [mediaType]="'image'" [mediaURL]="'https://fastly.picsum.photos/id/512/536/354.jpg?hmac=B1ChCYwros8uQq7yiGCxjYXB-6pIuzoYaL10sWf01H4'"></app-media> -->
+    <div class="spacer-div"></div>
+
+    <app-footer>    </app-footer>
+    <div class="spacer-div"></div>
 </div>

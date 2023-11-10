@@ -1,1 +1,21 @@
-<p>mission works!</p>
+
+<div class="container about">
+    <app-overview [pageTitle]="'Mission & Vision'"  [pageOverviewText]="'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.   Milaya Capital is a dynamic London based venture capital business which has evolved into highly respected mastermind in diverse sectors, as per its acclaimed operations in the UK. Under our investment umbrella we cover various sectors including:'"></app-overview>
+    <div class="spacer-div"></div>
+
+    <div class="row">
+        <app-mission-card></app-mission-card>
+    </div>
+    <div class="spacer-div"></div>
+    
+   
+    <app-clients></app-clients>
+    <div class="spacer-div"></div>
+
+    <app-media [mediaType]="'video'" [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
+    <!-- <app-media [mediaType]="'image'" [mediaURL]="'https://fastly.picsum.photos/id/512/536/354.jpg?hmac=B1ChCYwros8uQq7yiGCxjYXB-6pIuzoYaL10sWf01H4'"></app-media> -->
+    <div class="spacer-div"></div>
+
+    <app-footer>    </app-footer>
+    <div class="spacer-div"></div>
+</div>

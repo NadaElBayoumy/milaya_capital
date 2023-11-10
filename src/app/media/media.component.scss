@@ -1,0 +1,25 @@
+.media {
+    position: relative;
+    .play-center-btn {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 45px;
+    }
+
+    .video-player {
+        width: 100%;
+        border-radius: 20px;
+
+    }
+    .image-div{
+        img{
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+}
