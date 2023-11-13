@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-// import { SwiperModule, SwiperComponent } from 'swiper/angular';
-// import { SwiperModule } from 'ngx-swiper-wrapper';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,20 @@ import { MediaComponent } from './media/media.component';
 import { FooterComponent } from './footer/footer.component';
 import { MissionCardComponent } from './mission-card/mission-card.component';
 import { MissionSliderComponent } from './mission-slider/mission-slider.component';
+import { PortfolioCardComponent } from './portfolio-card/portfolio-card.component';
+import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
+import { PortfolioDetailCardComponent } from './portfolio-detail-card/portfolio-detail-card.component';
+import { PortfolioSliderComponent } from './portfolio-slider/portfolio-slider.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactMapComponent } from './contact-map/contact-map.component';
+import { MainPosterComponent } from './main-poster/main-poster.component';
+import { WeAreHomeComponent } from './we-are-home/we-are-home.component';
+import { WhatWeDoCardComponent } from './what-we-do-card/what-we-do-card.component';
+import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
+import { NewBusinessHeightsComponent } from './new-business-heights/new-business-heights.component';
+import { HeightsSliderComponent } from './heights-slider/heights-slider.component';
+import { WhyChooseComponent } from './why-choose/why-choose.component';
+import { WhyChooseCardComponent } from './why-choose-card/why-choose-card.component';
 
 
 @NgModule({
@@ -42,16 +57,34 @@ import { MissionSliderComponent } from './mission-slider/mission-slider.componen
     FooterComponent,
     MissionCardComponent,
     MissionSliderComponent,
-    // SwiperDirective
+    PortfolioCardComponent,
+    PortfolioDetailsComponent,
+    PortfolioDetailCardComponent,
+    PortfolioSliderComponent,
+    ContactFormComponent,
+    ContactMapComponent,
+    MainPosterComponent,
+    WeAreHomeComponent,
+    WhatWeDoCardComponent,
+    WhatWeDoComponent,
+    NewBusinessHeightsComponent,
+    HeightsSliderComponent,
+    WhyChooseComponent,
+    WhyChooseCardComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NgxGalleryModule
-    HttpClientModule, 
+    HttpClientModule,
+    CarouselModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

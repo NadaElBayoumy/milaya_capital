@@ -1,0 +1,65 @@
+.main-poster {
+    border-radius: 20px;
+    border: 1px solid grey;
+    // background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    background-image: url('../../assets/main-poster.svg');
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-position: left top;
+    position: relative;
+    z-index: -1;
+
+    .main-desc {
+        font-weight: bold;
+        color: #fff;
+        // z-index: 1;
+    }
+
+
+    .highlighter-text {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        z-index: 0;
+    }
+
+    .highlighter-text::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0d6efd;
+        /* Highlighter color */
+        color: white;
+        z-index: -1;
+        mix-blend-mode: multiply;
+        /* Blend mode for the highlighter effect */
+        transform: rotate(-2deg);
+    }
+
+    .desc {
+        color: #fff;
+        font-size: 10px;
+    }
+
+
+
+    .layer {
+        background-color: rgba(0, 0, 0, 0.5); 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        border-radius: 20px;
+    }
+
+
+
+}

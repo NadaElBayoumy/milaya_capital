@@ -18,6 +18,9 @@ export class MediaComponent {
   show: boolean = false;
 
   pauseVideo(videoplayer: any) {
+    if (!videoplayer ||  !videoplayer.nativeElement){
+      return;
+    }
     videoplayer.nativeElement.play();
     // this.startedPlay = true;
     // if(this.startedPlay == true)
@@ -32,7 +35,7 @@ export class MediaComponent {
   }
 
   playVideo() {
-    if (!this.videoplayer ){
+    if (!this.videoplayer || !this.videoplayer.nativeElement ){
       return;
     }
     this.videoplayer.nativeElement.play();

@@ -1,0 +1,101 @@
+.portfolio-card{
+    .right{
+       .image-side{
+            margin : 0 auto;
+            img{
+                float: right;
+            }
+       }
+    }
+    .left{
+        .image-side{
+             margin : auto 0;
+             img{
+                 float: left;
+             }
+        }
+     }
+    border-radius: 20px;
+    max-width: 70%;
+    // margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 0px;
+
+
+    .row,.col{
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 0;
+        // height: auto;
+        // display: block; /* To remove extra space below the image */
+        // margin: 0 auto; /* Center the image */
+    }
+    background-color: grey;
+    // width: 70%;
+    .text-side{
+        color: #fff;
+        font-size: 15px;
+    }
+    .text-desc{
+        margin: 30px;
+    }
+    .title-side{
+        text-align: center;
+        margin-top: 30px;
+        font-size: 15px;
+    }
+    .image-side{
+        width: 100%;
+        height: auto;
+        display: block; /* To remove extra space below the image */
+        margin: 0 auto; /* Center the image */
+        // float: right;
+    }
+}
+
+.right-card{
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.left-card{
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+
+// .cont-2{
+//     border: 1px solid;
+//     .container {
+//         max-width: 100%;
+//         margin: 0 auto;
+//         padding: 20px;
+//         box-sizing: border-box;
+//       }
+  
+//       img {
+//         max-width: 100%;
+//         height: auto;
+//         display: block; /* To remove extra space below the image */
+//         margin: 0 auto; /* Center the image */
+//       }
+// }
+
+    // .cont2 {
+    //     border: solid 1px;
+    //     max-width: 100%;
+    //     margin: 0 auto;
+    //     padding: 20px;
+    //     box-sizing: border-box;
+
+    //     img {
+    //         max-width: 100%;
+    //         height: auto;
+    //         float: right; /* Stick the image to the right */
+    //         margin-left: 20px; /* Add some space between the image and text */
+    //       }
+    //   }
+  
+     

@@ -1,10 +1,30 @@
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <ng-content>
+<owl-carousel-o class="container" [options]="customOptions">
 
-        </ng-content>
-    </div>
-    <div class="swiper-pagination">
+    <ng-container *ngFor="let slide of slides">
+            <ng-template carouselSlide>
 
-    </div>
-</div>
+                <div class="mission-card">
+                    <div class="icon-mission-card">
+                        <i [class]="slide.icon"></i>
+                    </div>
+                    <p class="mission-card-title">
+                        {{slide.title}}
+                    </p>
+                    <div class="mission-card-image">
+                        <img alt="mission" [src]="slide.img">
+                        <!-- <img alt="mission" src="../../assets/mission-1.svg"> -->
+                    </div>
+
+                    <p class="mission-card-description">
+                        {{slide.descr}}
+                        <!-- real estate agent, rent house, mls listings, land for sale, houses for rent, realtor, -->
+                    </p>
+
+                </div>
+
+
+            </ng-template>
+
+    </ng-container>
+
+</owl-carousel-o>

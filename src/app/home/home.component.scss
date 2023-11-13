@@ -1,0 +1,59 @@
+.home{
+    .breadcrumb{
+        color: blue;
+        font-size: 10px;
+    }
+    background: #F5F5F5;
+    .what-we-do-divs{
+       
+    }
+
+    .Milaya-bg-img{
+        background: grey;
+        img{
+            width: 100%;
+        }
+    }
+    
+}
+
+
+
+//   .container-ring {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//     margin: 0;
+//   }
+
+//   .ring {
+//     position: relative;
+//     width: 150px;
+//     height: 150px;
+//     border: 10px solid #3498db; /* Change to your desired color */
+//     border-radius: 50%;
+//     margin: 10px; /* Adjust the margin as needed */
+//     box-sizing: border-box;
+//   }
+
+//   .ring::before,
+//   .ring::after {
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     border: 10px solid #3498db; /* Change to your desired color */
+//     border-radius: 50%;
+//     box-sizing: border-box;
+//   }
+
+//   .ring::before {
+//     top: -20px;
+//     left: 0;
+//   }
+
+//   .ring::after {
+//     top: 20px;
+//     left: 0;
+//   }

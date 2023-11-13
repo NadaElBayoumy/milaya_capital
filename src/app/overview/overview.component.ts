@@ -9,6 +9,9 @@ import { Component , Input } from '@angular/core';
 export class OverviewComponent {
   @Input() pageTitle!: string;
   @Input() pageOverviewText!: string;
+  @Input() direction!: string;
+  @Input() light! :string;
+
   
  
 

@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
-import Swiper from 'swiper';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-mission-slider',
@@ -8,36 +7,45 @@ import Swiper from 'swiper';
   styleUrls: ['./mission-slider.component.scss'],
 })
 export class MissionSliderComponent implements AfterViewInit {
-  private swiper: Swiper|any;
+  title = 'mission slider';
 
-  constructor(private el: ElementRef) {}
-
-  ngAfterViewInit(): void {
-    this.swiper = new Swiper(this.el.nativeElement.querySelector('.swiper-container'), {
-      // Swiper options here...
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
+  customOptions: OwlOptions = {
+    items:4,
+    loop: true,
+    dots: false,
+    navSpeed: 200,
+    navText : ["<i class='bi bi-arrow-left'></i>","<i class='bi bi-arrow-right'></i>"],
+    // responsive: {
+    //   0: {
+    //     items: 1
+    //   },
+    //   400: {
+    //     items: 2
+    //   },
+    //   740: {
+    //     items: 3
+    //   },
+    //   940: {
+    //     items: 4
+    //   }
+    // },
+    nav: true
   }
-  
-  items = [
-    { image: 'path/to/image1.jpg', title: 'Slide 1', description: 'Description for slide 1' },
-    { image: 'path/to/image2.jpg', title: 'Slide 2', description: 'Description for slide 2' },
-    { image: 'path/to/image3.jpg', title: 'Slide 3', description: 'Description for slide 3' }
+
+  slides = [
+    { id: 1, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-1.svg" },
+    { id: 2, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-2.svg" },
+    { id: 3, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-3.svg" },
+    { id: 4, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-4.svg" },
+    { id: 5, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "https://dummyimage.com/350x150/9a2b7a/fff" },
+    { id: 6, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "https://dummyimage.com/350x150/5a2b7a/fff" },
+    { id: 7, icon:"bi bi-buildings", title:"REAL ESTATE", descr:"real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "https://dummyimage.com/350x150/4a2b7a/fff" }
   ];
 
-  swiperConfig = {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    }
-  };
+  constructor(private el: ElementRef) { }
+
+  ngAfterViewInit(): void {
+   
+  }
+
 }

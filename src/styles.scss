@@ -1,17 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
-$spacer:40px;
+$spacer: 40px;
 
-.px-2{
-    padding-left: ($spacer * .5) ;
-    padding-right: ($spacer * .5) ;
+.px-2 {
+    padding-left: ($spacer * .5);
+    padding-right: ($spacer * .5);
 }
 
 
-.top-spacer{
+.top-spacer {
     padding-top: $spacer;
 }
 
 
-.spacer-div{
+.spacer-div {
     min-height: $spacer;
+}
+
+.mission {
+    .mission-slider-card {
+        .owl-carousel {
+            position: relative;
+        }
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff !important;
+            color: #333 !important;
+            padding: 10px 15px;
+            border: solid 1px grey;
+            cursor: pointer;
+        }
+
+        .owl-prev {
+            left: -25px;
+        }
+
+        .owl-next {
+            right: -25px;
+        }
+
+        .owl-prev:hover,
+        .owl-next:hover {
+            background-color: #555;
+        }
+    }
+}
+
+.heights-slider {
+    .owl-carousel {
+        position: relative;
+    }
+
+    .owl-nav{
+        position: absolute;
+        top: -50px;
+        right: 22px;
+        margin-top: 0px !important;
+        font-size: 22px;
+       
+    }
+    .owl-item{
+        // border: 1px solid #D9D9D9;
+        height: 140vh;
+        // margin-right: 15px; 
+    }
+
+    // .owl-item > div {
+    //   width: 100%;
+    // }
+
+    
+    .owl-prev,.owl-next {
+        color: #333 !important;
+        background: none !important;
+        i{
+            font-size: 22px;
+        }
+    }
+
+
+    // .owl-prev,
+    // .owl-next {
+    //     position: absolute;
+    //     top: 0;
+    //     transform: translateY(-50%);
+    //     background-color: #fff !important;
+    //     color: #333 !important;
+    //     padding: 10px 15px;
+    //     border: solid 1px grey;
+    //     cursor: pointer;
+    // }
+
+    // .owl-prev {
+    //     left: 0px;
+    // }
+
+    // .owl-next {
+    //     right: 0px;
+    // }
+
+    // .owl-prev:hover,
+    // .owl-next:hover {
+    //     background-color: #555;
+    // }
 }

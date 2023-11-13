@@ -1,0 +1,14 @@
+.what-we-do{
+    display: flex;
+    height: 130vh;
+    .box{
+        flex: 1;
+        padding-right: 0px;
+        // background: linear-gradient(180deg, #262626 14.47%, #2A2A2A 100%);
+        background: grey;
+        &:not(:last-child) {
+            margin-right: 10px; // Adjust the margin as needed
+        }
+    }
+   
+}

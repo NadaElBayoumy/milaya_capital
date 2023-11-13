@@ -1,0 +1,22 @@
+.new-business-heights {
+    display: flex;
+
+    .box {
+        flex: 1;
+        padding: 20px;
+
+        &:first-child {
+            margin-right: 10px;
+        }
+        &:last-child {
+            margin-right: 10px;
+            &:after {
+                content: '';
+                display: block;
+                height: 1px;
+                background-color: #ddd; // Adjust the color of the horizontal rule
+                margin-top: 10px; // Adjust the margin between the box and the hr
+            }
+        }
+    }
+}

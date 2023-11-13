@@ -1,0 +1,46 @@
+<div class="heights-slider">
+    <owl-carousel-o class="container" [options]="customOptions">
+        <ng-container *ngFor="let slide of slides">
+            <ng-template carouselSlide>
+
+                <div class="heights-slider-card">
+                    <div class="heights-slider-card-image">
+                        <img alt="heights-card" [src]="slide.img">
+                    </div>
+
+                    <div class="data-container">
+                        <div class="icon-height-slider-card">
+                            <i [class]="slide.icon"></i>
+                        </div>
+                        <p class="heights-slider-card-num">
+                            {{slide.num}}
+                        </p>
+                        <p class="heights-slider-card-title">
+                            {{slide.title}}
+                        </p>
+
+
+                        <p class="heights-slider-card-description">
+                            {{slide.descr}}
+                            <!-- real estate agent, rent house, mls listings, land for sale, houses for rent, realtor, -->
+                        </p>
+
+                        <p class="heights-slider-card-title">
+                            Read more
+                            <i class="bi bi-arrow-right"></i>
+                        </p>
+                    </div>
+                </div>
+
+
+            </ng-template>
+
+        </ng-container>
+
+    </owl-carousel-o>
+</div>
+<!-- 
+<div class="custom-nav-container">
+    <button class="owl-prev">Prev</button>
+    <button class="owl-next">Next</button>
+  </div> -->

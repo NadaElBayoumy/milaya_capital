@@ -1,1 +1,19 @@
-<p>portfolio works!</p>
+
+<div class="container portfolio">
+    <app-overview [pageTitle]="'Latest Portfolio'"  [pageOverviewText]="'Consulting is a long-term investment in your goal’s future.'"></app-overview>
+    <div class="spacer-div"></div>
+    
+
+    <div class="portfolio-divs">
+        <div class="spacer-div"></div>
+        <app-portfolio-card [imageWay]="'left'"></app-portfolio-card>
+        <div class="spacer-div"></div>
+        <app-portfolio-card [imageWay]="'right'"></app-portfolio-card>
+        <div class="spacer-div"></div>
+        <!-- <app-portfolio-card [imageWay]="'top'"></app-portfolio-card> -->
+    </div>
+
+    <div class="spacer-div"></div>
+    <app-footer>    </app-footer>
+    <div class="spacer-div"></div>
+</div>

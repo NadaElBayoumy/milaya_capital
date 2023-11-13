@@ -1,0 +1,43 @@
+.portfolio-slider {
+    .owl-carousel {
+        padding: 10px;
+        position: relative !important;
+
+        .fa-chevron-left {
+            color: #909292;
+            background-color: #fff;
+
+        }
+        .owl-prev{
+            position: absolute !important;
+            top: 50% !important;
+            left: 0%;
+        }
+
+    }
+
+    .portfolio-card {
+        margin: 20px;
+        border: 1px #909292 solid;
+        border-radius: 20px;
+        background: linear-gradient(150.12deg, rgba(217, 217, 217, 0.9) 3.9%, rgba(217, 217, 217, 0.1) 91.59%);
+        ;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
+        /* Box shadow on all four sides */
+
+        .portfolio-card-image {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .portfolio-card-title {
+            text-align: center;
+        }
+
+        .portfolio-card-desc {
+            text-align: center;
+            color: grey;
+
+        }
+    }
+}

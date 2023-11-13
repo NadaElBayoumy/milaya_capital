@@ -1,0 +1,89 @@
+<div class="contact-form">
+    <div class="row">
+        <div class="col-8 send-message-section">
+            <h2>Send us a message</h2>
+            <p> Our customer representative specially assigned to you will respond to your message as soon as possible.
+                Thank you for contacting.
+            </p>
+            <div class="contact-form">
+                <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group form-floating mb-3">
+                                <input type="name" id="name" name="name" [(ngModel)]="model.name" required  class="form-control" placeholder="Name"/>
+                                <label for="name">Your Name*</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group form-floating mb-3">
+                                <input type="sur_name"  name="sur_name" [(ngModel)]="model.sur_name"  required class="form-control" id="sur_name" placeholder="Surname"/>
+                                <label for="sur_name">Your Surname*</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group form-floating mb-3">
+                                <input type="email" name="email" [(ngModel)]="model.email" required email class="form-control" id="email" placeholder="Email"/>
+                                <label for="email">E-mail*</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group form-floating mb-3">
+                                <input type="company" id="company" name="company" [(ngModel)]="model.company"  class="form-control"  placeholder="Company"/>
+                                <label for="company">Company</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group form-floating mb-3">
+                                <textarea  rows="5" cols="27" type="message" id="message" name="message" required  [(ngModel)]="model.message" class="form-control"  placeholder="Message"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col contact-btn-col">
+                            <button type="submit"  [disabled]="contactForm.invalid" class="btn btn-primary">
+                                SEND MESSAGE   
+                                <i class="bi bi-arrow-up-right"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-4 get-in-touch">
+            <h1> GET IN TOUCH</h1>
+            <p class="description-p">
+                Get in touch and let us know how we can help.
+            </p>
+            <p class="description-p">
+                Send a message through given form, If your enquiry is time sensitive please use below contact details.
+            </p>
+            <div class="row">
+                <div class="col-2">
+                    <i class="bi bi-building"></i>
+                </div>
+                <div class="col-10">
+                    <h5>Head Office</h5>
+                    <span class="description-p">
+                        Second Floor Office , Bugatti Showroam Building, Al Manara - Dubai , UAE
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <i class="bi bi-envelope-plus"></i>
+                </div>
+                <div class="col-10">
+                    <h5>E-mail Info</h5>
+                    <span class="description-p">
+                        info@milayacapital.ae
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

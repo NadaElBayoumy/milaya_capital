@@ -1,0 +1,64 @@
+$circle-size: 200px; // Adjust the size of the circle
+// $border-color1: rgba(44,85,241, 0.5) ;
+$border-color1: rgb(44, 85, 241);
+$border-width1: 40px; // Adjust the width of the first border
+// $border-color2: rgba(44,85,241, 0.3); 
+$border-color2: #7c93f0;
+; //#2C55F1
+// $border-color2: black;
+$border-width2: 20px; // Adjust the width of the second border
+
+.container {
+   
+}
+
+.we-are-home {
+    .we-are-left-div {
+        padding: 50px 30px 30px 30px;
+        background-color: #fff;
+        overflow: hidden;
+        position: relative;
+
+        .circle {
+            width: $circle-size;
+            height: $circle-size;
+            background-color: rgba(40, 80, 220);
+            // background-color: #1e3bb18e ;
+            border-radius: 50%;
+            position: absolute;
+            top: -100px;
+            right: -100px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                box-sizing: border-box;
+                border: $border-width1 solid $border-color1 !important;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                box-sizing: border-box;
+                border: $border-width2 solid $border-color2 !important;
+            }
+        }
+    }
+
+    .we-are-right-img {
+        overflow: visible;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+}
