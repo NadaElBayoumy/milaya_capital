@@ -1,10 +1,12 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { fadeInFromTop2 } from '../animations';
 
 @Component({
   selector: 'app-mission-slider',
   templateUrl: './mission-slider.component.html',
   styleUrls: ['./mission-slider.component.scss'],
+  animations:[ fadeInFromTop2]
 })
 export class MissionSliderComponent implements AfterViewInit {
   title = 'mission slider';

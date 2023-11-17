@@ -1,0 +1,272 @@
+
+$xxs-font: 12px;
+// $xs-font: 14px;
+$sm-font: 15px;
+$md-font: 18px;
+$lg-font: 20px;
+$xl-font: 24px;
+// $xxl-font: 30px;
+$xxxl-font: 48px;
+
+
+//milaya
+
+$circle-size: 200px; // Adjust the size of the circle
+$border-width1: 40px; // Adjust the width of the first border
+$border-width2: 20px; // Adjust the width of the second border
+
+
+//end milaya
+
+//milaya
+$s-font: 15px;
+$s-font-2 : 16px;
+$l-font: 40px;
+$h1-font: 50px;
+$h2-font: 20px;
+$h3-font: 22px;
+$p-font: 14px;
+$p-font-sm: 12px;
+$title-font:17px;
+$tiny-font: 8px;
+$md-font-p : 18px;
+$sm-f : 10px;
+$h2-font-big:30px;
+//milaya end
+
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1540px,
+);
+// ///////////////
+// Fonts
+// //////////////
+$font-sizes: (
+  xxxs: 11px,
+  xxs: 12px,
+  xs: 14px,
+  sm: 16px,
+  md: 18px,
+  lg: 20px,
+  xl: 24px,
+  xxl: 30px,
+  xxxl: 48px,
+);
+//////
+$xxxxl-font: (
+  null: map-get($font-sizes, xxxl),
+  xs: map-get($font-sizes, xxxl),
+  md: map-get($font-sizes, xxxxl),
+  lg: map-get($font-sizes, xxxxl),
+);
+$xxxl-font: (
+  null: map-get($font-sizes, xl),
+  xs: map-get($font-sizes, xl),
+  md: map-get($font-sizes, xxl),
+  lg: map-get($font-sizes, xxl),
+  xxl: map-get($font-sizes, xxxl),
+);
+$xxl-font: (
+  null: map-get($font-sizes, lg),
+  xs: map-get($font-sizes, lg),
+  md: map-get($font-sizes, xl),
+  lg: map-get($font-sizes, xl),
+  xxl: map-get($font-sizes, xxl),
+);
+$xl-font: (
+  null: map-get($font-sizes, md),
+  xs: map-get($font-sizes, md),
+  md: map-get($font-sizes, lg),
+  lg: map-get($font-sizes, xl),
+  xxl: map-get($font-sizes, xl),
+);
+$lg-font: (
+  null: map-get($font-sizes, sm),
+  xs: map-get($font-sizes, sm),
+  md: map-get($font-sizes, md),
+  lg: map-get($font-sizes, md),
+  xxl: map-get($font-sizes, lg),
+);
+$md-font: (
+  null: map-get($font-sizes, xs),
+  xs: map-get($font-sizes, xs),
+  md: map-get($font-sizes, sm),
+  lg: map-get($font-sizes, sm),
+  xxl: map-get($font-sizes, md),
+);
+$sm-font: (
+  null: map-get($font-sizes, xs),
+  xs: map-get($font-sizes, xs),
+  md: map-get($font-sizes, xs),
+  lg: map-get($font-sizes, xs),
+  xxl: map-get($font-sizes, sm),
+);
+$xs-font: (
+  null: map-get($font-sizes, xxs),
+  xs: map-get($font-sizes, xxs),
+  md: map-get($font-sizes, xxs),
+  lg: map-get($font-sizes, xxs),
+  xxl: map-get($font-sizes, xs),
+);
+$xxs-font: (
+  null: map-get($font-sizes, xxxs),
+  xs: map-get($font-sizes, xxxs),
+  md: map-get($font-sizes, xxxs),
+  lg: map-get($font-sizes, xxs),
+  xxl: map-get($font-sizes, xxs),
+);
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 991px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-md-desktop-up {
+  @media (min-width: 1540px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+/////////////////
+// Colors
+////////////////
+//milaya
+$brand: #2C55F1;
+$active-link-bg: #2C55F133;
+$active-link-bg-light: #D9D9D933;
+$light-grey: #F5F5F5;
+$dark-grey: #353535;
+$white: #FFFFFF;
+$white-grey: #FFFFFFBF;
+$dark-bg: linear-gradient(180deg, #262626 14.47%, #2A2A2A 100%);
+$black: #272727;
+$mid-grey: #909292;
+$p-grey-sm:#C8CBCB;
+$placeholder-grey: #909292BF;
+$placeholder-border:#90929280;
+$black:#2A2A2A;
+$border-color2: #7c93f0;
+$overview-color: #353535BF;
+$bg-layer : rgba(0, 0, 0, 0.5); 
+$arrow:#292D32;
+$black-title:#000000;
+$height-color:#6C6D6D;
+$overview-color-contact: #FFFFFF59;
+$contact-det-font: #35353580;
+
+//end milaya
+
+$text: #54565a;
+$text-mute: lighten(#353535, 10%);
+$primary: purple;
+$secondary: #f0f7fe;
+$mute: #f4f8fd;
+
+//$black: #000;
+$grey: #414141;
+//$dark-grey:  #333333;
+$light-grey: #f6f6f6;
+$lighter-grey: #d7dee9;
+//$light-grey:  #f6f6f6;
+$smoke-white: #f3f3f3;
+$error-color: #f6303f;
+$error-bg: #fff0f1;
+$success-color: #390;
+
+/*****************************/
+/* COLORS */
+$primaryColor: #002e6d;
+$royalBlue: #0047ba;
+$skyBlue: #009ade;
+$steelGrey: #54565a;
+$slateGrey: #a7a8a9;
+$skyGrey: #dbdcdb;
+$lightGrey: #ededed;
+$white: #ffffff;
+$tealHigh: #7eddd3;
+$tealMid: #00b0b9;
+$tealLow: #00677f;
+$greenHigh: #a4d65e;
+$greenMid: #009639;
+$greenLow: #006341;
+$purpleHigh: #b580d1;
+$purpleMid: #753bbd;
+$purpleLow: #5c068c;
+$redHigh: #f67599;
+$redMid: #d50032;
+$redLow: #a6093d;
+$yellowHigh: #f9e547;
+$yellowMid: #ffcd00;
+$yellowLow: #eaaa00;
+$purple-glow: #a60a3c;
+/*Background*/
+$lightGrey-bg: #fafafa;
+$mediumGrey-bg: rgba(237, 237, 237, 0.5);
+$blueCrystal: #002454;
+$lighterGrey: #fbfbfb;
+$skyBlueNav: #edf4ff;
+$lightWhite: #fffefe;
+$twitterBlue: #79c7ea;
+$navyBlue: #001b41;
+$linkedin: #0077b5;
+$facebook: #3b5998;
+$twitter: #38a1f3;
+$white-light: #fbfbfb;
+$white-light-fe: #fefefe;
+/////////////////
+// font
+////////////////
+
+$materialIcons: 'Material Icons';
+$font-primary: 'ADNOC Sans Regular';
+$font-bold-ad: 'ADNOC Sans Bold';
+$font-xbold: 'ADNOC Sans XBold';
+$font-light-ad: 'ADNOC Sans Light';
+$font-light: 300;
+$font-normal: 400;
+$font-semi: 400;
+$font-bold: 700;
+
+////////////////////////
+// Bootstrap Overrides
+////////////////////////
+
+$body-bg: $white;
+$body-color: $grey;
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'danger': $error-color,
+  'success': $success-color,
+);
+$hr-border-color: $light-grey;
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1540px,
+) !default;

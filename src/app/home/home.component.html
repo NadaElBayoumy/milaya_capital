@@ -1,45 +1,59 @@
-<div class="container home">
-
-    <app-main-poster></app-main-poster>
-    <div class="spacer-div"></div>
-
-    <span class="breadcrumb">ABOUT COMPANY</span>
-    <h1>We are the magic behind the company’s best days. </h1>
-
-    <div class="spacer-div"></div>
-    <app-we-are-home></app-we-are-home>
-    <div class="spacer-div"></div>
-    <span class="breadcrumb">WHAT WE DO</span>
-
-    <p>Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in
-        a sustainable future; hence we put all our efforts into being environmentally sustainable throughout our
-        company’s operations.</p>
-    <div class="spacer-div"></div>
-
-    <app-what-we-do></app-what-we-do>
-    <div class="Milaya-bg-img">
-        <img src="../../assets/MILAYA-bg.svg" alt="MILAYA-bg">
+<div class="home">
+    <div class="first-bg">
+        <div class="poster-container">
+            <div class="small-spacer-div"></div>
+            <app-main-poster></app-main-poster>
+            <div class="spacer-div"></div>
+        </div>
+        <div class="container">
+            <span class="breadcrumb" [@fadeInFromTop]>ABOUT COMPANY</span>
+            <h1 [@enterFromLeft] >We are the magic behind the company’s best days. </h1>
+            <div class="spacer-div"></div>
+        </div>
+        <div class="we-are-div">
+            <app-we-are-home ></app-we-are-home>
+            <div class="spacer-div"></div>
+        </div>
     </div>
-    
-    <div class="spacer-div"></div>
-    <app-new-business-heights></app-new-business-heights>
+ 
+    <div class="second-bg">
+        <div class="container">
+            <span class="breadcrumb" [@fadeInFromLeft]> WHAT WE DO</span>
+            <h1 class="grey" [@fadeInFromLeft2]>Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world
+                where we can
+                live in
+                a sustainable future; hence we put all our efforts into being environmentally sustainable throughout our
+                company’s operations.</h1>
+        </div>
 
-    <div class="spacer-div"></div>
-    <app-why-choose></app-why-choose>
+        <div class="spacer-div"></div>
+        <div class="container">
+            <app-what-we-do></app-what-we-do>
+        </div>
+        <div class="Milaya-bg-img">
+            <img src="../../assets/MILAYA-bg.svg" alt="MILAYA-bg">
+        </div>
+    </div>
 
-    
-    <app-clients></app-clients>
-    <div class="spacer-div"></div>
+    <div class="third-bg">
+        <!-- <div class="layer-light-squares"> </div> -->
+        <div class="spacer-div"></div>
+        <app-new-business-heights></app-new-business-heights>
+        <div class="spacer-div"></div>
+    </div>
 
-    <app-media [mediaType]="'video'" [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
-    <div class="spacer-div"></div>
+    <div class="fourth-bg">
+        <app-why-choose></app-why-choose>
+        <app-clients></app-clients>
+    </div>
 
 
-    <app-footer></app-footer>
-    <div class="spacer-div"></div>
+    <div class="fifth-bg">
+        <div class="layer-light-squares"> </div>
+        <div class="spacer-div"></div>
+        <app-media [mediaType]="'video'"  [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
+        <app-footer></app-footer>
+    </div>
+
 </div>
 
-
-<div class="container-ring">
-    <div class="ring"></div>
-</div>

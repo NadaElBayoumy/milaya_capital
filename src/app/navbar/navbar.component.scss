@@ -1,3 +1,6 @@
+@import '../../variables';
+
+
 /* Reset default margin and padding */
 * {
     margin: 0;
@@ -5,48 +8,76 @@
     box-sizing: border-box;
 }
 
-.main-nav {
+.main-nav,.poster-nav{
     display: flex;
     flex: 100%;
     justify-content: space-between;
-    /* Style the navigation menu container */
-    .navbar {
-        background-color: #FFF;
-        /* Background color */
-        display: flex;
-        /* Make the items display inline (in a row) */
-        // margin-left: 20px;
-        // margin-right: 20px;
-        
-    }
+    margin-bottom: 50px;
 
-    /* Style the navigation links */
     .navbar a {
-        color: #2C55F1;
-        /* Text color */
+        // color: $brand;
         text-decoration: none;
-        /* Remove underlines from links */
-        padding: 16px;
-        /* Spacing around each link */
+        padding:10px 40px;
+        font-size: $s-font-2 ;
+        line-height: 19px ;
+        font-weight: 600 ;
     }
 
-    /* Apply styles to the active link */
     .navbar a.active {
-        background-color: rgba(#2C55F1, .2);
-        color: #2C55F1;
-        border-radius: 47px;
+        border-radius: 100px;
     }
 
-
-    /* Apply styles to the active link */
     .navbar a:hover {
-        background-color: rgba(#2C55F1, .2);
-        color: #2C55F1;
-        border-radius: 47px;
+        background-color: $active-link-bg;
+        color: $brand;
+        border-radius: 100px;
     }
+    
+    .contact-btn {
+        width: 148px ;
+        border-radius: 47px;
+       
+    }
+    
+}
 
-    .contact-btn{
-        width: 148px !important;
-        border-radius: 47px;
+.main-nav{
+    margin-top: 50px;
+    .navbar a {
+        color: $brand;
     }
+    .navbar a.active {
+        background-color: $active-link-bg;
+        color: $brand;
+    }
+    .navbar a:hover {
+        background-color: $active-link-bg;
+        color: $brand;
+    }
+    .contact-btn {
+        background-color: $brand;
+        color: $white;
+    }
+}
+.poster-navbar,.contact-navbar{
+    margin-top: 0px;
+    .navbar a {
+        color: $white ;
+    }
+    .navbar a.active {
+        background-color: $active-link-bg-light ;
+        color: $white ;
+    }
+    .navbar a:hover {
+        background-color: $active-link-bg-light ;
+        color: $white ;
+    }
+    .contact-btn {
+        background-color: $white ;
+        color: $brand ;
+    }
+}
+
+.contact-navbar{
+
 }

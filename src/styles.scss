@@ -1,5 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+// @import 'variables.scss';
+@import 'variables';
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+// Override the default breadcrumb font size
+:root {
+    --bs-breadcrumb-font-size: $s-font-2; // Set your desired font size
+}
+
+.breadcrumb {
+    color: $brand;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+
+h1.grey {
+    color: $mid-grey;
+    font-weight: 700;
+    font-size: $l-font ;
+    line-height: 49px;
+}
+
+h1.black {
+    color: $dark-grey;
+    font-weight: 700;
+    font-size: $l-font ;
+    line-height: 49px;
+}
+
+p.small {
+    color: $p-grey-sm;
+    font-weight: 500;
+    font-size: $p-font-sm;
+    line-height: 15px;
+}
+
+.grey-p {
+    color: $p-grey-sm;
+    font-weight: 500;
+    font-size: $p-font-sm;
+}
+
+$small-spacer: 20px;
 $spacer: 40px;
+$big-spacer : 135px;
 
 .px-2 {
     padding-left: ($spacer * .5);
@@ -16,6 +68,15 @@ $spacer: 40px;
     min-height: $spacer;
 }
 
+.home-spacer-div {
+    min-height: $big-spacer;
+}
+
+
+.small-spacer-div {
+    min-height: $small-spacer !important;
+}
+
 .mission {
     .mission-slider-card {
         .owl-carousel {
@@ -27,7 +88,7 @@ $spacer: 40px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: #fff !important;
+            background-color: $white !important;
             color: #333 !important;
             padding: 10px 15px;
             border: solid 1px grey;
@@ -46,6 +107,9 @@ $spacer: 40px;
         .owl-next:hover {
             background-color: #555;
         }
+        .owl-item{
+            margin-top: 20px;
+        }
     }
 }
 
@@ -54,56 +118,27 @@ $spacer: 40px;
         position: relative;
     }
 
-    .owl-nav{
+    .owl-nav {
         position: absolute;
         top: -50px;
         right: 22px;
         margin-top: 0px !important;
         font-size: 22px;
-       
-    }
-    .owl-item{
-        // border: 1px solid #D9D9D9;
-        height: 140vh;
-        // margin-right: 15px; 
     }
 
-    // .owl-item > div {
-    //   width: 100%;
-    // }
-
-    
-    .owl-prev,.owl-next {
-        color: #333 !important;
+    .owl-prev:active,
+    .owl-next:active {
+        color:$arrow !important;
         background: none !important;
-        i{
+    }
+    
+    .owl-prev,
+    .owl-next {
+        color: $mid-grey !important;
+        background: none !important;
+
+        i {
             font-size: 22px;
         }
     }
-
-
-    // .owl-prev,
-    // .owl-next {
-    //     position: absolute;
-    //     top: 0;
-    //     transform: translateY(-50%);
-    //     background-color: #fff !important;
-    //     color: #333 !important;
-    //     padding: 10px 15px;
-    //     border: solid 1px grey;
-    //     cursor: pointer;
-    // }
-
-    // .owl-prev {
-    //     left: 0px;
-    // }
-
-    // .owl-next {
-    //     right: 0px;
-    // }
-
-    // .owl-prev:hover,
-    // .owl-next:hover {
-    //     background-color: #555;
-    // }
 }

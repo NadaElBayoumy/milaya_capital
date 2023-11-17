@@ -1,52 +1,58 @@
 <div class="container footer row">
     <div class="col-4">
-        <img class="footer-logo" src="assets/logo.svg" alt="logo">
-        <p class="footer-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod
-        </p>
+        <div class="row">
+            <div class="col">
+                <img class="footer-logo" src="assets/logo-footer.svg" alt="logo" [@fadeInFromTop]>
+                <p class="footer-description" [@fadeInFromRight]>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod
+                </p>
 
-        <div class="input-group mb-3 footer-input">
-            <input type="text" class="form-control" placeholder="Type Your Email" aria-label="Email"
-                aria-describedby="basic-addon1">
-            <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon1"> <i class="bi bi-arrow-up-right"></i> </span>
+                <div class="input-group mb-3 footer-input" [@fadeInFromBottom]>
+                    <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email"
+                        aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon1"> <i class="bi bi-arrow-up-right"></i> </span>
+                    </div>
+                </div>
+                <!-- <p class="error">please enter valid email</p> -->
+
+                <div class="social-media-wrapper">
+                    <img src="../../assets/social-media-insta.svg" alt="insta" [@fadeInFromBottom1]>
+                    <img src="../../assets/social-media-x.svg" alt="x" [@fadeInFromBottom2]>
+                    <img src="../../assets/social-media-fb.svg" alt="fb" [@fadeInFromBottom3]>
+                </div>
             </div>
         </div>
 
-        <div class="social-media-wrapper">
-            <img src="../../assets/social-media-insta.svg" alt="insta">
-            <img src="../../assets/social-media-x.svg" alt="x">
-            <img src="../../assets/social-media-fb.svg" alt="fb">
-        </div>
 
     </div>
-    <div class="col-8">
+    <div class="col-8" [@fadeInFromBottom]>
         <div class="row">
             <div class="col quick-links">
-                <h3>Company</h3>
+                <h4 class="title">Company</h4>
 
-                <p>About Us</p>
-                <p>Mission and Vision</p>
-                <p>Portfolio</p>
+                <p class="grey-p-small">About Us</p>
+                <p class="grey-p-small">Mission and Vision</p>
+                <p class="grey-p-small">Portfolio</p>
 
 
             </div>
             <div class="col get-in-touch">
-                <h3>Get In Touch</h3>
+                <h4 class="title">Get In Touch</h4>
                 <div class="email">
-                    <p>Email</p>
-                    <span> {{ 'info@milayacapital.ae' }} </span>
+                    <p class="grey-p-small">Email</p>
+                    <p class="black-p-small"> {{ 'info@milayacapital.ae' }} </p>
                 </div>
                 <div class="address">
-                    <p>Address</p>
-                    <span>Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE</span>
+                    <p class="grey-p-small">Address</p>
+                    <p class="black-p-small">Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <p class="footer-copy-rights">
+    <p class="footer-copy-rights" [@fadeInFromBottom]>
         Copyright © 2023 Milaya Capital All Rights Reserved
     </p>
 </div>

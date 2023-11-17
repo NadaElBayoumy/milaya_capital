@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule ,provideAnimations } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 
 import { AppComponent } from './app.component';
@@ -74,17 +75,22 @@ import { WhyChooseCardComponent } from './why-choose-card/why-choose-card.compon
 
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CarouselModule,
     FormsModule,
-    BrowserAnimationsModule,
+    
   ],
-  providers: [],
+  providers: [
+    provideAnimations()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
 
 
 

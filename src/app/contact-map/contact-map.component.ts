@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-
+import { 
+  fadeInFromTop
+} from '../animations';
 @Component({
   selector: 'app-contact-map',
   templateUrl: './contact-map.component.html',
-  styleUrls: ['./contact-map.component.scss']
+  styleUrls: ['./contact-map.component.scss'],
+  animations: [
+    fadeInFromTop,
+  ],
 })
 export class ContactMapComponent implements OnInit {
   ngOnInit(): void {

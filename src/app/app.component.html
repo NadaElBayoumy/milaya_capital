@@ -1,36 +1,24 @@
-<!-- Toolbar -->
-<div class="toolbar container" role="white-bg-banner">
-  <div class="spacer"></div>
-</div>
-
-<div class="top-spacer"></div>
-
 <div class="container">
-  <app-navbar></app-navbar>
+  <app-navbar *ngIf="showNavbar"></app-navbar>
+
 </div>
-
-
-<div class="container">
-<router-outlet name="primary"></router-outlet>
-</div>
-
 
 <div class="window home">
-<router-outlet name="primary"></router-outlet>
+  <router-outlet name="primary"></router-outlet>
 </div>
 
 <div class="window about">
-<router-outlet name="primary"></router-outlet>
+  <router-outlet name="primary"></router-outlet>
 </div>
 
 <div class="window mission">
-<router-outlet name="primary"></router-outlet>
+  <router-outlet name="primary"></router-outlet>
 </div>
 
 <div class="window portfolio">
-<router-outlet name="primary"></router-outlet>
+  <router-outlet name="primary"></router-outlet>
 </div>
 
 <div class="window contact">
-<router-outlet name="primary"></router-outlet>
+  <router-outlet name="primary"></router-outlet>
 </div>

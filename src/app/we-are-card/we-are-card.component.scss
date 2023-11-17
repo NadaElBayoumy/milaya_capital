@@ -1,3 +1,4 @@
+@import '../../variables';
 .weare{
     .details-div{
         padding-top: 100px;
@@ -12,8 +13,9 @@
             margin-right: 10px;
         }
         p {
-            font-size: 18px ;
-            font-weight: 600;
+            font-size: $p-font-sm  ;
+            font-weight: 600 ;
+            line-height: 15px ;
             display: inline;
         }
         h1{
@@ -21,10 +23,11 @@
         }
     }
     .we-are-description{
-        margin-top: 30px;
-        line-height: 22px;
-        font-weight: 600;
-        color: #909292;
+        margin-top: 30px ;
+        line-height: 22px ;
+        font-weight: 600 ;
+        font-size: $md-font-p ;
+        color: $mid-grey;
     }
     .contact-btn{
         min-width: 217px;

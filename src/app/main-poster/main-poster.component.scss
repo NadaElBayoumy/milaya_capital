@@ -1,28 +1,28 @@
+@import '../../variables';
 .main-poster {
     border-radius: 20px;
-    border: 1px solid grey;
-    // background-color: transparent;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     background-image: url('../../assets/main-poster.svg');
-    background-color: white;
+    background-color: $white;
     background-size: cover;
     background-repeat: no-repeat;
-    // background-position: left top;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 
     .main-desc {
-        font-weight: bold;
-        color: #fff;
-        // z-index: 1;
+        font-weight: 700;
+        color: $white;
+        font-size: $l-font;
+        line-height: 58px;
+        margin: 90px 120px 25px 120px;
     }
 
 
     .highlighter-text {
         position: relative;
         display: inline-block;
-        color: #fff;
+        color: $white;
         z-index: 0;
     }
 
@@ -33,24 +33,24 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #0d6efd;
-        /* Highlighter color */
-        color: white;
+        background-color:$brand;
+        color: $white;
         z-index: -1;
         mix-blend-mode: multiply;
-        /* Blend mode for the highlighter effect */
         transform: rotate(-2deg);
     }
 
     .desc {
-        color: #fff;
-        font-size: 10px;
+        color: $white-grey;
+        font-size: $s-font;
+        margin: 35px 145px 60px 145px;
+        line-height: 22px;
+        font-weight: 600;
     }
 
 
-
     .layer {
-        background-color: rgba(0, 0, 0, 0.5); 
+        background-color: $bg-layer;
         position: absolute;
         top: 0;
         left: 0;
@@ -60,6 +60,17 @@
         border-radius: 20px;
     }
 
+    .about-btn{
+        width: 148px !important;
+        border-radius: 47px;
+        background-color: $white;
+        color: $brand;
+        padding: 15px;
+        font-size: $s-font;
+        font-weight: 600;
+        margin-bottom: 30px;
+        line-height: 19px;
+    }
 
 
 }

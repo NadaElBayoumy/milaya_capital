@@ -1,13 +1,15 @@
-<div class="main-nav" >
-    <img src="assets/logo.svg" alt="logo">
+<!-- <div class="main-nav" [ngClass]='{isHome == "true" ? "homenavbar" : "" ; }' > -->
+<div class="main-nav"  [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome}" >
+    <img *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft] />
+    <img *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft] />
+    
     <nav class="navbar">
-        <a routerLink="/home" routerLinkActive="active">Home</a>
-        <a routerLink="/about" routerLinkActive="active">About</a>
-        <a routerLink="/mission" routerLinkActive="active">Mission</a>
-        <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        <a routerLink="/home" routerLinkActive="active" [@slideFromTop4]>Home</a>
+        <a routerLink="/about" routerLinkActive="active" [@slideFromTop3]>About</a>
+        <a routerLink="/mission" routerLinkActive="active" [@slideFromTop2]>Mission</a>
+        <a routerLink="/portfolio" routerLinkActive="active" [@slideFromTop1]>Portfolio</a>
   </nav>
-  <button type="button" class="btn btn-primary contact-btn">Contact Us</button>
+  <button type="button" class="btn btn-primary contact-btn"  [@slideFromRight]  [routerLink]="'/contact'">Contact Us</button>
 </div>
 
   

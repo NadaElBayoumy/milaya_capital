@@ -10,7 +10,4 @@ export class WhyChooseCardComponent {
   @Input() title!: string;
   @Input() description!: string;
 
-
-
-
 }

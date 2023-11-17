@@ -1,13 +1,17 @@
 <div [ngClass]="light == 'yes' ? 'light overview' : 'overview'">
     <div class="h-overview">
         <div class="tit-div">
-            <img *ngIf="light == 'yes'" class="rect" src="./../../assets/Rectangle-white.svg" alt="rectangle">
-            <img *ngIf="light !== 'yes'" class="rect" src="./../../assets/Rectangle-blue.svg" alt="rectangle">
-            <h1 class="h-title">{{pageTitle}}</h1>
+            <div [@slideFromTop2]>
+                <img *ngIf="light == 'yes'" class="rect" src="./../../assets/Rectangle-white.svg" alt="rectangle"
+                    [@slideFromTop]>
+                <img *ngIf="light !== 'yes'" class="rect" src="./../../assets/Rectangle-blue.svg" alt="rectangle"
+                    [@slideFromTop]>
+                <h1 class="black">{{pageTitle}}</h1>
+            </div>
         </div>
     </div>
-   
-    <p>
+    <div class="spacer-div"></div>
+    <p class="overview-p" [@slideFromTop]>
         {{pageOverviewText}}
     </p>
 </div>

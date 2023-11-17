@@ -1,59 +1,87 @@
-.home{
-    .breadcrumb{
-        color: blue;
-        font-size: 10px;
-    }
-    background: #F5F5F5;
-    .what-we-do-divs{
-       
+@import '../../variables';
+
+.home {
+    background: $light-grey;
+
+    .first-bg {
+        background: $light-grey;
     }
 
-    .Milaya-bg-img{
-        background: grey;
-        img{
+    .second-bg {
+        background: $black url(../../assets/background-squares.svg )  center / cover; 
+        padding-top: 50px;
+        h1.grey {
+            padding-right: 60px;
+            margin-bottom: 60px;
+            color: $mid-grey;
+            font-weight: 700;
+            font-size: $l-font;
+            line-height: 48px;
+        }
+    }
+
+    .third-bg,
+    .fifth-bg {
+        background: url(../../assets/background-squares-light.svg )  center / cover; 
+        // position: relative;
+        // background: $light-grey;
+
+        // .layer-light-squares {
+        //     background-image: url(../../assets/background-squares.svg);
+        //     opacity: 0.3;
+        //     background-size: contain;
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     z-index: 0;
+        // }
+
+    }
+
+    app-we-are-home {
+        display: flex;
+    }
+
+    .Milaya-bg-img {
+        img {
             width: 100%;
         }
     }
-    
+
+    .poster-container {
+        margin: 0px 20px 20px 20px;
+    }
+
+    h1 {
+        color: $dark-grey;
+        font-weight: 700;
+        font-size: $h1-font ;
+        line-height: 61px;
+    }
+
+    h2 {
+        font-size: $h2-font;
+        color: $white;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+
+    h3 {
+        color: $dark-grey;
+        font-weight: 600;
+        font-size: $h3-font ;
+        line-height: 27px;
+    }
+
+    p {
+        color: $dark-grey;
+        font-size: $p-font ;
+        line-height: 18px;
+        font-weight: 500;
+    }
+
+
+
+
 }
-
-
-
-//   .container-ring {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100vh;
-//     margin: 0;
-//   }
-
-//   .ring {
-//     position: relative;
-//     width: 150px;
-//     height: 150px;
-//     border: 10px solid #3498db; /* Change to your desired color */
-//     border-radius: 50%;
-//     margin: 10px; /* Adjust the margin as needed */
-//     box-sizing: border-box;
-//   }
-
-//   .ring::before,
-//   .ring::after {
-//     content: '';
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     border: 10px solid #3498db; /* Change to your desired color */
-//     border-radius: 50%;
-//     box-sizing: border-box;
-//   }
-
-//   .ring::before {
-//     top: -20px;
-//     left: 0;
-//   }
-
-//   .ring::after {
-//     top: 20px;
-//     left: 0;
-//   }

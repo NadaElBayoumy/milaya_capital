@@ -1,11 +1,11 @@
-<div class="contact-form">
+<div class="contact-form container">
     <div class="row">
         <div class="col-8 send-message-section">
-            <h2>Send us a message</h2>
-            <p> Our customer representative specially assigned to you will respond to your message as soon as possible.
+            <h2 [@slideInFromRight]>Send us a message</h2>
+            <p [@fadeInFromRight]> Our customer representative specially assigned to you will respond to your message as soon as possible.
                 Thank you for contacting.
             </p>
-            <div class="contact-form">
+            <div class="contact-form" [@fadeInFromTop1]>
                 <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="col">
@@ -55,14 +55,14 @@
             </div>
         </div>
         <div class="col-4 get-in-touch">
-            <h1> GET IN TOUCH</h1>
-            <p class="description-p">
+            <h1 [@fadeInFromTop1]> GET IN TOUCH</h1>
+            <p [@fadeInFromTop1] class="description-p">
                 Get in touch and let us know how we can help.
             </p>
-            <p class="description-p">
+            <p [@fadeInFromTop1] class="description-p">
                 Send a message through given form, If your enquiry is time sensitive please use below contact details.
             </p>
-            <div class="row">
+            <div class="row" [@slideInFromRight]>
                 <div class="col-2">
                     <i class="bi bi-building"></i>
                 </div>
@@ -73,7 +73,7 @@
                     </span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" [@slideInFromRight2]>
                 <div class="col-2">
                     <i class="bi bi-envelope-plus"></i>
                 </div>

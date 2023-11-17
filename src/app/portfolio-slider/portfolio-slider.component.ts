@@ -1,17 +1,18 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
+import { fadeInFromTop1
+} from '../animations';
 
 @Component({
   selector: 'app-portfolio-slider',
   templateUrl: './portfolio-slider.component.html',
-  styleUrls: ['./portfolio-slider.component.scss']
+  styleUrls: ['./portfolio-slider.component.scss'],
+  animations: [
+    fadeInFromTop1
+  ]
 })
 export class PortfolioSliderComponent implements AfterViewInit {
-
-
   title = 'ng-carousel-demo';
-
   customOptions: OwlOptions = {
     loop: true,
     dots: false,

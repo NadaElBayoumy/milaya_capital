@@ -1,8 +1,11 @@
-.overview{
+@import '../../variables';
+
+.overview {
     max-width: 70%;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+
     .h-overview {
         .tit-div {
             img {
@@ -12,22 +15,36 @@
             }
 
             h1 {
-                font-size: 40px ;
+                font-size: 40px;
                 font-weight: 700;
                 display: inline !important;
-                
             }
         }
-       
     }
-   
-}
-    
 
-  .light{
-    color: #fff;
-    text-align: left;
-    .rect{
-        color: #fff;
+    p.overview-p{
+        color: $overview-color;
+        font-size: $s-font ;
+        line-height: 21px ;
+        font-weight: 600 ;
     }
-  }
+}
+
+.overview.light {
+    width: 100% !important;
+    margin-right: auto;
+    text-align: left;
+    h1{
+        color: $white;
+        font-size: 40px;
+        font-weight: 700;
+        display: inline !important;
+    }
+    text-align: left;
+    p.overview-p{
+        color: $overview-color-contact;
+    }
+    .rect {
+        color: $white;
+    }
+}

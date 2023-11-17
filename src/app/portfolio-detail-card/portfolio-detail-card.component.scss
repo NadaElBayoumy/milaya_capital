@@ -1,15 +1,50 @@
-.portfolio-detail-card{
-    .image-shadow{
-        background-color: grey;
+@import '../../variables';
+
+.portfolio-detail-card {
+    display: flex;
+
+    .image-side {
+        flex: 1;
+    }
+
+    .text-side {
+        flex: 1;
+        h2.h2-font-big{
+            color: $dark-grey;
+            font-size: $h2-font-big;
+            font-weight: 700;
+            line-height: 37px;
+        }
+        p.font-p{
+            font-size: $md-font-p;
+            font-weight: 600;
+            line-height: 22px;
+            color: $mid-grey;
+        }
+        .contact-btn{
+            border-radius: 0px;
+            height: 60px;
+        }
+    }
+
+    .image-shadow {
         margin: 0px 75px 75px 75px;
-        box-shadow: -42px 36px 0px grey;
-        border-radius: 15px;
+        box-shadow: -42px 36px 0px $dark-grey;
+        border-radius: 23px;
         width: 80%;
         float: right;
     }
-    .contact-details{
-        i{
-            color: #2C55F1;
+
+    .contact-details {
+        i {
+            color: $brand;
+            padding: 10px;
+        }
+
+        span{
+            color: $contact-det-font;
+            font-weight: 600;
+            font-size: $s-font;
         }
     }
 }

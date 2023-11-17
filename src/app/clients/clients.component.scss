@@ -1,10 +1,24 @@
-.clients{
-    .title{
-        color: #2C55F1;
+@import '../../variables';
+.clients {
+    text-align: center;
+
+    h1 {
+        width: 49%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .breadcrumb {
+        display: block;
+    }
+
+    .title {
+        color: $brand;
         font-weight: 600;
         text-align: center;
     }
-    h3{
+
+    h3 {
         text-align: center;
         font-weight: 700;
         line-height: 49px;
@@ -13,14 +27,17 @@
         margin-left: auto;
 
     }
-    .clients-logos{
+
+    .clients-logos {
         display: flex;
         flex-wrap: wrap;
-        .logo-img{
-            flex: 0 0 calc(20% - 10px); 
-            margin: 5px; 
+        align-items: center;
+
+        .logo-img {
+            flex: 0 0 calc(20% - 10px);
+            margin: 5px;
             box-sizing: border-box;
         }
-        
+
     }
 }

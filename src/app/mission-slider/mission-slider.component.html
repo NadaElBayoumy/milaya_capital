@@ -1,6 +1,6 @@
-<owl-carousel-o class="container" [options]="customOptions">
-
-    <ng-container *ngFor="let slide of slides">
+<div [@fadeInFromTop2]>
+    <owl-carousel-o class="container" [options]="customOptions">
+        <ng-container *ngFor="let slide of slides">
             <ng-template carouselSlide>
 
                 <div class="mission-card">
@@ -25,6 +25,7 @@
 
             </ng-template>
 
-    </ng-container>
+        </ng-container>
 
-</owl-carousel-o>
+    </owl-carousel-o>
+</div>

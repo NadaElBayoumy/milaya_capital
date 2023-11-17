@@ -1,16 +1,28 @@
+@import '../../variables';
 .contact-form{
     margin: 20px;
-    background-color: #fff;
-    color: black;
+    background-color: $white;
+    color: $black;
     border-radius: 20px;
+    // width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+
+    .row {
+        .send-message-section{
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+
+        }
+    }
+   
 
     .send-message-section{
         padding: 35px;
 
     }
     .get-in-touch{
-        color: #fff;
-        background-color: #2C55F1;
+        color: $white;
+        background-color: $brand;
         border-radius: 0px 20px 20px 0px;
         padding: 35px;
         i{
@@ -27,12 +39,6 @@
         label{
             padding: 0px;
         }
-        .contact-btn{
-            // margin-top: auto;
-            // margin-bottom: 15px;
-        }
-        
-        
     }
 
     .description-p{

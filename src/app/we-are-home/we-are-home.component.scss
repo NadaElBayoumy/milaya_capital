@@ -1,64 +1,50 @@
-$circle-size: 200px; // Adjust the size of the circle
-// $border-color1: rgba(44,85,241, 0.5) ;
-$border-color1: rgb(44, 85, 241);
-$border-width1: 40px; // Adjust the width of the first border
-// $border-color2: rgba(44,85,241, 0.3); 
-$border-color2: #7c93f0;
-; //#2C55F1
-// $border-color2: black;
-$border-width2: 20px; // Adjust the width of the second border
 
-.container {
-   
-}
-
+@import '../../variables';
 .we-are-home {
+    margin: 0px 65px 24px 24px;
     .we-are-left-div {
         padding: 50px 30px 30px 30px;
-        background-color: #fff;
+        background-color: $white;
         overflow: hidden;
         position: relative;
+        display: inline-block;
 
-        .circle {
-            width: $circle-size;
-            height: $circle-size;
-            background-color: rgba(40, 80, 220);
-            // background-color: #1e3bb18e ;
-            border-radius: 50%;
-            position: absolute;
-            top: -100px;
-            right: -100px;
-
-            &::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                box-sizing: border-box;
-                border: $border-width1 solid $border-color1 !important;
+        .box-title{
+            i,h3{
+                display: inline-block;
+                vertical-align: top;
+                color: $dark-grey;
+                font-size: $h3-font;
+                font-weight: 600;
+                line-height: 27px;
             }
-
-            &::after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                box-sizing: border-box;
-                border: $border-width2 solid $border-color2 !important;
+            i{
+                margin-left: 10px;
             }
         }
-    }
 
-    .we-are-right-img {
-        overflow: visible;
-        position: relative;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .three-rings{
+            img{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
         }
+        p.bold{
+            margin-top: 25px;
+            font-size: $p-font;
+            font-weight: 600;
+            line-height: 17px;
+            color: $dark-grey;
+        }
+        p{
+            font-size: $p-font;
+            font-weight: 500;
+            line-height: 17px;
+            color: $overview-color;
+        }
+   
+       
     }
 
 }
