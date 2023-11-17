@@ -1,26 +1,26 @@
 @import '../../variables';
 .we-are-img-text{
-    border-radius: 15px;
-    background: linear-gradient(150.12deg, rgba(217, 217, 217, 0.9) 3.9%, rgba(217, 217, 217, 0.1) 91.59%);
-    backdrop-filter: blur(25px);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #d9d9d9;
     text-align: center;
     padding: 17px;
+    border-radius: 10px;
+    border: 1px solid $active-link-bg-light;
+    background: linear-gradient(150deg, rgba(217, 217, 217, 0.90) 3.9%, rgba(217, 217, 217, 0.10) 91.59%);
+    backdrop-filter: blur(25px);
+
+    .imgwearecard{
+        width: 100%;
+    }
     h3{
-        color: #2C55F1;
+        color: $brand;
         line-height: 25px;
         font-weight: 700;
         margin-top: 30px;
         margin-bottom: 30px;
     }
     .wearecardtext{
-        color: #909292;
-        font-size: 18px;
+        color: $mid-grey;
         font-weight: 600;
         line-height: 20px;
+        font-size: 15px;
     }
 }

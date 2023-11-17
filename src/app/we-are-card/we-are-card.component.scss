@@ -2,6 +2,9 @@
 .weare{
     .details-div{
         padding-top: 100px;
+        @media screen and (max-width: 1000px) {
+            padding-top: 0px;
+        }
     }
     .imgweare{
         max-width: 600px;

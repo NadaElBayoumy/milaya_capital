@@ -12,8 +12,21 @@
         margin-right: auto;
         margin-left: auto;
     }
-    h1.black{
+
+    h1.black {
         line-height: 59px !important;
+    }
+
+    .we-are-cards {
+        display: flex;
+        height: 100vh;
+        .card1{
+            flex: 1;
+            margin-right: 50px;
+        }
+        .card2 {
+            flex: 1;
+        }
     }
 }
 
@@ -27,4 +40,4 @@
     background: url(../../assets/lines.svg) center / cover; // Replace 'your-image-url.jpg' with your image URL
     z-index: -1; // Place the pseudo-element behind the content
     opacity: 0.2; // Adjust the opacity as needed
-  }
+}

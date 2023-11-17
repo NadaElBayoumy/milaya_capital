@@ -21,6 +21,10 @@
             i{
                 margin-left: 10px;
             }
+
+            // @media screen and (max-width: 1000px) {
+            //     padding: 15px;
+            // }
         }
 
         .three-rings{
@@ -44,7 +48,15 @@
             color: $overview-color;
         }
    
-       
+        @media screen and (max-width: 1000px) {
+            width: 300px;
+        
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        margin: 0px 25px 24px 24px;
+    
     }
 
 }
