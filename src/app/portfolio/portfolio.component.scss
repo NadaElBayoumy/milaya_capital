@@ -1,13 +1,4 @@
 @import '../../variables';
-.portfolio{
-    .portfolio-divs{
-        // width: 70%;
-
-        // @media screen and (max-width: 600px) {
-        //     width: 100%;
-        // }
-    }
-}
 
 .portfolio::before{
     content: "";
@@ -19,5 +10,7 @@
     background: url(../../assets/porfolio-bg.svg) center / cover; 
     z-index: -1; 
     opacity: 0.4; 
+
+
 }
 

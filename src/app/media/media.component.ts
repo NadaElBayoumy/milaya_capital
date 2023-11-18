@@ -1,15 +1,11 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { 
-  fadeInFromBottom
-} from '../animations';
+import { fadeInFromBottom } from '../animations';
 
 @Component({
   selector: 'app-media',
   templateUrl: './media.component.html',
   styleUrls: ['./media.component.scss'],
-  animations: [
-    fadeInFromBottom
-  ]
+  animations: [fadeInFromBottom]
 })
 export class MediaComponent {
   @Input() mediaType!: string;
@@ -19,8 +15,10 @@ export class MediaComponent {
   startedPlay: boolean = false;
   show: boolean = false;
 
+
+  
   pauseVideo(videoplayer: any) {
-    if (!videoplayer ||  !videoplayer.nativeElement){
+    if (!videoplayer || !videoplayer.nativeElement) {
       return;
     }
     videoplayer.nativeElement.play();
@@ -33,11 +31,12 @@ export class MediaComponent {
   }
 
   playVideo() {
-    if (!this.videoplayer || !this.videoplayer.nativeElement ){
+    if (!this.videoplayer || !this.videoplayer.nativeElement) {
       return;
     }
     this.videoplayer.nativeElement.play();
     this.startedPlay = true;
+    this.videoplayer.controls = true;
   }
 
   closebutton(videoplayer: any) {

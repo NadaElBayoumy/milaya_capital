@@ -182,7 +182,6 @@ export const enterFromLeft = trigger('enterFromLeft', [
     ]),
 ]);
 
-//new
 export const fadeInFromLeft2 = trigger('fadeInFromLeft2', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateX(-10%)' }),
@@ -226,15 +225,15 @@ export const fadeInFromTop3 = trigger('fadeInFromTop3', [
 
 export const slideFromTop = trigger('slideFromTop', [
     transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-50px)' }), // Initial position (above)
-        animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })), // Final position (normal)
+        style({ opacity: 0, transform: 'translateY(-50px)' }),  
+        animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })), 
       ]),
 ]);
 
 
 export const enterFromBottom = trigger('enterFromBottom', [
     transition(':enter', [
-      style({ opacity: 0, transform: 'translateY(100%)' }), // Initial position (below)
-      animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })), // Final position (normal)
+      style({ opacity: 0, transform: 'translateY(100%)' }), 
+      animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })), 
     ]),
   ]);

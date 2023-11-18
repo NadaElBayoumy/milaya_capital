@@ -1,7 +1,5 @@
 import { Component , Input} from '@angular/core';
-import {
-  slideFromLeft , slideFromTop1 ,slideFromTop2, slideFromTop3 , slideFromTop4 ,slideFromRight
-} from '../animations';
+import {  slideFromLeft , slideFromTop1 ,slideFromTop2, slideFromTop3 , slideFromTop4 ,slideFromRight} from '../animations';
 
 @Component({
   selector: 'app-navbar',

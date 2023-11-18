@@ -18,8 +18,8 @@
         flex:1;
         text-decoration: none;
         padding:10px 40px;
-        font-size: $s-font-2 ;
-        line-height: 19px ;
+        font-size: $s-font ;
+        line-height: 18px ;
         font-weight: 600 ;
     }
 
@@ -38,7 +38,9 @@
         border-radius: 47px;
         height: 40px;
     }
-    
+    .logo-img{
+        cursor: pointer;
+    }
 }
 
 .main-nav{

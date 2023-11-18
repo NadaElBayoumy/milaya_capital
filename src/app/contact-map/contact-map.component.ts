@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { 
-  fadeInFromTop
-} from '../animations';
+import { fadeInFromTop } from '../animations';
 @Component({
   selector: 'app-contact-map',
   templateUrl: './contact-map.component.html',
   styleUrls: ['./contact-map.component.scss'],
-  animations: [
-    fadeInFromTop,
-  ],
+  animations: [fadeInFromTop],
 })
 export class ContactMapComponent implements OnInit {
   ngOnInit(): void {
@@ -18,8 +14,6 @@ export class ContactMapComponent implements OnInit {
 
   private initMap(): void {
     const map = L.map('map').setView([0, 0], 2);
-    // var map = L.map('map').setView([51.505, -0.09], 13);
-
     var latlng = L.latLng(50.5, 30.5);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -28,7 +22,6 @@ export class ContactMapComponent implements OnInit {
     }).addTo(map);
 
 
-    // Create a custom icon
     const customIcon = L.icon({
       iconUrl: 'assets/pinpoint.jpg',
       iconSize: [32, 32], // size of the icon
@@ -40,8 +33,5 @@ export class ContactMapComponent implements OnInit {
     L.marker([0, 0], { icon: customIcon }).addTo(map)
       .bindPopup('This is a marker.')
       .openPopup();
-
   }
-
-
 }

@@ -1,14 +1,11 @@
 import { Component , Input } from '@angular/core';
-import { slideFromTop ,slideFromTop2
-} from '../animations';
+import { slideFromTop ,slideFromTop2} from '../animations';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
-  animations: [
-    slideFromTop ,slideFromTop2
-  ],
+  animations: [    slideFromTop ,slideFromTop2  ],
 })
 
 export class OverviewComponent {

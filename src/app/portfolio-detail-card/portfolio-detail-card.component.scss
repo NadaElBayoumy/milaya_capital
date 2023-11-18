@@ -2,26 +2,29 @@
 
 .portfolio-detail-card {
     display: flex;
-
     .image-side {
         flex: 1;
+        margin-left: 20px;
     }
 
     .text-side {
         flex: 1;
-        h2.h2-font-big{
+
+        h2.h2-font-big {
             color: $dark-grey;
             font-size: $h2-font-big;
             font-weight: 700;
             line-height: 37px;
         }
-        p.font-p{
+
+        p.font-p {
             font-size: $md-font-p;
             font-weight: 600;
             line-height: 22px;
             color: $mid-grey;
         }
-        .contact-btn{
+
+        .contact-btn {
             border-radius: 0px;
             height: 60px;
         }
@@ -30,7 +33,7 @@
     .image-shadow {
         margin: 0px 75px 75px 75px;
         box-shadow: -42px 36px 0px $dark-grey;
-        border-radius: 23px;
+        border-radius: 40px;
         width: 80%;
         float: right;
     }
@@ -38,13 +41,21 @@
     .contact-details {
         i {
             color: $brand;
-            padding: 10px;
+            padding: 0px 10px 10px 10px;
         }
 
-        span{
+        span {
             color: $contact-det-font;
             font-weight: 600;
             font-size: $s-font;
         }
+    }
+
+    .contact-btn-col {
+        button {
+            border-radius: 0px;
+        }
+        cursor: pointer;
+        width: 100%;
     }
 }

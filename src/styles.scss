@@ -96,18 +96,19 @@ $big-spacer : 135px;
         }
 
         .owl-prev {
-            left: -25px;
+            left: -50px;
         }
 
         .owl-next {
-            right: -25px;
+            right: -50px;
         }
 
         .owl-prev:hover,
         .owl-next:hover {
             background-color: #555;
         }
-        .owl-item{
+
+        .owl-item {
             margin-top: 20px;
         }
     }
@@ -128,10 +129,10 @@ $big-spacer : 135px;
 
     .owl-prev:active,
     .owl-next:active {
-        color:$arrow !important;
+        color: $arrow !important;
         background: none !important;
     }
-    
+
     .owl-prev,
     .owl-next {
         color: $mid-grey !important;
@@ -141,4 +142,86 @@ $big-spacer : 135px;
             font-size: 22px;
         }
     }
+}
+
+
+.portfolio-slider {
+
+
+    .owl-carousel {
+        position: relative;
+    }
+
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $white !important;
+        color: #333 !important;
+        padding: 10px 15px;
+        border: solid 1px grey;
+        cursor: pointer;
+    }
+
+    .owl-prev {
+        left: 0px;
+    }
+
+    .owl-next {
+        right: 0px;
+    }
+
+    .owl-prev:hover,
+    .owl-next:hover {
+        background-color: #555;
+    }
+
+    .owl-item:not(:first-child):not(:last-child) {
+        opacity: 1 ;
+    }
+
+    .owl-item:first-child:not(:active),
+    .owl-item:last-child:not(:active) {
+        opacity: 0.5 ;
+        transition: opacity 0.3s ease ;
+    }
+
+    .owl-item.active {
+        opacity: 1 !important;
+    }
+
+    .owl-item:last-child{
+        display: none;
+    }
+
+    .owl-stage {
+        margin-right: 15%;
+        margin-left: 11%;
+    }
+
+    .owl-item:nth-last-child(2) {
+        // opacity: 0.5 !important;
+        // transition: opacity 0.3s ease ;
+    }
+}
+
+app-footer {
+    position: relative;
+}
+
+app-footer::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: url(../src/assets/footer-bg.png) center / cover repeat-y;
+
+    // background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 1) 100%),  url(../src/assets/footer-bg.png) cover / cover  repeat-y; 
+    // background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%),
+    // url(../src/assets/footer-bg.png) right bottom / contain repeat-y; /* Updated background property */
+    z-index: -1;
+    opacity: 0.9;
 }

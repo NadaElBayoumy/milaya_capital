@@ -6,6 +6,10 @@
     margin-left: auto;
     margin-right: auto;
 
+    .text-danger{
+        font-size: $p-desc-port;
+    }
+    
     .footer-logo {
         margin-bottom: 25px;
         margin-top: 25px;
@@ -13,7 +17,7 @@
 
     p.footer-description {
         color: $mid-grey;
-        font-size: 11px ;
+        font-size: $p-desc-port;
         line-height: 14px ;
         font-weight: 500 ;
     }
@@ -63,7 +67,7 @@
     .footer-copy-rights {
         margin-top: 20px;
         color: $mid-grey;
-        font-size: 11px ;
+        font-size: $p-desc-port;
         line-height: 16px ;
         font-weight: 500 ;
     }
@@ -80,8 +84,7 @@
             color: $mid-grey ;
             font-weight: 500 ;
             line-height: 19px ;
-            font-size: $s-font ;
-            // margin-top: 20px;
+            font-size: $p-portfolio;
         }
     }
 
@@ -108,18 +111,5 @@
         .black-p-small {
             color: $black ;
         }
-
     }
-}
-
-.footer::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../../assets/footer-bg.png) center / cover; 
-    z-index: -1; 
-    opacity: 0.9; 
 }

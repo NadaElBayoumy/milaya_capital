@@ -1,7 +1,6 @@
-<!-- <div class="main-nav" [ngClass]='{isHome == "true" ? "homenavbar" : "" ; }' > -->
 <div class="main-nav"  [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome}" >
-    <img *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft] />
-    <img *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft] />
+    <img class="logo-img" *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
+    <img class="logo-img" *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
     
     <nav class="navbar">
         <a routerLink="/home" routerLinkActive="active" [@slideFromTop4]>Home</a>

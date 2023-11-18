@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'portfolio-details', component: PortfolioDetailsComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home' } // Handle invalid routes
+  { path: '**', redirectTo: '/home' } 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

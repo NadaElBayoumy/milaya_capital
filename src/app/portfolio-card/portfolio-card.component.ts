@@ -7,16 +7,13 @@ import { slideFromLeft, slideFromRight
   selector: 'app-portfolio-card',
   templateUrl: './portfolio-card.component.html',
   styleUrls: ['./portfolio-card.component.scss'],  
-  animations: [
-    slideFromLeft ,slideFromRight
-  ],
+  animations: [    slideFromLeft ,slideFromRight  ],
 })
 export class PortfolioCardComponent {
   @Input() imageWay!: string;
   constructor(private router: Router) {}
   
   navigateToDetailsPage(id:any) {
-    // Handle the navigation here
     this.router.navigate(['/portfolio-details',{'portfolio-id':'1'}]);
   }
 }

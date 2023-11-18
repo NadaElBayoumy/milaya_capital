@@ -1,16 +1,22 @@
-<div class="media container" [@fadeInFromBottom]>
-  <video *ngIf="mediaType == 'video'"  #videoPlayer class="video-player">
-    <source src="{{mediaURL}}" type="video/mp4" >
+<div class="media container">
+  <video *ngIf="mediaType == 'video'" #videoPlayer class="video-player" [controls]="startedPlay" [@fadeInFromBottom]>
+    <source src="{{mediaURL}}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-<!--   <img class="thumbnail" *ngIf="mediaType == 'video' && startedPlay == false" src="../../assets/video-thumbnail.svg" alt="videothumb"> -->
-  <img class="thumbnail" *ngIf="mediaType == 'video' && startedPlay == false" src="../../assets/testing.jpg" alt="videothumb">
-  <div  *ngIf="mediaType == 'video' && startedPlay == false" class="play-center-btn" (click)="playVideo();" >
-     <i class="bi bi-play-circle"></i>
+
+  <!-- <img class="thumbnail" *ngIf="mediaType == 'video' && startedPlay == false" src="../../assets/testing.jpg"   alt="videothumb"> -->
+  <img class="thumbnail" *ngIf="mediaType == 'video' && startedPlay == false" src="../../assets/figma-media.svg"
+    alt="videothumb" [@fadeInFromBottom]>
+
+
+  <div *ngIf="mediaType == 'video' && startedPlay == false" class="play-center-btn" (click)="playVideo();"
+    [@fadeInFromBottom]>
+    <i class="bi bi-play-circle"></i>
   </div>
 
-  <div *ngIf="mediaType == 'image'" class="image-div">
+  <div *ngIf="mediaType == 'image'" class="image-div" [@fadeInFromBottom]>
     <img alt="img" src="{{mediaURL}}">
   </div>
-  
+
+
 </div>

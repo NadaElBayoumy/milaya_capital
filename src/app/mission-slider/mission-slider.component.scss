@@ -5,9 +5,9 @@
 
       .icon-mission-card {
           i {
-              color: #fff;
-              font-size: 18px;
-              background-color: #2C55F1;
+              color: $white;
+              font-size: $md-font-p;
+              background-color: $brand;
               padding: 15px;
               border-radius: 24px;
           }
@@ -15,7 +15,7 @@
 
       .mission-card-title {
           padding-top: 20px;
-          font-size: 18px;
+          font-size:$md-font-p;
           line-height: 26px;
           font-weight: 600;
       }
@@ -26,21 +26,10 @@
 
       .mission-card-description {
           max-width: 200px;
-          color: #909292;
+          color:$mid-grey;
           font-weight: 500;
           size: 13px;
           line-height: 20px;
           padding-top: 20px;
       }
   }
-
-
-  // .owl-carousel{
-  //     padding: 300px;
-  //     position: relative !important;
-  //     .fa-chevron-left{
-  //         color: #909292;
-  //         background-color: #fff;
-
-  //     }
-  // }

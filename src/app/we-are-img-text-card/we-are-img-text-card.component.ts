@@ -4,9 +4,6 @@ import { Component , Input} from '@angular/core';
   selector: 'app-we-are-img-text-card',
   templateUrl: './we-are-img-text-card.component.html',
   styleUrls: ['./we-are-img-text-card.component.scss']
-  ,animations: [
-
-  ]
 })
 export class WeAreImgTextCardComponent {
   @Input() WeAreTitleCard!: string;

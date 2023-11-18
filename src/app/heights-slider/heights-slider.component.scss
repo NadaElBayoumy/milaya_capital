@@ -6,13 +6,10 @@
     .heights-slider-card {
         margin-right: 15px;
         border: 1px solid #D9D9D9;
-        // opacity: 0; //here
-        // transform: translateY(100%); //here
-
         .icon-height-slider-card {
             i {
                 color: $white;
-                font-size: 18px;
+                font-size: $md-font-p;
                 background-color: $brand;
                 padding: 5px;
                 position: absolute;
@@ -66,12 +63,4 @@
             line-height: 15px;
         }
     }
-
-    // .heights-slider-card.show {
-    //     opacity: 1;
-    //     transform: translateY(0);
-    //     transition: opacity 0.5s, transform 0.5s;
-    // }
-
-
 }
