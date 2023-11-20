@@ -1,5 +1,6 @@
-<div class="main-poster"  >
-    <app-navbar [isHome]="true"  ></app-navbar>
+<div class="main-poster" [ngClass]="{'mobile-poster':isMobile}" >
+    <app-navbar [isHome]="true" *ngIf="!isMobile" ></app-navbar>
+    <app-mobile-navbar [isHome]="true" *ngIf="isMobile" ></app-mobile-navbar>
     <div class="layer">
     </div>
     <div>

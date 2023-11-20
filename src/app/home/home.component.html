@@ -1,7 +1,7 @@
-<div class="home">
+<div class="home"  [ngClass]="{'mobile':isMobile}" >
     <div class="first-bg">
         <div class="poster-container">
-            <div class="small-spacer-div"></div>
+            <div class="small-spacer-div" *ngIf="!isMobile"></div>
             <app-main-poster></app-main-poster>
             <div class="spacer-div"></div>
         </div>

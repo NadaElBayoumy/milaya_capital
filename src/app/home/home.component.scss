@@ -9,8 +9,9 @@
     }
 
     .second-bg {
-        background: $black url(../../assets/background-squares.svg )  center / cover; 
+        background: $black url(../../assets/background-squares.svg ) center / cover;
         padding-top: 50px;
+
         h1.grey {
             padding-right: 60px;
             margin-bottom: 60px;
@@ -23,7 +24,7 @@
 
     .third-bg,
     .fifth-bg {
-        background: url(../../assets/background-squares-light.svg )  center / cover; 
+        background: url(../../assets/background-squares-light.svg ) center / cover;
     }
 
     app-we-are-home {
@@ -71,5 +72,33 @@
 
 
 
+
+}
+
+
+.mobile {
+    .poster-container {
+        margin: 0px !important;
+    }
+    .breadcrumb{
+        font-size: $p-font;
+        line-height: 17px;
+        font-weight: 600;
+    }
+
+    .first-bg{
+        h1{
+            font-weight: 700;
+            font-size: $h3-font;
+            line-height: 23px;
+        }
+    }
+
+    .we-are-div{
+        app-we-are-home{
+             flex-direction: column;
+        }
+       
+    }
 
 }

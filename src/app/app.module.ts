@@ -36,6 +36,7 @@ import { NewBusinessHeightsComponent } from './new-business-heights/new-business
 import { HeightsSliderComponent } from './heights-slider/heights-slider.component';
 import { WhyChooseComponent } from './why-choose/why-choose.component';
 import { WhyChooseCardComponent } from './why-choose-card/why-choose-card.component';
+import { MobileNavbarComponent } from './mobile-navbar/mobile-navbar.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { WhyChooseCardComponent } from './why-choose-card/why-choose-card.compon
     HeightsSliderComponent,
     WhyChooseComponent,
     WhyChooseCardComponent,
+    MobileNavbarComponent,
 
   ],
   imports: [

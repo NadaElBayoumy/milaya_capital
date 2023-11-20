@@ -1,4 +1,4 @@
-<div class="media container">
+<div class="media container" [ngClass]="{'mobile':isMobile}" >
   <video *ngIf="mediaType == 'video'" #videoPlayer class="video-player" [controls]="startedPlay" [@fadeInFromBottom]>
     <source src="{{mediaURL}}" type="video/mp4">
     Your browser does not support the video tag.

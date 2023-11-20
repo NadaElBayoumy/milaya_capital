@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { fadeInFromTop } from '../animations';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-contact-map',
   templateUrl: './contact-map.component.html',
@@ -8,6 +10,14 @@ import { fadeInFromTop } from '../animations';
   animations: [fadeInFromTop],
 })
 export class ContactMapComponent implements OnInit {
+  isMobile: boolean = false;
+  
+  constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
+  
   ngOnInit(): void {
     this.initMap();
   }

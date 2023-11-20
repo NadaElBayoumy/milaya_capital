@@ -1,7 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { fadeInFromTop1} from '../animations';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-portfolio-slider',
   templateUrl: './portfolio-slider.component.html',
@@ -10,6 +11,8 @@ import { fadeInFromTop1} from '../animations';
 })
 export class PortfolioSliderComponent {
   title = 'ng-carousel-demo';
+  isMobile: boolean = false;
+
   customOptions: OwlOptions = {
     items:3,
     dots: false,
@@ -44,8 +47,13 @@ export class PortfolioSliderComponent {
     {},
   ];
 
-  constructor(private el: ElementRef) { }
 
+  
+  constructor(private el: ElementRef, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
 
 }
 

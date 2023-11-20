@@ -1,6 +1,8 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { enterFromBottom,slideLeftToRight } from '../animations';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-heights-slider',
   templateUrl: './heights-slider.component.html',
@@ -11,7 +13,13 @@ export class HeightsSliderComponent implements AfterViewInit {
   title = 'heights';
   currentSlide = 0;
 
-
+  isMobile: boolean = false;
+  
+  constructor(private el: ElementRef,private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
   customOptions: OwlOptions = {
     items: 4,
     loop: true,
@@ -30,7 +38,6 @@ export class HeightsSliderComponent implements AfterViewInit {
     { id: 6, num: "06", icon: "bi bi-arrow-up-right", title: "Provider: Leading", descr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", img: "../../assets/height-4.svg" },
   ];
 
-  constructor(private el: ElementRef) { }
 
   ngAfterViewInit(): void {
   }

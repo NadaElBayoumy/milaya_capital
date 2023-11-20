@@ -1,4 +1,4 @@
-<div >
+<div  [ngClass]="{'mobile':isMobile}" >
     <!-- [@fadeInFromTop2] -->
     <owl-carousel-o class="container" [options]="customOptions">
         <ng-container *ngFor="let slide of slides; let i = index;">

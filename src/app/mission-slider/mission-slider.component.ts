@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { fadeInFromTop2 } from '../animations';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-mission-slider',
   templateUrl: './mission-slider.component.html',
@@ -10,7 +11,13 @@ import { fadeInFromTop2 } from '../animations';
 })
 export class MissionSliderComponent implements AfterViewInit {
   title = 'mission slider';
-
+  isMobile: boolean = false;
+  
+  constructor(private el: ElementRef,private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
   customOptions: OwlOptions = {
     items: 4,
     loop: true,
@@ -30,7 +37,7 @@ export class MissionSliderComponent implements AfterViewInit {
     { id: 7, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-3.svg" },
   ];
 
-  constructor(private el: ElementRef) { }
+  
 
   ngAfterViewInit(): void {
 

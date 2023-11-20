@@ -1,5 +1,6 @@
-<div [ngClass]="light == 'yes' ? 'light overview' : 'overview'">
-    <div class="h-overview">
+<div [ngClass]=" light == 'yes' ? 'light overview' : 'overview'"> 
+
+    <div class="h-overview" [ngClass]="{'mobile': isMobile}">
         <div class="tit-div">
             <div [@slideFromTop2]>
                 <img *ngIf="light == 'yes'" class="rect" src="./../../assets/Rectangle-white.svg" alt="rectangle"

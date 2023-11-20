@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { fadeInFromBottom } from '../animations';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-media',
   templateUrl: './media.component.html',
@@ -14,7 +15,13 @@ export class MediaComponent {
   @ViewChild('videoPlayer') videoplayer: any;
   startedPlay: boolean = false;
   show: boolean = false;
-
+  isMobile: boolean = false;
+  
+  constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
 
   
   pauseVideo(videoplayer: any) {
