@@ -51,8 +51,11 @@
                 background-color: $brand;
                 color: $white;
 
-                i {}
+
             }
+        }
+        .input-group-append{
+            cursor: pointer;
         }
     }
 
@@ -61,6 +64,7 @@
 
         img {
             padding-right: 30px;
+            cursor: pointer;
         }
     }
 
@@ -85,6 +89,7 @@
             font-weight: 500 ;
             line-height: 19px ;
             font-size: $p-portfolio;
+            cursor: pointer;
         }
     }
 

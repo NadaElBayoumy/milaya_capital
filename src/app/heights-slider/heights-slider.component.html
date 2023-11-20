@@ -1,12 +1,12 @@
 <div class="heights-slider ">
-    <owl-carousel-o [options]="customOptions" [@enterFromBottom]>
-        <ng-container *ngFor="let slide of slides;; let i = index">
+    <!-- [@enterFromBottom] -->
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of slides; let i = index;">
             <ng-template carouselSlide>
-                <div class="heights-slider-card">
+                <div class="heights-slider-card" [ngClass]="getAnimationClass(i)">
                     <div class="heights-slider-card-image">
                         <img alt="heights-card" [src]="slide.img">
                     </div>
-
                     <div class="data-container">
                         <div class="icon-height-slider-card">
                             <i [class]="slide.icon"></i>
@@ -21,17 +21,13 @@
                             {{slide.descr}}
                         </p>
 
-                        <p class="heights-slider-card-title">
+                        <p class="heights-slider-card-title read-more">
                             Read more
                             <i class="bi bi-arrow-right"></i>
                         </p>
                     </div>
                 </div>
-
-
             </ng-template>
-
         </ng-container>
-
     </owl-carousel-o>
 </div>

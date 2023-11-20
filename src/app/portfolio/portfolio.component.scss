@@ -10,7 +10,8 @@
     background: url(../../assets/porfolio-bg.svg) center / cover; 
     z-index: -1; 
     opacity: 0.4; 
-
-
 }
 
+app-portfolio-card{
+    cursor: pointer;
+}

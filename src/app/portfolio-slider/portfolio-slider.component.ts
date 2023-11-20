@@ -46,5 +46,6 @@ export class PortfolioSliderComponent {
 
   constructor(private el: ElementRef) { }
 
+
 }
 

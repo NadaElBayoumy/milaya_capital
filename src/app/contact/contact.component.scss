@@ -20,6 +20,11 @@
             background-color: $dark-grey;
             border-radius: 30px
         }
+
+        @media screen and (max-width: 1500px) {
+            height: 130%;
+        }
+        
     }
 
     .content-container {

@@ -146,8 +146,6 @@ $big-spacer : 135px;
 
 
 .portfolio-slider {
-
-
     .owl-carousel {
         position: relative;
     }
@@ -178,31 +176,26 @@ $big-spacer : 135px;
     }
 
     .owl-item:not(:first-child):not(:last-child) {
-        opacity: 1 ;
+        opacity: 1;
     }
 
     .owl-item:first-child:not(:active),
     .owl-item:last-child:not(:active) {
-        opacity: 0.5 ;
-        transition: opacity 0.3s ease ;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
     }
 
     .owl-item.active {
         opacity: 1 !important;
     }
 
-    .owl-item:last-child{
+    .owl-item:last-child {
         display: none;
     }
 
     .owl-stage {
         margin-right: 15%;
         margin-left: 11%;
-    }
-
-    .owl-item:nth-last-child(2) {
-        // opacity: 0.5 !important;
-        // transition: opacity 0.3s ease ;
     }
 }
 
@@ -218,10 +211,84 @@ app-footer::before {
     width: 100%;
     height: 200%;
     background: url(../src/assets/footer-bg.png) center / cover repeat-y;
-
-    // background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 1) 100%),  url(../src/assets/footer-bg.png) cover / cover  repeat-y; 
-    // background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%),
-    // url(../src/assets/footer-bg.png) right bottom / contain repeat-y; /* Updated background property */
     z-index: -1;
     opacity: 0.9;
 }
+
+@keyframes fromTopToBottom {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fromBottomToUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+/* Apply different animations to each slide based on the index */
+.animation-slideIn-0 {
+    animation: fromTopToBottom 1s ease-in-out;
+}
+
+.animation-slideIn-1 {
+    animation: fromTopToBottom 1.5s ease-in-out;
+}
+
+.animation-slideIn-2 {
+    animation: fromTopToBottom 2s ease-in-out;
+}
+
+.animation-slideIn-3 {
+    animation: fromTopToBottom 2.5s ease-in-out;
+}
+
+.animation-slideIn-4 {
+    animation: fromTopToBottom 3s ease-in-out;
+}
+
+.animation-slideIn-5 {
+    animation: fromTopToBottom 3.5s ease-in-out;
+}
+
+/////////////////////////////////////////////////////////////
+
+/* Apply different animations to each slide based on the index */
+.animation-slideInFromBottom-0 {
+    animation: fromBottomToUp 1s ease-in-out;
+}
+
+.animation-slideInFromBottom-1 {
+    animation: fromBottomToUp 1.5s ease-in-out;
+}
+
+.animation-slideInFromBottom-2 {
+    animation: fromBottomToUp 2s ease-in-out;
+}
+
+.animation-slideInFromBottom-3 {
+    animation: fromBottomToUp 2.5s ease-in-out;
+}
+
+.animation-slideInFromBottom-4 {
+    animation: fromBottomToUp 3s ease-in-out;
+}
+
+.animation-slideInFromBottom-5 {
+    animation: fromBottomToUp 3.5s ease-in-out;
+}
+
+
+

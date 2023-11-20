@@ -24,14 +24,14 @@ export class ContactMapComponent implements OnInit {
 
     const customIcon = L.icon({
       iconUrl: '../../assets/marker.svg',
-      iconSize: [32, 32], // size of the icon
+      iconSize: [52, 52], // size of the icon
       iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
     });
 
     // Add a marker with the custom icon
     L.marker([0, 0], { icon: customIcon }).addTo(map)
-      .bindPopup('This is a marker.')
-      .openPopup();
+      .bindPopup('This is a marker.');
+      // .openPopup();
   }
 }

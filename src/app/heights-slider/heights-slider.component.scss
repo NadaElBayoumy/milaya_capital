@@ -17,6 +17,7 @@
                 right: 0;
                 transform: translate(-50%, -50%);
                 width: 30px;
+                cursor: pointer;
             }
 
             i.bi.bi-arrow-up-right {
@@ -53,6 +54,10 @@
             position: relative;
             padding: 0px 10px 10px 10px;
             min-height: 290px;
+
+            .read-more{
+                cursor: pointer;
+            }
         }
 
         .heights-slider-card-num {
