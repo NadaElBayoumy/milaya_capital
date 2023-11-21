@@ -48,3 +48,22 @@
         color: $white;
     }
 }
+
+.h-overview.mobile{
+    h1.black{
+        margin-top: 20px;
+        font-size: $h2-font !important;
+        font-weight: 700;
+        line-height: 29px;
+    }
+}
+.overview-p.mobile{
+    font-size: $p-font-sm !important;
+    font-weight: 600;
+    line-height: 18px;
+}
+.overview{
+    .mobile{
+        margin-top: 20px;
+    }
+}

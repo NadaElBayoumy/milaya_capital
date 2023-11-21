@@ -4,6 +4,7 @@
 
     .upper-box {
         display: flex;
+
         h1 {
             z-index: 1;
             width: 92%;
@@ -11,6 +12,7 @@
 
         .box {
             z-index: 0;
+
             &:first-child {
                 margin-right: 10px;
             }
@@ -26,31 +28,72 @@
                     margin-top: 10px;
                 }
             }
-
-           
         }
     }
 
-    .lower-box{
+    .lower-box {
+        display: flex;
+        .arrow-div{
+            flex: 1;
+        }
+        .text-div{
+            flex: 2;
+        }
         .grey-p-small {
             color: $mid-grey;
-            font-weight: 500 ;
-            line-height: 18px ;
+            font-weight: 500;
+            line-height: 18px;
             font-size: $s-font ;
         }
     }
 
-    .long-arrow{
-        width: 100%;
+    .long-arrow {
+        width: 98%;
     }
 
-    .why-choose-cards-div{
+    .why-choose-cards-div {
         display: flex;
-        app-why-choose-card{
-            flex:1;
+
+        app-why-choose-card {
+            flex: 1;
             margin: 5px;
             padding: 25px;
             background-color: $white;
+        }
+    }
+}
+
+
+.why-choose.mobile {
+    .upper-box {
+        display: block;
+
+        h1.black {
+            font-size: $h3-font ;
+            font-weight: 700;
+            line-height: 26px;
+        }
+        .box {
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .lower-box{
+        display: block;
+
+        .grey-p-small{
+            margin: 10px 0px;
+        }
+    }
+
+    .why-choose-cards-div {
+        display: block;
+
+        app-why-choose-card {
+            padding: 0px !important;
         }
     }
 }

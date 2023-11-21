@@ -32,16 +32,14 @@
 
 .mobile-side-menu {
     padding-top: 40px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: url('../../assets/MILAYA-bg.svg') 80% /contain no-repeat, url('../../assets/squares-mobile.svg') center center / cover;
     background-color: $mid-grey;
-    
-    
-    z-index: 999;
+    z-index: 999 !important;
     display: block;
 
     ul.the-menu {
@@ -93,7 +91,7 @@
     .social-media-wrapper {
         margin-right: auto;
         margin-left: auto;
-
+        text-align: center;
         img {
             display: inline-block;
             vertical-align: top;
@@ -110,6 +108,7 @@
         font-size: $p-desc-port;
         line-height: 16px ;
         font-weight: 500 ;
+        text-align: center;
     }
     
     .divider {

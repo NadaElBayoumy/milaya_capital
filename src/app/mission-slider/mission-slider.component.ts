@@ -24,7 +24,15 @@ export class MissionSliderComponent implements AfterViewInit {
     dots: false,
     navSpeed: 200,
     navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
-    nav: true
+    nav: true,
+    responsive: {
+      0: {
+        items: 1 
+      },  
+      768: {
+        items: 4 
+      }
+    }
   }
 
   slides = [
@@ -36,8 +44,7 @@ export class MissionSliderComponent implements AfterViewInit {
     { id: 6, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-2.svg" },
     { id: 7, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../assets/mission-3.svg" },
   ];
-
-  
+ 
 
   ngAfterViewInit(): void {
 
@@ -45,7 +52,6 @@ export class MissionSliderComponent implements AfterViewInit {
 
 
   getAnimationClass(index: number): string {
-    // Apply different animations based on the index
     return "animation-slideIn-" + index;
   }
 

@@ -37,6 +37,7 @@ import { HeightsSliderComponent } from './heights-slider/heights-slider.componen
 import { WhyChooseComponent } from './why-choose/why-choose.component';
 import { WhyChooseCardComponent } from './why-choose-card/why-choose-card.component';
 import { MobileNavbarComponent } from './mobile-navbar/mobile-navbar.component';
+import { WhatWeDoCard2Component } from './what-we-do-card-2/what-we-do-card-2.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { MobileNavbarComponent } from './mobile-navbar/mobile-navbar.component';
     WhyChooseComponent,
     WhyChooseCardComponent,
     MobileNavbarComponent,
+    WhatWeDoCard2Component,
 
   ],
   imports: [

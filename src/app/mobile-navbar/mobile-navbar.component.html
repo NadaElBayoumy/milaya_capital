@@ -10,13 +10,10 @@
     </div>
 
     <div class="menu-btn col-3">
-        <button id="menubtn" (click)="toggleMobileMenu()"><img src="../../assets/textalign-right.svg" /></button>
+        <button  *ngIf="isHome == true || isContact == true" id="menubtn" (click)="toggleMobileMenu()"><img src="../../assets/textalign-right.svg" /></button>
+        <button *ngIf="isHome !== true && isContact !== true"  id="menubtn" (click)="toggleMobileMenu()"><img src="../../assets/textalign-right-black.svg" /></button>
     </div>
 </nav>
-
-
-
-
 
 
 <div class="mobile-side-menu" *ngIf="isMobileMenuOpen" [ngClass]="{'show-mobile-menu': isMobileMenuOpen}">
@@ -38,6 +35,7 @@
         <li> <a routerLink="/about" routerLinkActive="active">About</a></li>
         <li><a routerLink="/mission" routerLinkActive="active">Mission</a></li>
         <li> <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
+        <li> <a routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
     
     <div class="social-media-wrapper">
@@ -48,8 +46,6 @@
 
 
     <div class="divider" ></div>
-
-    
 
     <p class="footer-copy-rights" >
         Copyright © 2023 Milaya Capital All Rights Reserved

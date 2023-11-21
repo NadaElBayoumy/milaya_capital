@@ -144,6 +144,12 @@ $big-spacer : 135px;
     }
 }
 
+.heights-slider.mobile{
+    .owl-nav {
+        right: 0px;
+    }
+}
+
 
 .portfolio-slider {
     .owl-carousel {
@@ -229,14 +235,15 @@ app-footer::before {
 
 @keyframes fromBottomToUp {
     from {
-      transform: translateY(100%);
-      opacity: 0;
+        transform: translateY(100%);
+        opacity: 0;
     }
+
     to {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
+}
 
 /* Apply different animations to each slide based on the index */
 .animation-slideIn-0 {
@@ -290,5 +297,58 @@ app-footer::before {
     animation: fromBottomToUp 3.5s ease-in-out;
 }
 
+//////////////////////////////////////////////////////////////////////
+/// 
+/// 
+/// 
 
 
+.what-we-do-slider.mobile {
+    .owl-carousel {
+        position: relative;
+    }
+
+    .owl-prev,
+    .owl-next {
+        right: 0px;
+        width: 30px;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        background-color: none;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    .fa-chevron-right:before,
+    .fa-chevron-left:before{
+        content: none !important;
+    }
+
+
+    .owl-prev {
+        left: 0px;
+        background: url(./../src/assets/arrow-left-mob.svg) !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+    }
+
+    .owl-next {
+        right: 0px;
+        background: url(./../src/assets/arrow-right-mob.svg) !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+    }
+
+    .owl-prev:hover,
+    .owl-next:hover {
+        background-color: #555;
+    }
+
+}
+
+.mobile.portfolio-slider{
+    .owl-item{
+        width: auto !important;
+    }
+}

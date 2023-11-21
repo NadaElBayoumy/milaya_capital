@@ -2,11 +2,14 @@
 
 .portfolio-card {
     width: 70%;
+
     @media screen and (max-width: 1000px) {
         width: 100%;
     }
+
     .right {
         display: flex;
+
         .image-side {
             img {
                 float: right;
@@ -16,6 +19,7 @@
 
     .left {
         display: flex;
+
         .image-side {
             img {
                 float: left;
@@ -38,6 +42,7 @@
         height: auto;
         display: block;
         flex: 1;
+
         img {
             width: 100%;
         }
@@ -52,4 +57,29 @@
 .left-card {
     margin-left: 0px;
     margin-right: auto;
+}
+
+.portfolio-card.mobile {
+    .left {
+        .image-side {
+            img {
+                float: none;
+            }
+        }
+
+        display: block;
+
+        // .image-side,
+        // .text-side {
+        //     // display: block;
+        // }
+    }
+
+    app-what-we-do-card.portfolio {
+        .what-we-do-card {
+            background: none;
+            border: none;
+        }
+    }
+
 }

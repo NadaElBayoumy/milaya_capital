@@ -2,9 +2,22 @@
 
 .portfolio-detail-card {
     display: flex;
+
     .image-side {
         flex: 1;
         margin-left: 20px;
+        position: relative;
+
+        .shadow-box {
+            width: 70%;
+            position: absolute;
+            height: 62%;
+            top: 30%;
+            background-color: #343a40;
+            z-index: -1;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+        }
     }
 
     .text-side {
@@ -32,7 +45,6 @@
 
     .image-shadow {
         margin: 0px 75px 75px 75px;
-        box-shadow: -42px 36px 0px $dark-grey;
         border-radius: 40px;
         width: 80%;
         float: right;
@@ -55,7 +67,40 @@
         button {
             border-radius: 0px;
         }
+
         cursor: pointer;
         width: 100%;
+    }
+}
+
+
+.mobile.portfolio-detail-card {
+    display: block;
+    .image-shadow{
+        border-radius: 20px;
+        float: none;
+    }
+
+
+    h2.h2-font-big {
+        font-size: $h2-font !important;
+        line-height: 24px ;
+        text-align: center;
+    }
+
+    p.font-p {
+        font-size: $p-font !important;
+        line-height: 17px !important;
+    }
+
+    .d-flex.contact-button{
+        display: block !important;
+        text-align: center;
+    }
+
+    .contact-details{
+        .d-flex{
+            text-align: left;
+        }
     }
 }

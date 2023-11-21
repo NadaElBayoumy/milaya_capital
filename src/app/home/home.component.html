@@ -27,7 +27,7 @@
                 company’s operations.</h1>
         </div>
 
-        <div class="spacer-div"></div>
+        <div class="spacer-div" *ngIf="!isMobile"></div>
         <div class="container">
             <app-what-we-do></app-what-we-do>
         </div>
@@ -52,7 +52,7 @@
         <div class="layer-light-squares"> </div>
         <div class="spacer-div"></div>
 
-        <div>
+        <div class="media">
             <app-media [mediaType]="'video'"
                 [mediaURL]="'https://player.vimeo.com/video/332079621?h=b8ef07fa3b&color=dedede&title=0&byline=0&portrait=0'"></app-media>
         </div>

@@ -1,5 +1,5 @@
 @import '../../variables';
-.what-we-do-card {
+.what-we-do-card2 {
     position: relative;
     
     
@@ -31,23 +31,13 @@
     }
 }
 
-.what-we-do-card.left-align{
+.what-we-do-card2.left-align{
     .what-we-do-title,.what-we-do-desc{
         text-align: left;
     }
 }
 
-.mobile.what-we-do-card{
-    background: linear-gradient(90deg, #565656 0%, #4f4f4f 35%, #343434 100%);
-    margin: 0px 40px;
-    border: 1px solid $white; 
-    border-radius: 20px;
-    // border-image: linear-gradient(to bottom, #D9D9D9, rgba(0, 0, 0, 0) 100%);
-    // border-image-slice: 1;
+.mobile.what-we-do-card2{
+    background: none;
+    border: none;
 }
-
-
-// .mobile.what-we-do-card.portfolio{
-//     background: none;
-//     border: none;
-// }

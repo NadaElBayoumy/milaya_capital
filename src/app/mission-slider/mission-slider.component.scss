@@ -33,3 +33,12 @@
           padding-top: 20px;
       }
   }
+
+  .mission-card.mobile{
+    .mission-card-image{
+        margin: 20px;
+    }
+    .mission-card-description{
+        margin: 20px;
+    }
+  }

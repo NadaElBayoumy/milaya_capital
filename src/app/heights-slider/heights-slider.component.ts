@@ -26,7 +26,15 @@ export class HeightsSliderComponent implements AfterViewInit {
     dots: false,
     navSpeed: 200,
     navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
-    nav: true
+    nav: true,
+    responsive: {
+      0: {
+        items: 1 
+      },  
+      768: {
+        items: 4 
+      }
+    }
   }
 
   slides = [

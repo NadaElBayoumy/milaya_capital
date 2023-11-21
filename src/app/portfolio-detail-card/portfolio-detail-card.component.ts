@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { slideFromTop,fadeInFromRight,fadeInFromTop1} from '../animations';
+import { slideFromTop,fadeInFromRight,fadeInFromTop1,fadeInFromLeft} from '../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-portfolio-detail-card',
   templateUrl: './portfolio-detail-card.component.html',
   styleUrls: ['./portfolio-detail-card.component.scss'],
-  animations: [    slideFromTop,fadeInFromRight,fadeInFromTop1  ],
+  animations: [    slideFromTop,fadeInFromRight,fadeInFromTop1 ,fadeInFromLeft ],
 })
 export class PortfolioDetailCardComponent {
 

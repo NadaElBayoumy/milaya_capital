@@ -5,11 +5,24 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
 
-    .text-danger{
+    .f-col {
+        flex: 2;
+    }
+
+    .m-col {
+        flex: 1;
+    }
+
+    .s-col {
+        flex: 3;
+    }
+
+    .text-danger {
         font-size: $p-desc-port;
     }
-    
+
     .footer-logo {
         margin-bottom: 25px;
         margin-top: 25px;
@@ -18,15 +31,15 @@
     p.footer-description {
         color: $mid-grey;
         font-size: $p-desc-port;
-        line-height: 14px ;
-        font-weight: 500 ;
+        line-height: 14px;
+        font-weight: 500;
     }
 
     .footer-input {
         border-style: solid;
         border: 0.5px solid $placeholder-border;
         border-width: 0.5px;
-        
+
 
         input {
             border-style: none;
@@ -35,7 +48,7 @@
         }
 
         input::placeholder {
-            font-weight: 500 ;
+            font-weight: 500;
             font-size: $tiny-font ;
             color: $placeholder-grey ;
 
@@ -54,7 +67,8 @@
 
             }
         }
-        .input-group-append{
+
+        .input-group-append {
             cursor: pointer;
         }
     }
@@ -68,26 +82,20 @@
         }
     }
 
-    .footer-copy-rights {
-        margin-top: 20px;
-        color: $mid-grey;
-        font-size: $p-desc-port;
-        line-height: 16px ;
-        font-weight: 500 ;
-    }
 
     .quick-links {
         h4.title {
             font-size: $h2-font ;
-            font-weight: 600 ;
-            line-height: 24px ;
+            font-weight: 600;
+            line-height: 24px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
-        .grey-p-small{
+
+        .grey-p-small {
             color: $mid-grey ;
-            font-weight: 500 ;
-            line-height: 19px ;
+            font-weight: 500;
+            line-height: 19px;
             font-size: $p-portfolio;
             cursor: pointer;
         }
@@ -96,15 +104,16 @@
     .get-in-touch {
         h4.title {
             font-size: $h2-font ;
-            font-weight: 600 ;
-            line-height: 24px ;
+            font-weight: 600;
+            line-height: 24px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
+
         .grey-p-small,
         .black-p-small {
-            font-weight: 500 ;
-            line-height: 18px ;
+            font-weight: 500;
+            line-height: 18px;
             font-size: $s-font ;
             margin-top: 20px;
         }
@@ -117,4 +126,35 @@
             color: $black ;
         }
     }
+}
+
+.footer-copy-rights {
+    margin-top: 20px;
+    color: $mid-grey;
+    font-size: $p-desc-port;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.footer.mobile {
+    display: block;
+    .f-col{
+        div{
+            text-align: center;
+        }
+    }
+    .s-col{
+        margin: 10px;
+    }
+    .footer-logo{
+        text-align: center;
+    }
+    .social-media-wrapper{
+        img{
+            width: 15%;
+        }
+    }
+}
+p.footer-copy-rights.mobile{
+    text-align: center;
 }

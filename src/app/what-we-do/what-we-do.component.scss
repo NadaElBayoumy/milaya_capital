@@ -15,3 +15,16 @@
     }
 
 }
+
+.what-we-do-slider.mobile{
+    display: block;
+    
+    app-what-we-do-card {
+        
+        // flex: none;
+        // background: none;
+        // border: 1px solid;
+        // border: none !important;
+        // border-image-source: linear-gradient(180deg, #D9D9D9 0%, rgba(0, 0, 0, 0) 100%) !important;
+    }
+}

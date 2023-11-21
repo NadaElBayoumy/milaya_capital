@@ -1,7 +1,8 @@
-
 @import '../../variables';
+
 .we-are-home {
     margin: 0px 65px 24px 24px;
+
     .we-are-left-div {
         padding: 50px 30px 30px 30px;
         background-color: $white;
@@ -9,8 +10,10 @@
         position: relative;
         display: inline-block;
 
-        .box-title{
-            i,h3{
+        .box-title {
+
+            i,
+            h3 {
                 display: inline-block;
                 vertical-align: top;
                 color: $dark-grey;
@@ -18,32 +21,35 @@
                 font-weight: 600;
                 line-height: 27px;
             }
-            i{
+
+            i {
                 margin-left: 10px;
             }
         }
 
-        .three-rings{
-            img{
+        .three-rings {
+            img {
                 position: absolute;
                 top: 0px;
                 right: 0px;
             }
         }
-        p.bold{
+
+        p.bold {
             margin-top: 25px;
             font-size: $p-font;
             font-weight: 600;
             line-height: 17px;
             color: $dark-grey;
         }
-        p{
+
+        p {
             font-size: $p-font;
             font-weight: 500;
             line-height: 17px;
             color: $overview-color;
         }
-   
+
         @media screen and (max-width: 1000px) {
             width: 300px;
         }
@@ -55,11 +61,18 @@
 
 }
 
-.we-are-home.mobile{
+.we-are-home.mobile {
+    margin: 0px;
 
-    .we-are-left-div{
+    .we-are-left-div {
         width: 100%;
-        margin: 20px;
     }
+}
 
+.we-are-right-img.mobile{
+    img{
+        width: 100%;
+        margin-top: 20px;
+
+    }
 }

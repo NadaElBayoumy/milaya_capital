@@ -4,8 +4,22 @@
            <img alt="portfolio" src="../../assets/portfolio-card.svg">
         </div>
         <div class="text-side">
-            <app-what-we-do-card [backgroundImage]="'../../assets/bg-card1.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card>
-         </div>
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../assets/bg-card1.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+         
+        </div>
+    </div>
+</div>
+
+<div class="spacer-div"></div>
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left' && isMobile" [@slideFromLeft]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}">
+    <div class="left">
+        <div class="image-side">
+           <img alt="portfolio" src="../../assets/portfolio-card.svg">
+        </div>
+        <div class="text-side">
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../assets/bg-card1.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+         
+        </div>
     </div>
 </div>
 
@@ -13,10 +27,10 @@
 
 <div class="spacer-div"></div>
 
-<div class="portfolio-card right-card" *ngIf="imageWay == 'left'" [@slideFromRight]  (click)="navigateToDetailsPage(1)" >
+<div class="portfolio-card right-card" *ngIf="imageWay == 'left'  && !isMobile" [@slideFromRight]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}" >
     <div class="right">
         <div class="text-side">
-            <app-what-we-do-card [backgroundImage]="'../../assets/bg-card2.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card>
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../assets/bg-card2.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
          </div>
         <div class="image-side">
            <img alt="portfolio" src="../../assets/portfolio-card.svg">
@@ -28,13 +42,13 @@
 
 <div class="spacer-div"></div>
 
-<div class="portfolio-card left-card" *ngIf="imageWay == 'left'" [@slideFromLeft]  (click)="navigateToDetailsPage(1)" >
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left' && !isMobile" [@slideFromLeft]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}" >
     <div class="left">
         <div class="image-side">
-           <img alt="portfolio" src="../../assets/portfolio-card.svg">
+           <img alt="portfolio"  src="../../assets/portfolio-card.svg">
         </div>
         <div class="text-side">
-            <app-what-we-do-card [backgroundImage]="'../../assets/bg-card3.png'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card>
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../assets/bg-card3.png'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
          </div>
     </div>
 </div>
@@ -42,10 +56,10 @@
 
 <div class="spacer-div"></div>
 
-<div class="portfolio-card right-card" *ngIf="imageWay == 'left'" [@slideFromRight]  (click)="navigateToDetailsPage(1)" >
+<div class="portfolio-card right-card" *ngIf="imageWay == 'left'  && !isMobile" [@slideFromRight]  (click)="navigateToDetailsPage(1)" >
     <div class="right">
         <div class="text-side">
-            <app-what-we-do-card [backgroundImage]="'../../assets/bg-card4.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card>
+            <app-what-we-do-card class="portfolio" [backgroundImage]="'../../assets/bg-card4.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card>
          </div>
         <div class="image-side">
            <img alt="portfolio" src="../../assets/portfolio-card.svg">

@@ -1,0 +1,10 @@
+<div class="what-we-do-card2" [ngClass]="{'left-align': alignment == 'left','mobile':isMobile}"   >
+    <div>
+        <h2 class="what-we-do-title">{{title}}</h2>
+        <p class="what-we-do-desc small">{{description}} </p>
+    </div>
+    <div class="top-right-img">
+        <img *ngIf="!backgroundImage" src="../../assets/memo-circle-check.svg" alt="memo">
+        <img *ngIf="backgroundImage" src="{{backgroundImage}}" alt="memo">
+    </div>
+</div>

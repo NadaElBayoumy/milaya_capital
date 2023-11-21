@@ -1,16 +1,15 @@
-<div class="container footer row"  [ngClass]="{'mobile':isMobile}" >
-    <div class="col-4">
-        <div class="row">
-            <div class="col">
-                <img class="footer-logo" src="assets/logo-footer.svg" alt="logo" [@fadeInFromTop]>
-                <p class="footer-description" [@fadeInFromRight]>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit, sed do eiusmod
-                </p>
-
+<div class="container footer" [ngClass]="{'mobile':isMobile}">
+    <div class="f-col">
+        <div>
+            <img class="footer-logo" src="assets/logo-footer.svg" alt="logo" [@fadeInFromTop]>
+            <p class="footer-description" [@fadeInFromRight]>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod
+            </p>
+            <div class="wrap-email-sm" *ngIf="!isMobile">
                 <div class="input-group mb-3 footer-input" [@fadeInFromBottom]>
-                    <input type="email" class="form-control" placeholder="Enter Your Email"  [(ngModel)]="userEmail" aria-label="Email"
-                        aria-describedby="basic-addon1">
+                    <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
+                        aria-label="Email" aria-describedby="basic-addon1">
                     <div class="input-group-append">
                         <span class="input-group-text"> <i class="bi bi-arrow-up-right"></i> </span>
                     </div>
@@ -18,7 +17,7 @@
 
                 <div *ngIf="isEmailInvalid()" class="text-danger">
                     Email is not in a valid format
-                  </div>
+                </div>
 
                 <!-- <p class="error">please enter valid email</p> -->
 
@@ -32,7 +31,8 @@
 
 
     </div>
-    <div class="col-8" [@fadeInFromBottom]>
+    <div class="m-col"></div>
+    <div class="s-col" [@fadeInFromBottom]>
         <div class="row">
             <div class="col quick-links">
                 <h4 class="title">Company</h4>
@@ -57,7 +57,34 @@
         </div>
     </div>
 
-    <p class="footer-copy-rights" [@fadeInFromBottom]>
-        Copyright © 2023 Milaya Capital All Rights Reserved
-    </p>
+    <div class="f-col">
+
+        <div class="wrap-email-sm" *ngIf="isMobile">
+            <div class="input-group mb-3 footer-input" [@fadeInFromBottom]>
+                <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
+                    aria-label="Email" aria-describedby="basic-addon1">
+                <div class="input-group-append">
+                    <span class="input-group-text"> <i class="bi bi-arrow-up-right"></i> </span>
+                </div>
+            </div>
+
+            <div *ngIf="isEmailInvalid()" class="text-danger">
+                Email is not in a valid format
+            </div>
+
+            <!-- <p class="error">please enter valid email</p> -->
+
+            <div class="social-media-wrapper">
+                <img src="../../assets/social-media-insta.svg" alt="insta" [@fadeInFromBottom1]>
+                <img src="../../assets/social-media-x.svg" alt="x" [@fadeInFromBottom2]>
+                <img src="../../assets/social-media-fb.svg" alt="fb" [@fadeInFromBottom3]>
+            </div>
+        </div>
+
+    </div>
+
+
 </div>
+<p class="container footer-copy-rights" [@fadeInFromBottom] [ngClass]="{'mobile':isMobile}">
+    Copyright © 2023 Milaya Capital All Rights Reserved
+</p>
