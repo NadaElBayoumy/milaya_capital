@@ -1,0 +1,18 @@
+<div [ngClass]=" light == 'yes' ? 'light overview' : 'overview'"> 
+
+    <div class="h-overview" [ngClass]="{'mobile': isMobile}">
+        <div class="tit-div">
+            <div [@slideFromTop2]>
+                <img *ngIf="light == 'yes'" class="rect" src="./../../../assets/Rectangle-white.svg" alt="rectangle"
+                    [@slideFromTop]>
+                <img *ngIf="light !== 'yes'" class="rect" src="./../../../assets/Rectangle-blue.svg" alt="rectangle"
+                    [@slideFromTop]>
+                <h1 class="black">{{pageTitle}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-div" *ngIf="!isMobile"></div>
+    <p class="overview-p" [@slideFromTop] [ngClass]="{'mobile': isMobile}">
+        {{pageOverviewText}}
+    </p>
+</div>

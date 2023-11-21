@@ -1,0 +1,48 @@
+@import '../../../variables';
+.what-we-do-card2 {
+    position: relative;
+    
+    
+    padding: 50px;
+    @media screen and (max-width: 900px) {
+        padding: 20px;
+    }
+
+
+    .what-we-do-title {
+        color: $white;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: $h2-font;
+        line-height: 24px;
+
+        
+    }
+
+    .what-we-do-desc {
+        text-align: center;
+    }
+
+    .top-right-img {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+}
+
+.what-we-do-card2.left-align{
+    .what-we-do-title,.what-we-do-desc{
+        text-align: left;
+    }
+}
+
+.mobile.what-we-do-card2{
+    background: none;
+    border: none;
+    .top-right-img{
+        img{
+            width: 50%;
+        }
+    }
+}

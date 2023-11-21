@@ -1,0 +1,136 @@
+@import '../../../variables';
+
+.home {
+    background: $light-grey;
+
+    .first-bg {
+        background: $light-grey;
+        overflow: hidden;
+    }
+
+    .second-bg {
+        background: $black url(../../../assets/background-squares.svg ) center / cover;
+        padding-top: 50px;
+
+        h1.grey {
+            padding-right: 60px;
+            margin-bottom: 60px;
+            color: $mid-grey;
+            font-weight: 700;
+            font-size: $l-font;
+            line-height: 48px;
+        }
+    }
+
+    
+    .fifth-bg {
+        background: url(../../../assets/background-squares-light.svg ) center / cover;
+        
+    }
+
+    .third-bg{
+        position: relative;
+    }
+
+
+    .third-bg::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 95%;
+        background: url(../../../assets/footer-bg.png) center / cover repeat-y;
+        z-index: 0;
+        transform: rotate(180deg);
+    }
+
+    app-we-are-home {
+        display: flex;
+    }
+
+    .Milaya-bg-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    .poster-container {
+        margin: 0px 20px 20px 20px;
+    }
+
+    h1 {
+        color: $dark-grey;
+        font-weight: 700;
+        font-size: $h1-font ;
+        line-height: 61px;
+    }
+
+    h2 {
+        font-size: $h2-font;
+        color: $white;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+
+    h3 {
+        color: $dark-grey;
+        font-weight: 600;
+        font-size: $h3-font ;
+        line-height: 27px;
+    }
+
+    p {
+        color: $dark-grey;
+        font-size: $p-font ;
+        line-height: 18px;
+        font-weight: 500;
+    }
+
+
+
+
+}
+
+
+.mobile {
+    .poster-container {
+        margin: 0px !important;
+    }
+
+    .breadcrumb {
+        font-size: $p-font;
+        line-height: 17px;
+        font-weight: 600;
+    }
+
+    .first-bg {
+        h1 {
+            font-weight: 700;
+            font-size: $h3-font;
+            line-height: 23px;
+        }
+    }
+
+    .second-bg {
+        h1.grey {
+            font-weight: 700;
+            font-size: $md-font-p !important;
+            line-height: 21px;
+        }
+    }
+
+    .we-are-div {
+        app-we-are-home {
+            flex-direction: column;
+        }
+    }
+
+    .fifth-bg {
+        .media {
+            margin: 10px;
+        }
+    }
+
+}

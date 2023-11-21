@@ -1,0 +1,58 @@
+@import '../../../variables';
+.clients {
+    text-align: center;
+
+    h1 {
+        width: 49%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .breadcrumb {
+        display: block;
+    }
+
+    .title {
+        color: $brand;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+        font-weight: 700;
+        line-height: 49px;
+        width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .clients-logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .logo-img {
+            flex: 1;
+            margin: 5px;
+            box-sizing: border-box;
+        }
+
+    }
+}
+
+.clients.mobile{
+    h1.black{
+        font-weight: 700;
+        font-size: $h3-font;
+        line-height: 27px;
+    }
+    .clients-logos {
+        .logo-img {
+            img{
+                width: 80%;
+            }
+        }
+    }
+}

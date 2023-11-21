@@ -1,0 +1,122 @@
+@import '../../../variables';
+
+.mobile-nav {
+    padding: 1rem;
+    color: $brand;
+
+    .logo {
+
+    }
+
+    .menu-btn {
+
+        button {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: $white;
+            cursor: pointer;
+            float: right;
+        }
+    }
+
+    .logo-img {
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+
+}
+
+
+.mobile-side-menu {
+    padding-top: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../../assets/MILAYA-bg.svg') 80% /contain no-repeat, url('../../../assets/squares-mobile.svg') center center / cover;
+    background-color: $mid-grey;
+    z-index: 999 !important;
+    display: block;
+
+    ul.the-menu {
+        padding:  30px 0px ;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        li {
+            text-decoration: none;
+            padding: 20px 20px 20px 40px;
+            a {
+                color: $dark-grey;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: $h3-font;
+                line-height: 32px;
+            }
+        }
+
+        li:is(:has(.active)) {
+            color: $white;
+            text-decoration: none;
+            background: linear-gradient(90deg, rgba(144, 146, 146, 0.79) 0%, rgba(144, 146, 146, 0) 100%),linear-gradient(90deg, #909292 2.7%, rgba(144, 146, 146, 0) 87.84%);
+            border: 2px solid;
+            border-image-source: linear-gradient(172.11deg, #F7ECEC 3.29%, rgba(242, 235, 235, 0.35) 98.42%);
+            a {
+                color: $white;
+                font-weight: 600;
+                font-size: $h3-font;
+                line-height: 32px;
+            }
+
+        }
+    }
+
+    .head {
+        .logo-img {
+            width: 100%;
+            padding-left: 25px;
+        }
+
+        .close-btn {
+            font-size: 22px !important;
+        }
+    }
+
+    .social-media-wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        img {
+            display: inline-block;
+            vertical-align: top;
+            padding: 30px;
+            cursor: pointer;
+        }
+    }
+
+
+    
+    .footer-copy-rights {
+        margin-top: 20px;
+        color: $mid-grey;
+        font-size: $p-desc-port;
+        line-height: 16px ;
+        font-weight: 500 ;
+        text-align: center;
+    }
+    
+    .divider {
+        border-top: 0.5px solid $dark-grey;
+        margin-top: 20px;
+        max-width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}

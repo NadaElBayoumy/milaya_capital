@@ -1,0 +1,77 @@
+@import '../../../variables';
+
+.heights-slider {
+    padding-top: 50px;
+
+    .heights-slider-card {
+        margin-right: 15px;
+        border: 1px solid #D9D9D9;
+        .icon-height-slider-card {
+            i {
+                color: $white;
+                font-size: $md-font-p;
+                background-color: $brand;
+                padding: 5px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                cursor: pointer;
+            }
+
+            i.bi.bi-arrow-up-right {
+                background-color: $brand
+            }
+
+            i.bi.bi-arrow-down-right {
+                background-color: $dark-grey;
+            }
+        }
+
+        .heights-slider-card-title {
+            color: $black-title;
+            padding-top: 20px;
+            font-weight: 600;
+            font-size: $p-font-sm;
+            line-height: 15px;
+            
+        }
+
+        .heights-slider-card-image {
+            border-radius: 0px;
+        }
+
+        .heights-slider-card-description {
+            color: $height-color;
+            font-weight: 500;
+            font-size: $sm-f;
+            line-height: 16px;
+            text-overflow: ellipsis;
+        }
+
+        .data-container {
+            position: relative;
+            padding: 0px 10px 10px 10px;
+            min-height: 290px;
+
+            .read-more{
+                cursor: pointer;
+            }
+        }
+
+        .heights-slider-card-num {
+            color: $mid-grey;
+            padding-top: 20px;
+            font-weight: 600;
+            font-size: $p-font-sm;
+            line-height: 15px;
+        }
+    }
+}
+
+.mobile{
+    .heights-slider-card{
+        margin-right: 0px;
+    }
+}

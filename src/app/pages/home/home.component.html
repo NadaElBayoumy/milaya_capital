@@ -1,0 +1,63 @@
+<div class="home"  [ngClass]="{'mobile':isMobile}" >
+    <div class="first-bg">
+        <div class="poster-container">
+            <div class="small-spacer-div" *ngIf="!isMobile"></div>
+            <app-main-poster></app-main-poster>
+            <div class="spacer-div"></div>
+        </div>
+        <div class="container">
+            <span class="breadcrumb" [@fadeInFromTop]>ABOUT COMPANY</span>
+            <h1 [@enterFromLeft]>We are the magic behind the company’s best days. </h1>
+            <div class="spacer-div"></div>
+        </div>
+        <div class="we-are-div">
+            <app-we-are-home></app-we-are-home>
+            <div class="spacer-div"></div>
+        </div>
+    </div>
+
+    <div class="second-bg">
+        <div class="container">
+            <span class="breadcrumb" [@fadeInFromLeft]> WHAT WE DO</span>
+            <h1 class="grey" [@fadeInFromLeft2]>Milaya Capital’s vision is to create a better tomorrow for the
+                generations to come. A world
+                where we can
+                live in
+                a sustainable future; hence we put all our efforts into being environmentally sustainable throughout our
+                company’s operations.</h1>
+        </div>
+
+        <div class="spacer-div" *ngIf="!isMobile"></div>
+        <div class="container">
+            <app-what-we-do></app-what-we-do>
+        </div>
+        <div class="Milaya-bg-img">
+            <img src="../../../assets/MILAYA-bg.svg" alt="MILAYA-bg">
+        </div>
+    </div>
+
+    <div class="third-bg">
+        <div class="spacer-div"></div>
+        <app-new-business-heights></app-new-business-heights>
+        <div class="spacer-div"></div>
+    </div>
+
+    <div class="fourth-bg">
+        <app-why-choose></app-why-choose>
+        <app-clients></app-clients>
+    </div>
+
+
+    <div class="fifth-bg">
+        <div class="layer-light-squares"> </div>
+        <div class="spacer-div"></div>
+
+        <div class="media">
+            <app-media [mediaType]="'video'"
+                [mediaURL]="'https://player.vimeo.com/video/332079621?h=b8ef07fa3b&color=dedede&title=0&byline=0&portrait=0'"></app-media>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

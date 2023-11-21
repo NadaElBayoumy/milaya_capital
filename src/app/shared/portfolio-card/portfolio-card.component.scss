@@ -1,0 +1,86 @@
+@import '../../../variables';
+
+.portfolio-card {
+    width: 70%;
+
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
+
+    .right {
+        display: flex;
+
+        .image-side {
+            img {
+                float: right;
+            }
+        }
+    }
+
+    .left {
+        display: flex;
+
+        .image-side {
+            img {
+                float: left;
+            }
+        }
+    }
+
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: $dark-grey;
+
+    .text-side {
+        color: $white;
+        font-size: $s-font;
+        flex: 1;
+    }
+
+    .image-side {
+        width: 100%;
+        height: auto;
+        display: block;
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.right-card {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.left-card {
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.portfolio-card.mobile {
+    margin-bottom: 20px;
+    .left {
+        .image-side {
+            img {
+                float: none;
+            }
+        }
+
+        display: block;
+
+        // .image-side,
+        // .text-side {
+        //     // display: block;
+        // }
+    }
+
+    app-what-we-do-card.portfolio {
+        .what-we-do-card {
+            background: none;
+            border: none;
+        }
+    }
+
+}

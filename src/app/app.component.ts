@@ -14,10 +14,8 @@ export class AppComponent implements OnInit {
   isMobile: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
-    // Subscribe to changes in the viewport size
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
-      console.log("is mobile ---" , this.isMobile)
     });
   }
 
@@ -30,7 +28,6 @@ export class AppComponent implements OnInit {
   }
 
   checkRoute(): boolean {
-    console.log("path is", this.router.url)
     return this.router?.url === '' || this.router?.url === '/home' || this.router?.url === '/contact';
   }
 

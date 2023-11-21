@@ -1,0 +1,37 @@
+@import '../../../variables';
+
+.why-choose-card {
+    .card-choose {
+        .col-9 {
+            text-align: end;
+        }
+
+        h4.title {
+            font-size: $title-font ;
+            font-weight: 600 ;
+            line-height: 17px ;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        p.description {
+            color: $mid-grey  ;
+            font-size: $p-font-sm  ;
+            font-weight: 600  ;
+            line-height: 15px  ;
+        }
+
+        .learn-more {
+            font-size: $p-font-sm  ;
+            font-weight: 500  ;
+            line-height: 15px  ;
+            cursor: pointer;
+
+        }
+    }
+}
+
+.mobile.why-choose-card{
+    background: $white;
+    padding: 25px !important;
+}

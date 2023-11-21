@@ -1,0 +1,25 @@
+@import '../../../variables';
+
+.portfolio::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../../assets/porfolio-bg.svg) center / cover; 
+    z-index: -1; 
+    opacity: 0.4; 
+}
+
+app-portfolio-card{
+    cursor: pointer;
+}
+
+
+.mobile.portfolio{
+    .portfolio-divs{
+        display: block;
+        margin: 40px;
+    }
+}

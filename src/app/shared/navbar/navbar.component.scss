@@ -1,0 +1,92 @@
+@import '../../../variables';
+
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-nav,.poster-nav{
+    display: flex;
+    flex: 100%;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .navbar a {
+        flex:1;
+        text-decoration: none;
+        padding:10px 40px;
+        font-size: $s-font ;
+        line-height: 18px ;
+        font-weight: 600 ;
+    }
+
+    .navbar a.active {
+        border-radius: 100px;
+    }
+
+    .navbar a:hover {
+        background-color: $active-link-bg;
+        color: $brand;
+        border-radius: 100px;
+    }
+    
+    .contact-btn {
+        width: 148px ;
+        border-radius: 47px;
+        height: 40px;
+    }
+    .logo-img{
+        cursor: pointer;
+    }
+}
+
+.main-nav{
+    margin-top: 50px;
+    .navbar a {
+        color: $brand;
+    }
+    .navbar a.active {
+        background-color: $active-link-bg;
+        color: $brand;
+    }
+    .navbar a:hover {
+        background-color: $active-link-bg;
+        color: $brand;
+    }
+    .contact-btn {
+        background-color: $brand;
+        color: $white;
+    }
+    .navbar a {
+        @media screen and (max-width: 1000px) {
+            padding: 15px;
+        }
+    }
+}
+.poster-navbar,.contact-navbar{
+    margin-top: 0px;
+    .navbar a {
+        color: $white ;
+    }
+    .navbar a.active {
+        background-color: $active-link-bg-light ;
+        color: $white ;
+    }
+    .navbar a:hover {
+        background-color: $active-link-bg-light ;
+        color: $white ;
+    }
+    .contact-btn {
+        background-color: $white ;
+        color: $brand ;
+    }
+
+    .navbar a {
+        @media screen and (max-width: 1000px) {
+            padding: 15px;
+        }
+    }
+}

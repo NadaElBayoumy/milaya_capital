@@ -1,0 +1,30 @@
+@import '../../../variables';
+.we-are-img-text{
+    text-align: center;
+    padding: 17px;
+    border-radius: 10px;
+    border: 1px solid $active-link-bg-light;
+    background: linear-gradient(150deg, rgba(217, 217, 217, 0.90) 3.9%, rgba(217, 217, 217, 0.10) 91.59%);
+    backdrop-filter: blur(25px);
+
+    .imgwearecard{
+        width: 100%;
+    }
+    h3{
+        color: $brand;
+        line-height: 25px;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .wearecardtext{
+        color: $mid-grey;
+        font-weight: 600;
+        line-height: 20px;
+        font-size: $s-font;
+    }
+}
+
+.mobile{
+    
+}

@@ -1,0 +1,86 @@
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left'" [@slideFromLeft]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}" >
+    <div class="left">
+        <div class="image-side">
+           <img alt="portfolio" src="../../../assets/portfolio-card.svg">
+        </div>
+        <div class="text-side">
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card1.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+         
+        </div>
+    </div>
+</div>
+
+<div class="spacer-div" *ngIf="!isMobile"></div>
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left' && isMobile" [@slideFromLeft]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}">
+    <div class="left">
+        <div class="image-side">
+           <img alt="portfolio" src="../../../assets/portfolio-card.svg">
+        </div>
+        <div class="text-side">
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card1.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+         
+        </div>
+    </div>
+</div>
+
+<!--------------------------- another way RIGHT ----------------------------------------- -->
+
+<div class="spacer-div" *ngIf="!isMobile"></div>
+
+<div class="portfolio-card right-card" *ngIf="imageWay == 'left'  && !isMobile" [@slideFromRight]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}" >
+    <div class="right">
+        <div class="text-side">
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card2.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+         </div>
+        <div class="image-side">
+           <img alt="portfolio" src="../../../assets/portfolio-card.svg">
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="spacer-div" *ngIf="!isMobile"></div>
+
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left' && !isMobile" [@slideFromLeft]  (click)="navigateToDetailsPage(1)"   [ngClass]="{'mobile':isMobile}" >
+    <div class="left">
+        <div class="image-side">
+           <img alt="portfolio"  src="../../../assets/portfolio-card.svg">
+        </div>
+        <div class="text-side">
+            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card3.png'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+         </div>
+    </div>
+</div>
+
+
+<div class="spacer-div" *ngIf="!isMobile"></div>
+
+<div class="portfolio-card right-card" *ngIf="imageWay == 'left'  && !isMobile" [@slideFromRight]  (click)="navigateToDetailsPage(1)" >
+    <div class="right">
+        <div class="text-side">
+            <app-what-we-do-card class="portfolio" [backgroundImage]="'../../../assets/bg-card4.svg'" [alignment]="'left'" [title]="'MILAYA ENERGY'" [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card>
+         </div>
+        <div class="image-side">
+           <img alt="portfolio" src="../../../assets/portfolio-card.svg">
+        </div>
+        
+    </div>
+</div>
+
+<!--------------------------- another way TOP ----------------------------------------- -->
+
+
+<!-- <div class="portfolio-card" *ngIf="imageWay == 'top'">
+    <div class="row">
+        <div class="col image-side">
+           <img alt="portfolio" src="../../assets/portfolio-card.svg">
+        </div>
+        <div class="col text-side">
+            <h1 class="title-side">MILAYA ENERGY</h1>
+            <p class="text-desc">
+                Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.
+            </p>
+         </div>
+    </div>
+</div> -->
