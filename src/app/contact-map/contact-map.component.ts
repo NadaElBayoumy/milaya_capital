@@ -43,5 +43,6 @@ export class ContactMapComponent implements OnInit {
     L.marker([0, 0], { icon: customIcon }).addTo(map)
       .bindPopup('This is a marker.');
       // .openPopup();
+
   }
 }

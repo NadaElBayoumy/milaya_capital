@@ -144,4 +144,68 @@
 
 .contact-form.mobile{
     display: block;
+    .send-message-section{
+        h2{
+            font-size: $s-font-2;
+            font-weight: 600;
+            line-height: 23px;
+        }
+        p{
+            font-size: $p-portfolio;
+            font-weight: 600;
+            line-height: 19px;
+        }
+    }
+
+    .contact-form{
+        .d-flex{
+            display: block !important;
+        }
+
+        .contact-btn-col{
+            text-align: center;
+            margin-right: 0px;
+            button{
+                height: 60px;
+                margin-top: 20px;
+                width: auto;
+            }
+        }
+      
+    }
+}
+
+.contact-form.mobile{
+    .get-in-touch{
+        border-radius: 0px 0px 20px 20px;
+        h1{
+            font-size: $s-font-2 !important;
+            font-weight: 600;
+            line-height: 23px !important;
+        }
+        p.description-p{
+            font-size: $p-font;
+            font-weight: 600;
+            line-height: 20px;
+        }
+        p.description-p2{
+            font-size: $p-portfolio;
+            font-weight: 500;
+            line-height: 19px;
+        }
+
+        .address-section{
+            .content{
+                h5{
+                    font-size: $p-portfolio;
+                    font-weight: 600;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+
+    .send-message-section{
+        border-radius: initial;
+    }
 }

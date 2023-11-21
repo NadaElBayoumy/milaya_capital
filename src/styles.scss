@@ -144,7 +144,7 @@ $big-spacer : 135px;
     }
 }
 
-.heights-slider.mobile{
+.heights-slider.mobile {
     .owl-nav {
         right: 0px;
     }
@@ -321,7 +321,7 @@ app-footer::before {
     }
 
     .fa-chevron-right:before,
-    .fa-chevron-left:before{
+    .fa-chevron-left:before {
         content: none !important;
     }
 
@@ -347,8 +347,8 @@ app-footer::before {
 
 }
 
-.mobile.portfolio-slider{
-    .owl-item{
+.mobile.portfolio-slider {
+    .owl-item {
         width: auto !important;
     }
 }
