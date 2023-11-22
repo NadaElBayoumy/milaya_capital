@@ -352,3 +352,22 @@ app-footer::before {
         width: auto !important;
     }
 }
+
+
+.toast-container {
+    width: 100% !important;
+    .toast-success {
+        background-color: #333;
+        color: #fff;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+    .toast-error {
+        background-color: red;
+        color: #fff;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+}

@@ -1,3 +1,4 @@
+<!-- Portfolio Details Card section  -->
 <div class="container portfolio-detail-card"  [ngClass]="{'mobile':isMobile}" >
     <div class="image-side" [@fadeInFromLeft]>
         <img class="image-shadow" alt="img" src="../../../assets/portfolio-card.svg">
@@ -6,7 +7,7 @@
     <div class="text-side">
         <div>
             <h2 class="h2-font-big" [@slideFromTop]>MILAYA ENERGY</h2>
-            <p class="font-p " [@fadeInFromRight]>
+            <p class="font-p " [@fadeInFromRight] [ngClass]="{'container':isMobile}">
                 Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we
                 deliver results you can rely on to enhance productivity, optimize operations, and minimize risk
                 through

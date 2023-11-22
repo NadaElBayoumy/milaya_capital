@@ -1,3 +1,4 @@
+<!-- Main nav section works for only web not mobile  -->
 <div class="main-nav"  [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome}">
     <img class="logo-img" *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
     <img class="logo-img" *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>

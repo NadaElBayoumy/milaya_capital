@@ -1,18 +1,16 @@
 
 
+<!-- Home Page -->
 <div class="home"  [ngClass]="{'mobile':isMobile}" >
     <div class="first-bg">
-       
-        <!-- <app-mobile-navbar *ngIf="isMobile"></app-mobile-navbar> -->
-
         <div class="poster-container">
             <div class="small-spacer-div" *ngIf="!isMobile"></div>
-            <!-- <app-mobile-navbar *ngIf="isMobile"  [isHome]="true" ></app-mobile-navbar> -->
             <app-main-poster></app-main-poster>
             <div class="spacer-div"></div>
         </div>
         <div class="container">
-            <span class="breadcrumb" [@fadeInFromTop]>ABOUT COMPANY</span>
+            <!-- [@fadeInFromTop] -->
+            <span class="breadcrumb"  [@scrollAnimation]="animationState" >ABOUT COMPANY</span>
             <h1 [@enterFromLeft]>We are the magic behind the company’s best days. </h1>
             <div class="spacer-div"></div>
         </div>

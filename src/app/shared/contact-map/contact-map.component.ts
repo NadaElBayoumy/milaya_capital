@@ -23,12 +23,11 @@ export class ContactMapComponent implements OnInit {
   }
 
   private initMap(): void {
-    const map = L.map('map').setView([0, 0], 2);
-    var latlng = L.latLng(50.5, 30.5);
+    const map = L.map('map').setView([25.14091142684441, 55.217559581197044], 15);
+    var latlng = L.latLng(25.14091142684441, 55.217559581197044);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      maxZoom: 13
     }).addTo(map);
 
 
@@ -40,8 +39,8 @@ export class ContactMapComponent implements OnInit {
     });
 
     // Add a marker with the custom icon
-    L.marker([0, 0], { icon: customIcon }).addTo(map)
-      .bindPopup('This is a marker.');
+    L.marker([25.14091142684441, 55.217559581197044], { icon: customIcon }).addTo(map)
+      .bindPopup('Milaya Capital');
       // .openPopup();
 
   }

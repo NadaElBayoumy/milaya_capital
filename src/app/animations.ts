@@ -225,15 +225,28 @@ export const fadeInFromTop3 = trigger('fadeInFromTop3', [
 
 export const slideFromTop = trigger('slideFromTop', [
     transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-50px)' }),  
-        animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })), 
-      ]),
+        style({ opacity: 0, transform: 'translateY(-50px)' }),
+        animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+    ]),
 ]);
 
 
 export const enterFromBottom = trigger('enterFromBottom', [
     transition(':enter', [
-      style({ opacity: 0, transform: 'translateY(100%)' }), 
-      animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })), 
+        style({ opacity: 0, transform: 'translateY(100%)' }),
+        animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
     ]),
-  ]);
+]);
+
+export const scrollAnimation =
+    trigger('scrollAnimation', [
+        state('start', style({
+            opacity: 0,
+            transform: 'translateY(-50px)'
+        })),
+        state('end', style({
+            opacity: 1,
+            transform: 'translateY(0)'
+        })),
+        transition('start => end', animate('0.5s ease-in')),
+    ]);

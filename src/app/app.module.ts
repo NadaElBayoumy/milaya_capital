@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -38,8 +40,8 @@ import { WhyChooseComponent } from './shared/why-choose/why-choose.component';
 import { WhyChooseCardComponent } from './shared/why-choose-card/why-choose-card.component';
 import { MobileNavbarComponent } from './shared/mobile-navbar/mobile-navbar.component';
 import { WhatWeDoCard2Component } from './shared/what-we-do-card-2/what-we-do-card-2.component';
-import { ToastComponent } from './shared/toast/toast.component';
 import { MilayaService } from './milaya.service';
+import { PortfolioPageSliderComponent } from './shared/portfolio-page-slider/portfolio-page-slider.component';
 
 
 @NgModule({
@@ -76,7 +78,7 @@ import { MilayaService } from './milaya.service';
     WhyChooseCardComponent,
     MobileNavbarComponent,
     WhatWeDoCard2Component,
-    ToastComponent,
+    PortfolioPageSliderComponent,
 
   ],
   imports: [
@@ -86,8 +88,9 @@ import { MilayaService } from './milaya.service';
     HttpClientModule,
     CarouselModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    SlickCarouselModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     MilayaService,

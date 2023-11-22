@@ -1,3 +1,4 @@
+<!-- Multimedia section Should work for both video and images media  -->
 <div class="media container" [ngClass]="{'mobile':isMobile}" >
   <video *ngIf="mediaType == 'video'" #videoPlayer class="video-player" [controls]="startedPlay" [@fadeInFromBottom]>
     <source src="{{mediaURL}}" type="video/mp4">
