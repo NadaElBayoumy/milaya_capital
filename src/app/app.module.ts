@@ -39,6 +39,7 @@ import { WhyChooseCardComponent } from './shared/why-choose-card/why-choose-card
 import { MobileNavbarComponent } from './shared/mobile-navbar/mobile-navbar.component';
 import { WhatWeDoCard2Component } from './shared/what-we-do-card-2/what-we-do-card-2.component';
 import { ToastComponent } from './shared/toast/toast.component';
+import { MilayaService } from './milaya.service';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { ToastComponent } from './shared/toast/toast.component';
     
   ],
   providers: [
+    MilayaService,
     provideAnimations()
   ],
   bootstrap: [AppComponent]

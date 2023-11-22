@@ -10,13 +10,15 @@
     </div>
 
     <div class="menu-btn col-3">
-        <button  *ngIf="isHome == true || isContact == true" id="menubtn" (click)="toggleMobileMenu()"><img src="../../../assets/textalign-right.svg" /></button>
-        <button *ngIf="isHome !== true && isContact !== true"  id="menubtn" (click)="toggleMobileMenu()"><img src="../../../assets/textalign-right-black.svg" /></button>
+        <button *ngIf="isHome == true || isContact == true" id="menubtn" (click)="toggleMobileMenu()"><img
+                src="../../../assets/textalign-right.svg" /></button>
+        <button *ngIf="isHome !== true && isContact !== true" id="menubtn" (click)="toggleMobileMenu()"><img
+                src="../../../assets/textalign-right-black.svg" /></button>
     </div>
 </nav>
 
 
-<div class="mobile-side-menu" *ngIf="isMobileMenuOpen" [ngClass]="{'show-mobile-menu': isMobileMenuOpen}">
+<div class="mobile-side-menu" *ngIf="milaya.sideMenuOpen" [ngClass]="{'show-mobile-menu': milaya.sideMenuOpen}" [@slideInFromRight]>
 
     <div class="head row">
         <div class="col-6">
@@ -31,23 +33,23 @@
     </div>
 
     <ul class="the-menu">
-        <li  class="active"><a routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li> <a routerLink="/about" routerLinkActive="active">About</a></li>
-        <li><a routerLink="/mission" routerLinkActive="active">Mission</a></li>
-        <li> <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
-        <li> <a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        <li class="active"><a routerLink="/home" routerLinkActive="active" (click)="toggleMobileMenu()">Home</a></li>
+        <li> <a routerLink="/about" routerLinkActive="active" (click)="toggleMobileMenu()">About</a></li>
+        <li><a routerLink="/mission" routerLinkActive="active" (click)="toggleMobileMenu()">Mission</a></li>
+        <li> <a routerLink="/portfolio" routerLinkActive="active" (click)="toggleMobileMenu()">Portfolio</a></li>
+        <li> <a routerLink="/contact" routerLinkActive="active" (click)="toggleMobileMenu()">Contact</a></li>
     </ul>
-    
+
     <div class="social-media-wrapper">
-        <img src="../../../assets/social-media-insta.svg" alt="insta" >
-        <img src="../../../assets/social-media-x.svg" alt="x" >
-        <img src="../../../assets/social-media-fb.svg" alt="fb" >
+        <img src="../../../assets/social-media-insta.svg" alt="insta">
+        <img src="../../../assets/social-media-x.svg" alt="x">
+        <img src="../../../assets/social-media-fb.svg" alt="fb">
     </div>
 
 
-    <div class="divider" ></div>
+    <div class="divider"></div>
 
-    <p class="footer-copy-rights" >
+    <p class="footer-copy-rights">
         Copyright © 2023 Milaya Capital All Rights Reserved
     </p>
 

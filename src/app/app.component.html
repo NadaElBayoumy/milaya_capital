@@ -4,6 +4,13 @@
 
 <app-mobile-navbar *ngIf="showNavbar && isMobile"></app-mobile-navbar>
 
+<!-- new code -->
+<!-- <app-mobile-sidemenu [ngClass]="{ 'show': sideMenu.isMenuOpen }" *ngIf="showNavbar && isMobile"></app-mobile-sidemenu> -->
+<!-- <button (click)="sideMenu.toggleMenu()">Toggle Side Menu</button> -->
+<!-- end of new code -->
+
+
+
 <div class="window home" [ngClass]="{'mobile': isMobile}">
   <router-outlet name="primary"></router-outlet>
 </div>

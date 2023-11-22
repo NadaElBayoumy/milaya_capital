@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MilayaService } from './milaya.service';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +11,12 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class AppComponent implements OnInit {
   title = 'Milaya Capital';
-  showNavbar: boolean = true;
-  isMobile: boolean = false;
+  showNavbar: boolean;
+  isMobile: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
-      this.isMobile = result.matches;
-    });
+  constructor(public milayaService: MilayaService, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+    this.isMobile = this.milayaService.isMobile;
+    this.showNavbar = false;
   }
 
   ngOnInit() {
@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
     });
   }
 
+  
   checkRoute(): boolean {
     return this.router?.url === '' || this.router?.url === '/home' || this.router?.url === '/contact';
   }
-
 }

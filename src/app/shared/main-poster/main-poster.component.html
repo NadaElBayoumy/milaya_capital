@@ -1,10 +1,12 @@
-<div class="main-poster" [ngClass]="{'mobile-poster':isMobile}" >
-    <app-navbar [isHome]="true" *ngIf="!isMobile" ></app-navbar>
-    <app-mobile-navbar [isHome]="true" *ngIf="isMobile" ></app-mobile-navbar>
-    <div class="layer">
-    </div>
+<div class="main-poster" [ngClass]="{'mobile-poster':isMobile}">
+    <app-navbar [isHome]="true" *ngIf="!isMobile"></app-navbar>
+    <app-mobile-navbar [isHome]="true" *ngIf="isMobile"></app-mobile-navbar>
+
+    <!-- <div class="layer">
+        </div> -->
     <div>
-        <h1 [@fadeInFromBottomTy20] class="main-desc">Welcome to <span class="highlighter-text">Milaya Capital’s</span> Diverse Business
+        <h1 [@fadeInFromBottomTy20] class="main-desc">Welcome to <span class="highlighter-text">Milaya Capital’s</span>
+            Diverse Business
             Ventures</h1>
     </div>
 
@@ -16,7 +18,8 @@
             all aspects of today’s business requirements.
         </p>
 
-        <button type="button" class="btn btn-primary about-btn" [@fadeInFromBottomTy20]>About Us <i class="bi bi-box-arrow-in-right"></i>
+        <button type="button" class="btn btn-primary about-btn" [@fadeInFromBottomTy20]>About Us <i
+                class="bi bi-box-arrow-in-right"></i>
         </button>
     </div>
 
