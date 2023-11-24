@@ -109,6 +109,8 @@
 .mobile {
     .poster-container {
         margin: 0px !important;
+        position: relative;
+        z-index: 4;
     }
 
     .breadcrumb {
@@ -128,6 +130,8 @@
 
         .about-com{
             margin-top: 20px;
+            position: relative;
+            z-index: 3;
         }
     }
 
@@ -151,6 +155,8 @@
     }
 
     .we-are-div {
+        position: relative;
+        z-index: 2;
         app-we-are-home {
             flex-direction: column;
         }
