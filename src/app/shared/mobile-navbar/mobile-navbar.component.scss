@@ -1,15 +1,10 @@
+
 @import '../../../variables';
 
 .mobile-nav {
     padding: 1rem;
     color: $brand;
-
-    .logo {
-
-    }
-
     .menu-btn {
-
         button {
             font-size: 1.5rem;
             background: none;
@@ -25,8 +20,6 @@
         text-align: center;
         width: 100%;
     }
-
-
 }
 
 .mobile-side-menu {
@@ -34,7 +27,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100%;
+    width: 52%;
     height: 100%;
     background: url('../../../assets/MILAYA-bg.svg') 80% /contain no-repeat, url('../../../assets/squares-mobile.svg') center center / cover;
     background-color: $mid-grey;
@@ -73,7 +66,6 @@
                 font-size: $h3-font;
                 line-height: 32px;
             }
-
         }
     }
 
@@ -99,8 +91,6 @@
             cursor: pointer;
         }
     }
-
-
     
     .footer-copy-rights {
         margin-top: 20px;

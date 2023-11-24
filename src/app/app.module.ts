@@ -81,7 +81,6 @@ import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card
     WhatWeDoCard2Component,
     PortfolioPageSliderComponent,
     PortfolioVerticalCardComponent,
-
   ],
   imports: [
     BrowserAnimationsModule,

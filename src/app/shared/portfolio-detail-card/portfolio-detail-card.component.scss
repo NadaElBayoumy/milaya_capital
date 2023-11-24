@@ -8,15 +8,34 @@
         margin-left: 20px;
         position: relative;
 
-        .shadow-box {
-            width: 70%;
-            position: absolute;
-            height: 62%;
-            top: 30%;
-            background-color: #343a40;
-            z-index: -1;
-            border-radius: 20px;
-            box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+        .image-shadow {
+            margin: 0px 75px 75px 75px;
+            border-radius: 40px;
+            width: 80%;
+            float: right;
+            position: relative;
+        }
+    }
+
+    .image-side::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 80%;
+        height: 65%;
+        background: $shadow;
+        border-radius: 40px;
+
+        @media screen and (max-width: 1200px) {
+            top: 11%;
+            left: -8%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            height: 30%;
+            top: 11%;
+            left: -19%;
         }
     }
 
@@ -43,12 +62,6 @@
         }
     }
 
-    .image-shadow {
-        margin: 0px 75px 75px 75px;
-        border-radius: 40px;
-        width: 80%;
-        float: right;
-    }
 
     .contact-details {
         i {
@@ -76,15 +89,31 @@
 
 .mobile.portfolio-detail-card {
     display: block;
-    .image-shadow{
+
+    .image-side::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 80%;
+        height: 65%;
+        background: $shadow;
         border-radius: 20px;
-        float: none;
+    }
+
+
+    .image-shadow {
+        border-radius: 20px;
+        float: inherit !important;
+        margin: 0px 40px 40px 40px !important;
+        border-radius: 20px;
+        width: 80%;
     }
 
 
     h2.h2-font-big {
         font-size: $h2-font !important;
-        line-height: 24px ;
+        line-height: 24px;
         text-align: center;
     }
 
@@ -93,13 +122,13 @@
         line-height: 17px !important;
     }
 
-    .d-flex.contact-button{
+    .d-flex.contact-button {
         display: block !important;
         text-align: center;
     }
 
-    .contact-details{
-        .d-flex{
+    .contact-details {
+        .d-flex {
             text-align: left;
         }
     }

@@ -22,7 +22,7 @@ export class FooterComponent {
     });
 
     if (this.router?.url == "/home") {
-      this.threshold = 3800;
+      this.threshold = 3400;
     }
     else if (this.router?.url == "/about") {
       this.threshold = 2100;

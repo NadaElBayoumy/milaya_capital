@@ -7,6 +7,7 @@
         background: $light-grey;
         overflow: hidden;
         position: relative;
+        
     }
 
     .second-bg {
@@ -123,6 +124,10 @@
             font-weight: 700;
             font-size: $h3-font;
             line-height: 23px;
+        }
+
+        .about-com{
+            margin-top: 20px;
         }
     }
 
