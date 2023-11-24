@@ -1,6 +1,202 @@
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
+/////////New Animations
+
+export const enterFromTop = trigger('enterFromTop', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(-20%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('1s ease-in')),
+  ]);
+  export const enterFromTop1 = trigger('enterFromTop1', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(-10%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('1s ease-in')),
+  ]);
+  export const enterFromTop2 = trigger('enterFromTop2', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(-10%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('1.5s ease-in')),
+  ]);
+  export const enterFromTop3 = trigger('enterFromTop3', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(-10%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('2s ease-in')),
+  ]);
+  export const enterFromLeft = trigger('enterFromLeft', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateX(-100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateX(0)'
+    })),
+    transition('hidden => visible', animate('1s ease-in')),
+  ]);
+  export const enterFromLeft2 = trigger('enterFromLeft2', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateX(-100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateX(0)'
+    })),
+    transition('hidden => visible', animate('1.5s ease-in')),
+  ]);
+  export const enterFromRight =  trigger('enterFromRight', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateX(100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateX(0)'
+    })),
+    transition('hidden => visible', animate('0.5s ease-in')),
+  ]);
+
+  export const enterFromRight2 =  trigger('enterFromRight2', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateX(100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateX(0)'
+    })),
+    transition('hidden => visible', animate('1s ease-in')),
+  ]);
+
+  export const enterFromBottom =  trigger('enterFromBottom', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('0.5s ease-in')),
+  ]);
+
+
+
+  export const enterFromBottom1 =  trigger('enterFromBottom1', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('1s ease-in')),
+  ]);
+
+
+
+
+  export const enterFromBottom2 =  trigger('enterFromBottom2', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('1.5s ease-in')),
+  ]);
+  
+
+
+  export const enterFromBottom3 =  trigger('enterFromBottom3', [
+    state('hidden', style({
+      opacity: 0,
+      transform: 'translateY(100%)'
+    })),
+    state('visible', style({
+      opacity: 1,
+      transform: 'translateY(0)'
+    })),
+    transition('hidden => visible', animate('2s ease-in')),
+  ]);
+
+  export const fadeInFromTop = trigger('fadeInFromTop', [
+    transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-20px)' }),
+        animate('1500ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
+    ]),
+]);
+
+export const fadeInFromLeft = trigger('fadeInFromLeft', [
+    transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-20px)' }),
+        animate('2000ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+    ]),
+]);
+
+export const enterFromLeft0 = trigger('enterFromLeft0', [
+    transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-20%)' }),
+        animate('1500ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+    ]),
+]);
+
+
+export const fadeInFromTop1 = trigger('fadeInFromTop1', [
+  transition(':enter', [
+      style({ opacity: 0, transform: 'translateY(-80px)' }),
+      animate('2000ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
+  ]),
+]);
+
+
+export const fadeInFromTop2 = trigger('fadeInFromTop2', [
+  transition(':enter', [
+      style({ opacity: 0, transform: 'translateY(-80px)' }),
+      animate('1500ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
+  ]),
+]);
+export const fadeInFromTop3 = trigger('fadeInFromTop3', [
+  transition(':enter', [
+      style({ opacity: 0, transform: 'translateY(-20px)' }),
+      animate('2000ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
+  ]),
+]);
+
+
+/////////End of New Animations
+
+
+
+
 export const fadeInFromBottomTy20 = trigger('fadeInFromBottomTy20', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateY(20px)' }),
@@ -16,18 +212,7 @@ export const fadeInFromBottom = trigger('fadeInFromBottom', [
 ]);
 
 
-export const fadeInFromLeft = trigger('fadeInFromLeft', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(-20px)' }),
-        animate('2000ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
-    ]),
-]);
-export const fadeInFromTop = trigger('fadeInFromTop', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-20px)' }),
-        animate('1500ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
-    ]),
-]);
+
 export const enterFromBottomLeftToTopRight333 = trigger('enterFromBottomLeftToTopRight333', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translate(10%, 100%)' }),
@@ -57,14 +242,6 @@ export const fadeInFromRight = trigger('fadeInFromRight', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateX(10%)' }),
         animate('2000ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
-    ]),
-]);
-
-
-export const fadeInFromTop1 = trigger('fadeInFromTop1', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-80px)' }),
-        animate('2000ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
     ]),
 ]);
 
@@ -175,12 +352,12 @@ export const fadeInFromBottom5 = trigger('fadeInFromBottom5', [
 ]);
 
 
-export const enterFromLeft = trigger('enterFromLeft', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(-20%)' }),
-        animate('1500ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
-    ]),
-]);
+// export const enterFromLeft = trigger('enterFromLeft', [
+//     transition(':enter', [
+//         style({ opacity: 0, transform: 'translateX(-20%)' }),
+//         animate('1500ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+//     ]),
+// ]);
 
 export const fadeInFromLeft2 = trigger('fadeInFromLeft2', [
     transition(':enter', [
@@ -209,19 +386,6 @@ export const fadeInFromBottomToTop3 = trigger('fadeInFromBottomToTop3', [
     ]),
 ]);
 
-export const fadeInFromTop2 = trigger('fadeInFromTop2', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-80px)' }),
-        animate('1500ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
-    ]),
-]);
-export const fadeInFromTop3 = trigger('fadeInFromTop3', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-20px)' }),
-        animate('2000ms ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
-    ]),
-]);
-
 
 export const slideFromTop = trigger('slideFromTop', [
     transition(':enter', [
@@ -231,7 +395,7 @@ export const slideFromTop = trigger('slideFromTop', [
 ]);
 
 
-export const enterFromBottom = trigger('enterFromBottom', [
+export const enterFromBottom00 = trigger('enterFromBottom00', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateY(100%)' }),
         animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
@@ -248,5 +412,20 @@ export const scrollAnimation =
             opacity: 1,
             transform: 'translateY(0)'
         })),
-        transition('start => end', animate('0.5s ease-in')),
+        transition('start => end', animate('1s ease-in')),
     ]);
+
+
+
+// export const enterFromLeft =
+//     trigger('enterFromLeft', [
+//         state('start', style({
+//             opacity: 0,
+//             transform: 'translateX(-100%)'
+//         })),
+//         state('end', style({
+//             opacity: 1,
+//             transform: 'translateX(0)'
+//         })),
+//         transition('start => end', animate('0.5s ease-in')),
+//     ]);

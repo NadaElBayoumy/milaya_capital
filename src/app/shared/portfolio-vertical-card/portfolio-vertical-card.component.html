@@ -1,6 +1,6 @@
 <!-- Portfolio Card section  -->
-<!-- Works for both left and right positioned images -->
-<div class="portfolio-card left-card" *ngIf="imageWay == 'left'" [@slideFromLeft] (click)="navigateToDetailsPage(1)"
+<!-- Works for vertical top positioned images -->
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left'"  (click)="navigateToDetailsPage(1)"
     [ngClass]="{'mobile':isMobile}">
     <div class="left">
         <div class="image-side">
@@ -15,7 +15,7 @@
 </div>
 
 
-<div class="portfolio-card right-card" *ngIf="imageWay == 'right'  && !isMobile" [@slideFromRight]
+<div class="portfolio-card right-card" *ngIf="imageWay == 'right'  && !isMobile"
     (click)="navigateToDetailsPage(2)" [ngClass]="{'mobile':isMobile}">
     <div class="right">
         <div class="text-side">
@@ -32,18 +32,19 @@
 
 
 
-<div class="portfolio-card left-card" *ngIf="imageWay == 'top'" [@slideFromLeft] (click)="navigateToDetailsPage(1)"
+<div class="portfolio-vertical-card left-card" *ngIf="imageWay == 'top'"  (click)="navigateToDetailsPage(1)"
     [ngClass]="{'mobile':isMobile, 'top-card': imageWay == 'top'}">
-    <div class="left">
+    <div class="top">
         <div class="image-side">
             <img alt="portfolio" src="../../../assets/portfolio-card.svg">
         </div>
         <div class="text-side">
             <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card1.svg'"
-                [alignment]="'left'" [title]="'MILAYA ENERGY'"
+                [alignment]="'top'" [title]="'MILAYA ENERGY'"
                 [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
         </div>
     </div>
+    <div class="spacer-div"></div>
 
 </div>
 

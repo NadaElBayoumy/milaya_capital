@@ -1,9 +1,9 @@
 <!-- Clients Page -->
 <div class="clients" [ngClass]="{'mobile':isMobile}" >
-    <span class="breadcrumb" [@fadeInFromTop]>CLIENTS</span>
-    <h1 class="black" [@fadeInFromTop1]> Look Closer With Our Beloved Client</h1>
+    <span class="breadcrumb"  [@enterFromTop]="animationStates.enterFromTop" >CLIENTS</span>
+    <h1 class="black"  [@enterFromTop1]="animationStates.enterFromTop1" > Look Closer With Our Beloved Client</h1>
 
-    <div class="clients-logos" [@slideInFromLeft]>
+    <div class="clients-logos"  [@enterFromLeft]="animationStates.enterFromLeft" >
         <div class="logo-img">
             <img alt="logo1" src="../../../assets/1.svg" />
         </div>
@@ -22,7 +22,7 @@
         </div>
 
     </div>
-    <div class="clients-logos" [@slideInFromRight]>
+    <div class="clients-logos"  [@enterFromRight]="animationStates.enterFromRight" >
 
         <div class="logo-img">
             <img alt="logo1" src="../../../assets/4.svg" />

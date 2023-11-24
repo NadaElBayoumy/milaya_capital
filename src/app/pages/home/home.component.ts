@@ -1,29 +1,16 @@
-import { Component, AfterViewInit, ElementRef, ViewChild,HostListener  } from '@angular/core';
-import { fadeInFromTop, enterFromLeft, fadeInFromLeft, fadeInFromLeft2 , fadeInFromBottomToTop1,scrollAnimation} from '../../animations';
+import { Component, AfterViewInit,  HostListener   } from '@angular/core';
+import {fadeInFromTop,enterFromLeft0,enterFromLeft,enterFromLeft2} from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [fadeInFromTop, enterFromLeft, fadeInFromLeft, fadeInFromLeft2, fadeInFromBottomToTop1,scrollAnimation],
+  animations: [fadeInFromTop,enterFromLeft0,enterFromLeft,enterFromLeft2],
 
 })
 export class HomeComponent implements AfterViewInit {
-  animationState = 'start';
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    // Detect the scroll position and trigger animation accordingly
-    if (window.scrollY > 200) {
-      this.animationState = 'end';
-    } else {
-      this.animationState = 'start';
-    }
-  }
-
-  
   isMobile: boolean = false;
   
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
@@ -32,5 +19,25 @@ export class HomeComponent implements AfterViewInit {
     });
   }
   ngAfterViewInit() {
+    this.animationStates.enterFromTop = 'visible' ;
+    this.animationStates.enterFromLeft = 'visible';
+  }
+  
+  //For Animations on Scroll
+  animationStates = {
+    enterFromTop: 'visible',
+    enterFromLeft: 'visible',
+    enterFromLeft2: 'hidden',
+  };
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Threshold values as needed
+    const threshold = 50;
+
+    // Check the scroll position and update animation states
+    this.animationStates.enterFromTop = window.scrollY > threshold ? 'visible' : 'hidden';
+    this.animationStates.enterFromLeft = window.scrollY > threshold ? 'visible' : 'hidden';
+    this.animationStates.enterFromLeft2 = window.scrollY > threshold ? 'visible' : 'hidden';
   }
 }

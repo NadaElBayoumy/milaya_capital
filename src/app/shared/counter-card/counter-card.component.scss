@@ -7,11 +7,19 @@
     }
     .col-counter-num{
         max-width: 30%;
+        font-weight: 600;
+        line-height: 61px;
+        font-size: $h1-font;
+        margin-left: 20px;
     }
     .col-counter-desc{
         margin-top: auto;
         margin-bottom: auto;
         font-size: $s-font;
+        font-weight: 500;
+        line-height: 23px;
+        font-size: $h2-font;
+        margin: 0px 50px;
 
     }
 }

@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,HostListener} from '@angular/core';
 import * as L from 'leaflet';
-import { fadeInFromTop } from '../../animations';
+import { enterFromTop } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-contact-map',
   templateUrl: './contact-map.component.html',
   styleUrls: ['./contact-map.component.scss'],
-  animations: [fadeInFromTop],
+  animations: [enterFromTop],
 })
 export class ContactMapComponent implements OnInit {
   isMobile: boolean = false;
@@ -43,5 +43,22 @@ export class ContactMapComponent implements OnInit {
       .bindPopup('Milaya Capital');
       // .openPopup();
 
+  }
+
+  
+  //For Animations on Scroll
+  animationStates = {
+    enterFromTop: 'hidden',
+    enterFromTop1: 'hidden',
+    enterFromTop2: 'hidden'
+  };
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Threshold values as needed
+    const threshold = 50;
+
+    // Check the scroll position and update animation states
+    this.animationStates.enterFromTop = window.scrollY > threshold ? 'visible' : 'hidden';
   }
 }

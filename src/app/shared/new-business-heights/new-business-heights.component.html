@@ -1,11 +1,11 @@
 <!-- New business heights section  -->
 <div class="new-business-heights container" [ngClass]="{'mobile':isMobile}" >
     <div class="box">
-        <span class="breadcrumb" [@slideLeftToRight]>MILAYA CAPITAL</span>
-        <h1 class="black" [@slideLeftToRight]>New Business Heights</h1>
+        <span class="breadcrumb" [@enterFromLeft]="animationStates.enterFromLeft" >MILAYA CAPITAL</span>
+        <h1 class="black" [@enterFromLeft]="animationStates.enterFromLeft" >New Business Heights</h1>
     </div>
     <div class="box">
-        <h2 class="grey-p" [@fadeInFromTop]>
+        <h2 class="grey-p" [@enterFromTop]="animationStates.enterFromTop" >
             We are at the highest levels by developing it with the best options. We serve with many experienced
             employees in this field.
         </h2>

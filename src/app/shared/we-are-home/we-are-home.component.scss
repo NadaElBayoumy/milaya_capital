@@ -2,7 +2,8 @@
 
 .we-are-home {
     position: relative;
-    margin: 0px 65px 24px 24px;
+    margin-right: calc(var(--bs-gutter-x) * 1.5);
+    margin-left: calc(var(--bs-gutter-x) * 3);
 
     .we-are-left-div {
         padding: 50px 30px 30px 30px;
@@ -60,6 +61,10 @@
         margin: 0px 25px 24px 24px;
     }
 
+}
+
+.we-are-right-img{
+    z-index: 1;
 }
 
 .we-are-home.mobile {

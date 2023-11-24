@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { slideInFromRight, fadeInFromRight, fadeInFromTop1, slideInFromRight2, } from '../../animations';
+import { Component,HostListener } from '@angular/core';
+import {slideInFromRight,fadeInFromRight,fadeInFromTop1,slideInFromRight2 } from '../../animations';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss'],
-  animations: [slideInFromRight, fadeInFromRight, fadeInFromTop1, slideInFromRight2],
+  animations: [slideInFromRight,fadeInFromRight,fadeInFromTop1,slideInFromRight2],
 })
 export class ContactFormComponent {
   contactForm: FormGroup;
@@ -42,5 +42,4 @@ export class ContactFormComponent {
       this.contactForm.reset();
     }
   }
-
 }

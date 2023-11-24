@@ -1,18 +1,18 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef,HostListener } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { enterFromBottom,slideLeftToRight } from '../../animations';
+import { enterFromBottom,enterFromLeft } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-heights-slider',
   templateUrl: './heights-slider.component.html',
   styleUrls: ['./heights-slider.component.scss'],
-  animations: [enterFromBottom,slideLeftToRight]
+  animations: [enterFromBottom,enterFromLeft]
 })
 export class HeightsSliderComponent implements AfterViewInit {
   title = 'heights';
   currentSlide = 0;
-
+  isAnimationVisible = false;
   isMobile: boolean = false;
   
   constructor(private el: ElementRef,private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
@@ -55,4 +55,10 @@ export class HeightsSliderComponent implements AfterViewInit {
     return "animation-slideInFromBottom-" + index;
   }
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Threshold values as needed
+    const threshold = 1200;
+    this.isAnimationVisible = window.scrollY > threshold ? true : false;
+  }
 }

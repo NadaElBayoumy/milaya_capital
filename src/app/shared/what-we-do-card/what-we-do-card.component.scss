@@ -1,13 +1,10 @@
 @import '../../../variables';
 .what-we-do-card {
     position: relative;
-    
-    
-    padding: 50px;
+    padding: 40px 25px 20px 25px;
     @media screen and (max-width: 900px) {
         padding: 20px;
     }
-
 
     .what-we-do-title {
         color: $white;
@@ -16,8 +13,6 @@
         font-weight: 700;
         font-size: $h2-font;
         line-height: 24px;
-
-        
     }
 
     .what-we-do-desc {
@@ -42,12 +37,4 @@
     margin: 0px 40px;
     border: 1px solid $white; 
     border-radius: 20px;
-    // border-image: linear-gradient(to bottom, #D9D9D9, rgba(0, 0, 0, 0) 100%);
-    // border-image-slice: 1;
 }
-
-
-// .mobile.what-we-do-card.portfolio{
-//     background: none;
-//     border: none;
-// }

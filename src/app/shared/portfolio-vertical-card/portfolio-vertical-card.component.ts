@@ -4,12 +4,12 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 import { slideFromLeft, slideFromRight} from '../../animations';
 @Component({
-  selector: 'app-portfolio-card',
-  templateUrl: './portfolio-card.component.html',
-  styleUrls: ['./portfolio-card.component.scss'],  
+  selector: 'app-portfolio-vertical-card',
+  templateUrl: './portfolio-vertical-card.component.html',
+  styleUrls: ['./portfolio-vertical-card.component.scss'],  
   animations: [    slideFromLeft ,slideFromRight  ],
 })
-export class PortfolioCardComponent {
+export class PortfolioVerticalCardComponent {
   @Input() imageWay!: string;
 
   

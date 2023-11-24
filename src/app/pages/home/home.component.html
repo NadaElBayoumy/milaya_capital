@@ -1,17 +1,16 @@
-
-
 <!-- Home Page -->
-<div class="home"  [ngClass]="{'mobile':isMobile}" >
+<div class="home" [ngClass]="{'mobile':isMobile}">
     <div class="first-bg">
         <div class="poster-container">
             <div class="small-spacer-div" *ngIf="!isMobile"></div>
             <app-main-poster></app-main-poster>
             <div class="spacer-div"></div>
         </div>
+
         <div class="container">
-            <!-- [@fadeInFromTop] -->
-            <span class="breadcrumb"  [@scrollAnimation]="animationState" >ABOUT COMPANY</span>
-            <h1 [@enterFromLeft]>We are the magic behind the company’s best days. </h1>
+
+            <span class="breadcrumb" [@fadeInFromTop]>ABOUT COMPANY</span>
+            <h1 [@enterFromLeft0]>We are the magic behind the company’s best days. </h1>
             <div class="spacer-div"></div>
         </div>
         <div class="we-are-div">
@@ -21,9 +20,10 @@
     </div>
 
     <div class="second-bg">
-        <div class="container">
-            <span class="breadcrumb" [@fadeInFromLeft]> WHAT WE DO</span>
-            <h1 class="grey" [@fadeInFromLeft2]>Milaya Capital’s vision is to create a better tomorrow for the
+        <div class="container first">
+            <span class="breadcrumb" [@enterFromLeft]="animationStates.enterFromLeft"> WHAT WE DO</span>
+            <h1 class="grey" [@enterFromLeft2]="animationStates.enterFromLeft2">Milaya Capital’s vision is to create a
+                better tomorrow for the
                 generations to come. A world
                 where we can
                 live in
@@ -47,18 +47,19 @@
     </div>
 
     <div class="fourth-bg">
+        <div class="spacer-div"></div>
         <app-why-choose></app-why-choose>
+        <div class="spacer-div"></div>
         <app-clients></app-clients>
     </div>
 
 
     <div class="fifth-bg">
-        <div class="layer-light-squares"> </div>
-        <div class="spacer-div"></div>
-
+        <!-- <div class="layer-light-squares"> </div> -->
         <div class="media">
             <app-media [mediaType]="'video'"
-                [mediaURL]="'https://player.vimeo.com/video/332079621?h=b8ef07fa3b&color=dedede&title=0&byline=0&portrait=0'"></app-media>
+                [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
+
         </div>
     </div>
 

@@ -1,5 +1,27 @@
 @import '../../../variables';
 
+.portfolio-vertical-card {
+  
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: $dark-grey;
+
+    // width: calc(26.7% - 10px);
+    .text-side {
+        color: $white;
+        font-size: $s-font;
+    }
+
+    .image-side {
+        height: auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+
 .portfolio-card {
     width: 70%;
 
@@ -59,21 +81,17 @@
     margin-right: auto;
 }
 
-.portfolio-card.mobile,.portfolio-card.top-card {
+.portfolio-card.mobile,
+.portfolio-card.top-card {
     margin-bottom: 20px;
+
     .left {
         .image-side {
             img {
                 float: none;
             }
         }
-
         display: block;
-
-        // .image-side,
-        // .text-side {
-        //     // display: block;
-        // }
     }
 
     app-what-we-do-card.portfolio {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CounterCardComponent {
   isMobile: boolean = false;
+  @Input() number!: string;
+  @Input() text!: string;
   
   constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {

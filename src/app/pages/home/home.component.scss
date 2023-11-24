@@ -7,14 +7,13 @@
         background: $light-grey;
         overflow: hidden;
         position: relative;
-        
     }
 
     .second-bg {
         position: relative;
         background: $black url(../../../assets/background-squares.svg ) center / cover;
         padding-top: 50px;
-
+        margin-top: -10%; // to make the image over the bottom background
         h1.grey {
             padding-right: 60px;
             margin-bottom: 60px;
@@ -23,32 +22,40 @@
             font-size: $l-font;
             line-height: 48px;
         }
+        .container.first{
+            margin-top: 10%; // to compensate the -10% margin for the black background
+        }
     }
 
-    
+
+    .second-bg::before {
+        
+    }
+
+
     .fifth-bg {
         position: relative;
         background: url(../../../assets/background-squares-light.svg ) center / cover;
-        
+
     }
 
-    .third-bg{
+    .third-bg {
         position: relative;
         // background: url(../../../assets/footer-bg.png) center / cover repeat-y;
-        
     }
 
 
-    .third-bg::before{
+    .third-bg::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 95%;
-        background: url(../../../assets/footer-bg.png) center / cover repeat-y;
+        // background: url(../../../assets/footer-bg.png) center / cover repeat-y;
+        background: url(../../../assets/home-bg-squares.svg) center / cover repeat-y;
         z-index: 0;
-        transform: rotate(180deg);
+        // transform: rotate(180deg);
     }
 
     app-we-are-home {
@@ -58,6 +65,7 @@
     .Milaya-bg-img {
         img {
             width: 100%;
+            margin-top: -8%;
         }
     }
 
@@ -94,10 +102,6 @@
         line-height: 18px;
         font-weight: 500;
     }
-
-
-
-
 }
 
 
@@ -114,6 +118,7 @@
 
     .first-bg {
         position: relative;
+
         h1 {
             font-weight: 700;
             font-size: $h3-font;
@@ -125,11 +130,14 @@
         position: relative;
         background: url(../../../assets/footer-bg.png) center / cover repeat-y;
     }
+
     .third-bg::before {
         content: none;
     }
+
     .second-bg {
         position: relative;
+
         h1.grey {
             font-weight: 700;
             font-size: $md-font-p !important;
@@ -145,6 +153,7 @@
 
     .fifth-bg {
         position: relative;
+
         .media {
             margin: 10px;
         }
@@ -159,4 +168,4 @@
     // transform: translateY(-50px);
     // /* Define transition for smoother animation */
     // transition: opacity 0.5s, transform 0.5s;
-  }
+}

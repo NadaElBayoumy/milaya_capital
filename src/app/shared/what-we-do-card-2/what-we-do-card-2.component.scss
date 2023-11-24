@@ -1,9 +1,9 @@
 @import '../../../variables';
+
 .what-we-do-card2 {
     position: relative;
-    
-    
     padding: 50px;
+
     @media screen and (max-width: 900px) {
         padding: 20px;
     }
@@ -17,7 +17,7 @@
         font-size: $h2-font;
         line-height: 24px;
 
-        
+
     }
 
     .what-we-do-desc {
@@ -31,17 +31,28 @@
     }
 }
 
-.what-we-do-card2.left-align{
-    .what-we-do-title,.what-we-do-desc{
+.what-we-do-card2.left-align {
+
+    .what-we-do-title,
+    .what-we-do-desc {
         text-align: left;
     }
 }
 
-.mobile.what-we-do-card2{
+.what-we-do-card2.top-align {
+    padding: 20px;
+    .what-we-do-title,
+    .what-we-do-desc {
+        text-align: left;
+    }
+}
+
+.mobile.what-we-do-card2 {
     background: none;
     border: none;
-    .top-right-img{
-        img{
+
+    .top-right-img {
+        img {
             width: 50%;
         }
     }

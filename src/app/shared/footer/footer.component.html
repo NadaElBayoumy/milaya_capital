@@ -2,17 +2,19 @@
 <div class="container footer" [ngClass]="{'mobile':isMobile}">
     <div class="f-col">
         <div>
-            <img class="footer-logo" src="assets/logo-footer.svg" alt="logo" [@fadeInFromTop]>
-            <p class="footer-description" [@fadeInFromRight]>
+            <img class="footer-logo" src="assets/logo-footer.svg" alt="logo"
+                [@enterFromTop]="animationStates.enterFromTop">
+            <p class="footer-description" [@enterFromTop]="animationStates.enterFromTop">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod
             </p>
             <div class="wrap-email-sm" *ngIf="!isMobile">
-                <div class="input-group mb-3 footer-input" [@fadeInFromBottom]>
+                <div class="input-group mb-3 footer-input" [@enterFromTop2]="animationStates.enterFromTop">
                     <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                         aria-label="Email" aria-describedby="basic-addon1">
                     <div class="input-group-append">
-                        <span class="input-group-text" (click)="onSendMail()"> <i class="bi bi-arrow-up-right"></i> </span>
+                        <span class="input-group-text" (click)="onSendMail()"> <i class="bi bi-arrow-up-right"></i>
+                        </span>
                     </div>
                 </div>
 
@@ -20,48 +22,56 @@
                     Email is not in a valid format
                 </div>
 
+                <div class="spacer-div"></div>
                 <!-- <p class="error">please enter valid email</p> -->
 
                 <div class="social-media-wrapper">
-                    <img src="../../../assets/social-media-insta.svg" alt="insta" [@fadeInFromBottom1]>
-                    <img src="../../../assets/social-media-x.svg" alt="x" [@fadeInFromBottom2]>
-                    <img src="../../../assets/social-media-fb.svg" alt="fb" [@fadeInFromBottom3]>
+                    <img src="../../../assets/social-media-insta.svg" alt="insta"
+                        [@enterFromRight]="animationStates.enterFromRight">
+                    <img src="../../../assets/social-media-x.svg" alt="x"
+                        [@enterFromRight]="animationStates.enterFromRight">
+                    <img src="../../../assets/social-media-fb.svg" alt="fb"
+                        [@enterFromRight]="animationStates.enterFromRight">
                 </div>
+
+                <p class="footer-copy-rights" [@enterFromRight2]="animationStates.enterFromRight2"
+                    [ngClass]="{'mobile':isMobile}">
+                    Copyright © 2023 Milaya Capital All Rights Reserved
+                </p>
             </div>
         </div>
 
 
     </div>
     <div class="m-col"></div>
-    <div class="s-col" [@fadeInFromBottom]>
-        <div class="row">
-            <div class="col quick-links">
-                <h4 class="title">Company</h4>
+    <div class="s-col">
+        <div class="quick-links">
+            <h4 class="title" [@enterFromTop]="animationStates.enterFromTop">Company</h4>
 
-                <p class="grey-p-small" [routerLink]="'/about'">About Us</p>
-                <p class="grey-p-small" [routerLink]="'/mission'">Mission and Vision</p>
-                <p class="grey-p-small" [routerLink]="'/portfolio'">Portfolio</p>
-
-
+            <p class="grey-p-small" [routerLink]="'/about'" [@enterFromTop2]="animationStates.enterFromTop2">About Us
+            </p>
+            <p class="grey-p-small" [routerLink]="'/mission'" [@enterFromTop3]="animationStates.enterFromTop3">Mission
+                and Vision</p>
+            <p class="grey-p-small" [routerLink]="'/portfolio'" [@enterFromTop3]="animationStates.enterFromTop3">
+                Portfolio</p>
+        </div>
+        <div class="get-in-touch">
+            <h4 class="title" [@enterFromTop]="animationStates.enterFromTop">Get In Touch</h4>
+            <div class="email" [@enterFromTop2]="animationStates.enterFromTop2">
+                <p class="grey-p-small">Email</p>
+                <p class="black-p-small"> {{ 'info@milayacapital.ae' }} </p>
             </div>
-            <div class="col get-in-touch">
-                <h4 class="title">Get In Touch</h4>
-                <div class="email">
-                    <p class="grey-p-small">Email</p>
-                    <p class="black-p-small"> {{ 'info@milayacapital.ae' }} </p>
-                </div>
-                <div class="address">
-                    <p class="grey-p-small">Address</p>
-                    <p class="black-p-small">Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE</p>
-                </div>
+            <div class="address" [@enterFromTop3]="animationStates.enterFromTop3">
+                <p class="grey-p-small">Address</p>
+                <p class="black-p-small">Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE</p>
             </div>
         </div>
     </div>
 
-    <div class="f-col">
+    <div class="f-col" *ngIf="isMobile">
 
-        <div class="wrap-email-sm" *ngIf="isMobile">
-            <div class="input-group mb-3 footer-input" [@fadeInFromBottom]>
+        <div class="wrap-email-sm" >
+            <div class="input-group mb-3 footer-input" [@enterFromTop]="animationStates.enterFromTop">
                 <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                     aria-label="Email" aria-describedby="basic-addon1">
                 <div class="input-group-append">
@@ -76,16 +86,20 @@
             <!-- <p class="error">please enter valid email</p> -->
 
             <div class="social-media-wrapper">
-                <img src="../../../assets/social-media-insta.svg" alt="insta" [@fadeInFromBottom1]>
-                <img src="../../../assets/social-media-x.svg" alt="x" [@fadeInFromBottom2]>
-                <img src="../../../assets/social-media-fb.svg" alt="fb" [@fadeInFromBottom3]>
+                <img src="../../../assets/social-media-insta.svg" alt="insta"
+                    [@enterFromRight]="animationStates.enterFromRight">
+                <img src="../../../assets/social-media-x.svg" alt="x"
+                    [@enterFromRight]="animationStates.enterFromRight">
+                <img src="../../../assets/social-media-fb.svg" alt="fb"
+                    [@enterFromRight]="animationStates.enterFromRight">
             </div>
+            <p class="footer-copy-rights" [@enterFromRight2]="animationStates.enterFromRight2"
+                [ngClass]="{'mobile':isMobile}">
+                Copyright © 2023 Milaya Capital All Rights Reserved
+            </p>
         </div>
 
     </div>
 
 
 </div>
-<p class="container footer-copy-rights" [@fadeInFromBottom] [ngClass]="{'mobile':isMobile}">
-    Copyright © 2023 Milaya Capital All Rights Reserved
-</p>

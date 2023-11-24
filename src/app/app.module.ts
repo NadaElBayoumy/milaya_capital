@@ -42,6 +42,7 @@ import { MobileNavbarComponent } from './shared/mobile-navbar/mobile-navbar.comp
 import { WhatWeDoCard2Component } from './shared/what-we-do-card-2/what-we-do-card-2.component';
 import { MilayaService } from './milaya.service';
 import { PortfolioPageSliderComponent } from './shared/portfolio-page-slider/portfolio-page-slider.component';
+import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card/portfolio-vertical-card.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { PortfolioPageSliderComponent } from './shared/portfolio-page-slider/por
     MobileNavbarComponent,
     WhatWeDoCard2Component,
     PortfolioPageSliderComponent,
+    PortfolioVerticalCardComponent,
 
   ],
   imports: [

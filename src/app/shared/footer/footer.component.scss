@@ -17,6 +17,7 @@
 
     .s-col {
         flex: 3;
+        display: flex;
     }
 
     .text-danger {
@@ -84,6 +85,7 @@
 
 
     .quick-links {
+        flex: 2;
         h4.title {
             font-size: $h2-font ;
             font-weight: 600;
@@ -102,6 +104,7 @@
     }
 
     .get-in-touch {
+        flex: 4;
         h4.title {
             font-size: $h2-font ;
             font-weight: 600;
