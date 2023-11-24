@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { slideFromTop,fadeInFromRight,fadeInFromTop1,fadeInFromLeft} from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-portfolio-detail-card',
   templateUrl: './portfolio-detail-card.component.html',

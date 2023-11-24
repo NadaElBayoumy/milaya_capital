@@ -1,12 +1,18 @@
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
-  (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <img src="https://picsum.photos/536/354?{{slide}}" alt="" width="100%">
-  </div>
-</ngx-slick-carousel>
-
-
-<button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button>
+<div class="portfolio-slider" [@fadeInFromTop1] [ngClass]="{'mobile':isMobile}">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides;let i = index;" class="slide">
+      <div class="portfolio-card">
+        <div class="portfolio-card-image">
+          <img alt="portfolio" [src]="slide.img">
+        </div>
+        <p class="portfolio-card-title">
+          {{slide.title}}
+        </p>
+        <p class="portfolio-card-desc">
+          {{slide.descr}}
+        <p>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</div>

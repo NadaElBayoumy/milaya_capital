@@ -3,6 +3,10 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { fadeInFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+
+
 @Component({
   selector: 'app-portfolio-page-slider',
   templateUrl: './portfolio-page-slider.component.html',
