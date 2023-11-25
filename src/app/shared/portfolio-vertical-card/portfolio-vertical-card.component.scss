@@ -1,17 +1,13 @@
 @import '../../../variables';
 
 .portfolio-vertical-card {
-  
     border-radius: 20px;
     box-sizing: border-box;
     background-color: $dark-grey;
-
-    // width: calc(26.7% - 10px);
     .text-side {
         color: $white;
         font-size: $s-font;
     }
-
     .image-side {
         height: auto;
         img {
@@ -20,7 +16,9 @@
     }
 }
 
-
+.portfolio-vertical-card:hover{
+    opacity: 0.8 !important;
+}
 
 .portfolio-card {
     width: 70%;

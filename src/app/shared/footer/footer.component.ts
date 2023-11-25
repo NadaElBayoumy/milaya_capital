@@ -27,8 +27,11 @@ export class FooterComponent {
     else if (this.router?.url == "/about") {
       this.threshold = 2100;
     }
-    else if (this.router?.url == "/mission") {
+    else if (this.router?.url == "/mission" && !this.isMobile) {
       this.threshold = 1400;
+    }
+    else if (this.router?.url == "/mission" && this.isMobile) {
+      this.threshold = 1000;
     }
     else if (this.router?.url == "/portfolio") {
       this.threshold = 600;

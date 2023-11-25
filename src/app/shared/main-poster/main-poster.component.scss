@@ -97,7 +97,9 @@
 
 .mobile-poster.main-poster {
     background: none;
-    background-image: url('../../../assets/main-poster-mobile.svg') !important;
+    // background-image: url('../../../assets/main-poster-mobile.svg') !important;
+    background: url('../../../assets/main-poster-mobile.svg')  no-repeat center center/cover !important;
+
     border-radius: 0px ;
 
     .main-desc {

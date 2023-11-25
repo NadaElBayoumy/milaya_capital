@@ -1,17 +1,13 @@
 <!-- Home Page -->
 <div class="home" [ngClass]="{'mobile':isMobile}">
-
-
     <div class="first-bg">
         <div class="poster-container">
-            
             <div class="small-spacer-div" *ngIf="!isMobile"></div>
             <app-main-poster></app-main-poster>
             <div class="spacer-div" *ngIf="!isMobile"></div>
         </div>
 
         <div class="container about-com">
-
             <span class="breadcrumb" [@fadeInFromTop]>ABOUT COMPANY</span>
             <h1 [@enterFromLeft0]>We are the magic behind the company’s best days. </h1>
             <div class="spacer-div"></div>
@@ -46,13 +42,13 @@
     <div class="third-bg">
         <div class="spacer-div"></div>
         <app-new-business-heights></app-new-business-heights>
-        <div class="spacer-div"></div>
+        <div class="spacer-div" *ngIf="!isMobile"></div>
     </div>
 
     <div class="fourth-bg">
         <div class="spacer-div"></div>
         <app-why-choose></app-why-choose>
-        <div class="spacer-div"></div>
+        <div class="spacer-div" *ngIf="!isMobile"></div>
         <app-clients></app-clients>
     </div>
 

@@ -21,6 +21,10 @@
         font-size: $s-font ;
         line-height: 18px ;
         font-weight: 600 ;
+
+        @media screen and (max-width: 800px) {
+            padding:5px !important;
+        }
     }
 
     .navbar a.active {
@@ -37,9 +41,18 @@
         width: 148px ;
         border-radius: 47px;
         height: 40px;
+ 
+        @media screen and (max-width: 800px) {
+            width: 100px !important;
+        }
+
     }
     .logo-img{
         cursor: pointer;
+        
+        @media screen and (max-width: 800px) {
+            width: 100px !important;
+        }
     }
 }
 

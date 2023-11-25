@@ -374,3 +374,65 @@ app-footer::before {
         text-align: center;
     }
 }
+
+
+
+.portfolio-slider {
+    .slick-slider {
+        position: relative;
+
+        .nxt,
+        .prv {
+            width: 7vh;
+            height: 7vh;
+            border-radius: 15px;
+            border: 1px solid rgba(128, 128, 128, 0.1411764706);
+            box-shadow: 0 0 10px $white;
+            background: $white;
+            margin: 10px;
+            position: absolute;
+            top: 40%;
+            z-index: 1;
+        }
+
+        .nxt::before,
+        .prv::before {
+            font-family: 'slick';
+            font-size: 20px;
+            line-height: 1;
+            opacity: .75;
+            margin: 12px;
+            color: $placeholder-grey;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            border: 1px solid $placeholder-grey;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .prv {
+            left: 15px !important;
+        }
+
+        .nxt {
+            right: 15px !important;
+        }
+
+        .slick-slide[aria-hidden="true"] {
+            opacity: 0.5;
+        }
+
+    }
+}
+
+.mission-card.mobile {
+    .mission-card-image {
+        img {
+            width: 90%;
+        }
+    }
+
+    .owl-next {
+        right: 10px;
+    }
+}

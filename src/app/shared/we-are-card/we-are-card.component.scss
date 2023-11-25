@@ -35,7 +35,9 @@
         }
 
         h1 {
-            font-weight: bolder;
+            font-weight: 700;
+            line-height: 30px;
+            font-size: $contact-tit;
         }
     }
 
@@ -70,6 +72,21 @@
             line-height: 22px;
             font-size: $p-font ;
         }
+    }
+
+    .tit-div{
+        h1 {
+            font-weight: 700;
+            line-height: 30px;
+            font-size: $contact-tit ;
+        }
+        p {
+            font-size: $p-font !important ;
+            line-height: 17px !important;
+        }
+    }
+    .contact-btn{
+        border-radius: 0px;
     }
 
 }

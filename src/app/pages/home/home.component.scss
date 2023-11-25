@@ -7,14 +7,16 @@
         background: $light-grey;
         overflow: hidden;
         position: relative;
-        
+
     }
 
     .second-bg {
         position: relative;
         background: $black url(../../../assets/background-squares.svg ) center / cover;
         padding-top: 50px;
-        margin-top: -10%; // to make the image over the bottom background
+        margin-top: -10%;
+
+
         h1.grey {
             padding-right: 60px;
             margin-bottom: 60px;
@@ -23,15 +25,14 @@
             font-size: $l-font;
             line-height: 48px;
         }
-        .container.first{
-            margin-top: 10%; // to compensate the -10% margin for the black background
+
+        .container.first {
+            margin-top: 10%;
         }
     }
 
 
-    .second-bg::before {
-        
-    }
+    .second-bg::before {}
 
 
     .fifth-bg {
@@ -128,7 +129,7 @@
             line-height: 23px;
         }
 
-        .about-com{
+        .about-com {
             margin-top: 20px;
             position: relative;
             z-index: 3;
@@ -146,17 +147,22 @@
 
     .second-bg {
         position: relative;
-
+        margin-top: -90px;
+        .breadcrumb{
+            margin: 10px;
+        }
         h1.grey {
             font-weight: 700;
             font-size: $md-font-p !important;
             line-height: 21px;
+            margin: 10px;
         }
     }
 
     .we-are-div {
         position: relative;
         z-index: 2;
+
         app-we-are-home {
             flex-direction: column;
         }

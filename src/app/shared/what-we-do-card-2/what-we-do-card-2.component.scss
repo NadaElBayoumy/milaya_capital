@@ -22,6 +22,11 @@
 
     .what-we-do-desc {
         text-align: center;
+        color: $portfolio-p;
+        font-weight: 600;
+        font-size: $s-font !important;
+        line-height: 23px !important;
+
     }
 
     .top-right-img {
@@ -40,10 +45,17 @@
 }
 
 .what-we-do-card2.top-align {
-    padding: 20px;
+    padding: 35px;
+
     .what-we-do-title,
     .what-we-do-desc {
         text-align: left;
+    }
+
+    .what-we-do-desc {
+        font-weight: 600;
+        font-size: $p-portfolio !important;
+        line-height: 20px !important;
     }
 }
 
@@ -55,5 +67,17 @@
         img {
             width: 50%;
         }
+    }
+
+    .what-we-do-title {
+        font-weight: 600;
+        font-size: $h2-font !important;
+        line-height: 24px !important;
+    }
+
+    .what-we-do-desc {
+        font-weight: 600;
+        font-size: $p-font-sm !important ;
+        line-height: 19px !important;
     }
 }

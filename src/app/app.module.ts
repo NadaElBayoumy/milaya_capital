@@ -43,6 +43,7 @@ import { WhatWeDoCard2Component } from './shared/what-we-do-card-2/what-we-do-ca
 import { MilayaService } from './milaya.service';
 import { PortfolioPageSliderComponent } from './shared/portfolio-page-slider/portfolio-page-slider.component';
 import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card/portfolio-vertical-card.component';
+import { ContactMobileMapComponent } from './shared/contact-mobile-map/contact-mobile-map.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card
     WhatWeDoCard2Component,
     PortfolioPageSliderComponent,
     PortfolioVerticalCardComponent,
+    ContactMobileMapComponent,
   ],
   imports: [
     BrowserAnimationsModule,

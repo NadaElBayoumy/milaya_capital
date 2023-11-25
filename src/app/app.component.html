@@ -1,5 +1,7 @@
 <div class="window" [ngClass]="{'mobile': isMobile}">
-    <app-navbar *ngIf="showNavbar && !isMobile"></app-navbar>
+    <div class="container">
+        <app-navbar *ngIf="showNavbar && !isMobile"></app-navbar>
+    </div>
     <app-mobile-navbar *ngIf="showNavbar && isMobile"></app-mobile-navbar>
     <router-outlet name="primary"></router-outlet>
 </div>

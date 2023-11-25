@@ -1,11 +1,14 @@
 @import '../../../variables';
+
 .new-business-heights {
-    h1{
+    h1 {
         z-index: 1;
         width: 92%;
     }
+
     display: flex;
     align-items: flex-end;
+
     .box {
         flex: 1;
         padding: 20px;
@@ -14,18 +17,20 @@
         &:first-child {
             margin-right: 10px;
         }
+
         &:last-child {
             margin-right: 10px;
+
             &:after {
                 content: '';
                 display: block;
                 height: 1px;
                 background-color: $mid-grey;
-                margin-top: 10px; 
+                margin-top: 10px;
             }
         }
 
-        .grey-p{
+        .grey-p {
             color: $mid-grey;
             font-weight: 500 !important;
             line-height: 24px !important;
@@ -34,6 +39,17 @@
     }
 }
 
-.mobile.new-business-heights{
+.mobile.new-business-heights {
+    h1 {
+        font-weight: 700;
+        font-size: $h3-font !important ;
+        line-height: 26px !important;
+    }
+    .grey-p{
+        font-weight: 500;
+        font-size: $p-font !important;
+        line-height: 17px !important;
+    }
+
     display: block;
 }

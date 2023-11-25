@@ -3,7 +3,8 @@
     position: relative;
     padding: 40px 25px 20px 25px;
     @media screen and (max-width: 900px) {
-        padding: 20px;
+        padding: 5px;
+        margin: 5px;
     }
 
     .what-we-do-title {
@@ -37,4 +38,5 @@
     margin: 0px 40px;
     border: 1px solid $white; 
     border-radius: 20px;
+    padding: 25px;
 }

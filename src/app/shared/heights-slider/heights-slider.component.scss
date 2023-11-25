@@ -6,6 +6,7 @@
     .heights-slider-card {
         margin-right: 15px;
         border: 1px solid #D9D9D9;
+
         .icon-height-slider-card {
             i {
                 color: $white;
@@ -35,7 +36,7 @@
             font-weight: 600;
             font-size: $p-font-sm;
             line-height: 15px;
-            
+
         }
 
         .heights-slider-card-image {
@@ -55,7 +56,7 @@
             padding: 0px 10px 10px 10px;
             min-height: 290px;
 
-            .read-more{
+            .read-more {
                 cursor: pointer;
             }
         }
@@ -70,9 +71,30 @@
     }
 }
 
-.mobile{
-    .heights-slider-card{
+.mobile {
+    .heights-slider-card {
         margin-right: 0px;
         background: $light-grey !important;
+        margin: 15px;
+
+        .data-container {
+            margin: 25px;
+        }
+
+        .icon-height-slider-card {
+            i {
+                transform: translate(-10%, -120%) !important;
+            }
+        }
+    }
+
+    .heights-slider-card-title {
+        font-size: $s-font !important;
+        line-height: 18px !important;
+    }
+
+    .heights-slider-card-description {
+        font-size: $p-font-sm !important;
+        line-height: 20px I !important;
     }
 }

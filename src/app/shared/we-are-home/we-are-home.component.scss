@@ -61,9 +61,34 @@
         margin: 0px 25px 24px 24px;
     }
 
+    .moving-ring1 {
+        animation: moveAnimation 700ms ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    .moving-ring2 {
+        animation: moveAnimation 750ms ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    .moving-ring3 {
+        animation: moveAnimation 800ms ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes moveAnimation {
+        from {
+            transform: translate(-200px, 200px);
+        }
+
+        to {
+            transform: translate(0, 0);
+        }
+    }
+
 }
 
-.we-are-right-img{
+.we-are-right-img {
     z-index: 1;
 }
 
@@ -75,8 +100,8 @@
     }
 }
 
-.we-are-right-img.mobile{
-    img{
+.we-are-right-img.mobile {
+    img {
         width: 100%;
         margin-top: 20px;
 

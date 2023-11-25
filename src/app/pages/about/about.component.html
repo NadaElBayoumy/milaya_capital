@@ -1,5 +1,5 @@
 <!-- About Page -->
-<div class="container about"  [ngClass]="{'mobile':isMobile}" >
+<div class="container about" [ngClass]="{'mobile':isMobile}">
     <app-overview [pageTitle]="'About Us'"
         [pageOverviewText]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'"></app-overview>
     <div class="spacer-div"></div>
@@ -8,7 +8,7 @@
     <div class="spacer-div"></div>
 
     <div class="we-are-cards container">
-        <div [@enterFromTop1]="animationStates.enterFromTop1"  class="card1">
+        <div [@enterFromTop1]="animationStates.enterFromTop1" class="card1">
             <app-we-are-img-text-card [WeAreTitleCard]="'WE ARE DYNAMIC'"
                 [WeAreDescriptionCard]="'Being a dynamic, DUBAI based, venture capital business, Milaya Capital owns a portfolio of exciting brands that prosper in the local retail and property industries. Even though relatively young, Milaya Capital’s growth across different sectors has been exponential.'"></app-we-are-img-text-card>
         </div>
@@ -18,16 +18,17 @@
         </div>
     </div>
     <div>
-        <div class="spacer-div"></div>
-        <div class="counter-cards row container"  [@enterFromTop]="animationStates.enterFromTop">
-            <app-counter-card class="col counter-border" [number]="'250+'" [text]="'Clients & Partners Trusted'"></app-counter-card>
-            <app-counter-card class="col counter-border" [number]="'250'" [text]="'Awards & Winning Accquired'"></app-counter-card>
-            <app-counter-card class="col"  [number]="'250+'" [text]="'Projects Completed on 24 Countries'"></app-counter-card>
+        <div class="spacer-div" ></div>
+        <div class="spacer-div" *ngIf="!isMobile"></div>
+        <div class="counter-cards container" [@enterFromTop]="animationStates.enterFromTop">
+            <app-counter-card class="c-card counter-border" [number]="'250+'" [text]="'Clients & Partners Trusted'"></app-counter-card>
+            <app-counter-card class="c-card counter-border" [number]="'250'" [text]="'Awards & Winning Accquired'"></app-counter-card>
+            <app-counter-card class="c-card" [number]="'250+'"  [text]="'Projects Completed on 24 Countries'"></app-counter-card>
         </div>
-        <div class="spacer-div"></div>
-        <div class="divider"  [@enterFromTop]="animationStates.enterFromTop"></div>
+        <div class="spacer-div" *ngIf="!isMobile"></div>
+        <div class="divider" [@enterFromTop]="animationStates.enterFromTop"></div>
     </div>
-    <div class="spacer-div"></div>
+    <div class="spacer-div" ></div>
 
     <app-clients></app-clients>
     <div class="spacer-div"></div>

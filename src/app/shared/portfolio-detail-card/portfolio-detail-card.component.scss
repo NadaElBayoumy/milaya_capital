@@ -37,6 +37,12 @@
             top: 11%;
             left: -19%;
         }
+
+        @media screen and (max-width: 800px) {
+            height: 20%;
+            top: 3%;
+            left: -44%;
+        }
     }
 
     .text-side {

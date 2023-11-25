@@ -1,5 +1,4 @@
 import { Component, ElementRef } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { fadeInFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
@@ -36,6 +35,10 @@ export class PortfolioSliderComponent {
     centerMode: true,
     centerPadding: '60px',
     slidesToShow: 3,
+    prevArrow:'<div class=""><i class="prv bi bi-chevron-left"></i></div>',
+    nextArrow: '<div class=""><i class="nxt bi bi-chevron-right"></i></div>',
+    // prevArrow: '<button type="button" class="slick-prev"><i class="bi bi-arrow-left-square"></i></button>',
+    // nextArrow: '<button type="button" class="slick-next"><i class="bi bi-arrow-right-square"></i></i></button>',
     responsive: [
       {
         breakpoint: 768,

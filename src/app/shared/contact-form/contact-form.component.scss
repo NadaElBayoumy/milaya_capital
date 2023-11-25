@@ -72,6 +72,7 @@
 
             .icon {
                 flex: 1;
+                color: $mid-grey;
             }
 
             .content {
@@ -152,7 +153,6 @@
     display: block;
 
     .send-message-section {
-        margin-top: -20% !important;
         border-radius: 20px 0px 0px 0px;
         h2 {
             font-size: $s-font-2;

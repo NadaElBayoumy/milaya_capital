@@ -34,4 +34,12 @@
 .mobile.why-choose-card{
     background: $white;
     padding: 25px !important;
+
+    .card-choose {
+        h4.title {
+            font-size: $h2-font ;
+            line-height: 23px ;
+        }
+    }
+
 }

@@ -1,9 +1,10 @@
-
 @import '../../../variables';
 
 .mobile-nav {
     padding: 1rem;
     color: $brand;
+    margin-top: 20px;
+
     .menu-btn {
         button {
             font-size: 1.5rem;
@@ -29,14 +30,13 @@
     left: 0px;
     width: 100vw;
     height: 100vh;
-    background: url('../../../assets/MILAYA-bg.svg') 80% /contain no-repeat, url('../../../assets/squares-mobile.svg') center center / cover;
+    background: url('../../../assets/squares-mobile.svg') center center / cover;
     background-color: $mid-grey;
     z-index: 99999999 !important;
-    opacity: 1;
     display: block;
 
     ul.the-menu {
-        padding:  30px 0px ;
+        padding: 30px 0px;
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -45,6 +45,7 @@
         li {
             text-decoration: none;
             padding: 20px 20px 20px 40px;
+
             a {
                 color: $dark-grey;
                 text-decoration: none;
@@ -57,9 +58,10 @@
         li:is(:has(.active)) {
             color: $white;
             text-decoration: none;
-            background: linear-gradient(90deg, rgba(144, 146, 146, 0.79) 0%, rgba(144, 146, 146, 0) 100%),linear-gradient(90deg, #909292 2.7%, rgba(144, 146, 146, 0) 87.84%);
+            background: linear-gradient(90deg, rgba(144, 146, 146, 0.79) 0%, rgba(144, 146, 146, 0) 100%), linear-gradient(90deg, #909292 2.7%, rgba(144, 146, 146, 0) 87.84%);
             border: 2px solid;
             border-image-source: linear-gradient(172.11deg, #F7ECEC 3.29%, rgba(242, 235, 235, 0.35) 98.42%);
+
             a {
                 color: $white;
                 font-weight: 600;
@@ -84,6 +86,7 @@
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+
         img {
             display: inline-block;
             vertical-align: top;
@@ -91,16 +94,16 @@
             cursor: pointer;
         }
     }
-    
+
     .footer-copy-rights {
         margin-top: 20px;
         color: $mid-grey;
         font-size: $p-desc-port;
-        line-height: 16px ;
-        font-weight: 500 ;
+        line-height: 16px;
+        font-weight: 500;
         text-align: center;
     }
-    
+
     .divider {
         border-top: 0.5px solid $dark-grey;
         margin-top: 20px;
@@ -109,4 +112,31 @@
         margin-left: auto;
     }
 
+    .side-menu-footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+
+        .side-menu-footer-img {
+            width: 100%;
+            height: 6px;
+        }
+    }
+
+    .side-menu-footer::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        
+        //TODO Keep this line it is another option for background
+        top: -85%;
+        left: 0;
+        height: 100%;
+        background: url('../../../assets/MILAYA-mobile-bg.svg') center / contain no-repeat; 
+
+        // background: url('../../../assets/side-menu-bg2.svg') center / contain no-repeat;
+        // top: -190%;
+        // right: 0px;
+        // height: 168%;
+    }
 }
