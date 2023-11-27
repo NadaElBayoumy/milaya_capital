@@ -1,53 +1,19 @@
 <!-- Clients Page -->
-<div class="clients" [ngClass]="{'mobile':isMobile}" >
-    <span class="breadcrumb"  [@enterFromTop]="animationStates.enterFromTop" >CLIENTS</span>
-    <h1 class="black"  [@enterFromTop1]="animationStates.enterFromTop1" > Look Closer With Our Beloved Client</h1>
-
-    <div class="clients-logos"  [@enterFromLeft]="animationStates.enterFromLeft" >
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/6.svg" />
+<div class="clients" [ngClass]="{'mobile':isMobile}">
+    <span class="breadcrumb" [@enterFromTop]="animationStates.enterFromTop">CLIENTS</span>
+    <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Look Closer With Our Beloved Client</h1>
+    <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1">
+        <div ngxSlickItem *ngFor="let slide1 of slides1;let i = index;" class="slide">
+            <div class="logo-img">
+                <img [alt]="slide1.name" [src]="slide1.src" />
+            </div>
         </div>
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/7.svg" />
+    </ngx-slick-carousel>
+    <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2">
+        <div ngxSlickItem *ngFor="let slide2 of slides2;let i = index;" class="slide">
+            <div class="logo-img">
+                <img [alt]="slide2.name" [src]="slide2.src" />
+            </div>
         </div>
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/9.svg" />
-        </div>
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/8.svg" />
-        </div>
-        
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/2.svg" />
-        </div>
-      
-
-
-
-    </div>
-    <div class="clients-logos"  [@enterFromRight]="animationStates.enterFromRight" >
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/1.svg" />
-        </div>
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/2.svg" />
-        </div>
-      
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/4.svg" />
-        </div>
-        
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/5.svg" />
-        </div>
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/9.svg" />
-        </div>
-<!-- 
-
-        <div class="logo-img">
-            <img alt="logo1" src="../../../assets/3.svg" />
-        </div> -->
-
-    </div>
-
+    </ngx-slick-carousel>
+</div>

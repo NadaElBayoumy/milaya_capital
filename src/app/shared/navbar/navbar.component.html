@@ -1,12 +1,13 @@
 <!-- Main nav section works for only web not mobile  -->
-<div class="main-nav"  [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome}">
-    <img class="logo-img" *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
-    <img class="logo-img" *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
+<div class="main-nav"  [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome , 'sticky':isSticky}">
+  <img class="logo-img"  src="assets/logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
+    <!-- <img class="logo-img" *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/> -->
+    <!-- <img class="logo-img" *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/> -->
     
     <nav class="navbar">
         <a routerLink="/home" routerLinkActive="active" [@slideFromTop4]>Home</a>
-        <a routerLink="/about" routerLinkActive="active" [@slideFromTop3]>About</a>
-        <a routerLink="/mission" routerLinkActive="active" [@slideFromTop2]>Mission</a>
+        <a routerLink="/about" routerLinkActive="active" [@slideFromTop3]>About Us</a>
+        <a routerLink="/mission" routerLinkActive="active" [@slideFromTop2]>Mission & Vision</a>
         <a routerLink="/portfolio" routerLinkActive="active" [@slideFromTop1]>Portfolio</a>
   </nav>
   <button type="button" class="btn btn-primary contact-btn"  [@slideFromRight]  [routerLink]="'/contact'">Contact Us</button>

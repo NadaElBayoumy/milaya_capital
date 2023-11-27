@@ -1,6 +1,5 @@
 <div class="portfolio-slider" [@fadeInFromTop1] [ngClass]="{'mobile':isMobile}">
-  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
-    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
     <div ngxSlickItem *ngFor="let slide of slides;let i = index;" class="slide">
       <div class="portfolio-card">
         <div class="portfolio-card-image">

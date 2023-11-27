@@ -9,14 +9,14 @@
                 consectetur adipiscing elit, sed do eiusmod
             </p>
             <div class="wrap-email-sm" *ngIf="!isMobile">
-                <div class="input-group mb-3 footer-input" [@enterFromTop2]="animationStates.enterFromTop">
+                <!-- <div class="input-group mb-3 footer-input" [@enterFromTop2]="animationStates.enterFromTop">
                     <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                         aria-label="Email" aria-describedby="basic-addon1">
                     <div class="input-group-append">
                         <span class="input-group-text" (click)="onSendMail()"> <i class="bi bi-arrow-up-right"></i>
                         </span>
                     </div>
-                </div>
+                </div> -->
 
                 <div *ngIf="isEmailInvalid()" class="text-danger">
                     Email is not in a valid format
@@ -71,13 +71,13 @@
     <div class="f-col" *ngIf="isMobile">
 
         <div class="wrap-email-sm" >
-            <div class="input-group mb-3 footer-input" [@enterFromTop]="animationStates.enterFromTop">
+            <!-- <div class="input-group mb-3 footer-input" [@enterFromTop]="animationStates.enterFromTop">
                 <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                     aria-label="Email" aria-describedby="basic-addon1">
                 <div class="input-group-append">
                     <span class="input-group-text"> <i class="bi bi-arrow-up-right"></i> </span>
                 </div>
-            </div>
+            </div> -->
 
             <div *ngIf="isEmailInvalid()" class="text-danger">
                 Email is not in a valid format

@@ -2,47 +2,17 @@
 
 .portfolio-detail-card {
     display: flex;
+    position: relative;
 
     .image-side {
         flex: 1;
-        margin-left: 20px;
         position: relative;
-
-        .image-shadow {
-            margin: 0px 75px 75px 75px;
-            border-radius: 40px;
-            width: 80%;
-            float: right;
-            position: relative;
-        }
+        margin-right: 15px;
     }
 
-    .image-side::before {
-        content: "";
+    .contact-button{
         position: absolute;
-        top: 30%;
-        left: 0;
-        width: 80%;
-        height: 65%;
-        background: $shadow;
-        border-radius: 40px;
-
-        @media screen and (max-width: 1200px) {
-            top: 11%;
-            left: -8%;
-        }
-
-        @media screen and (max-width: 1000px) {
-            height: 30%;
-            top: 11%;
-            left: -19%;
-        }
-
-        @media screen and (max-width: 800px) {
-            height: 20%;
-            top: 3%;
-            left: -44%;
-        }
+        bottom: 0px;
     }
 
     .text-side {
@@ -55,24 +25,44 @@
             line-height: 37px;
         }
 
-        p.font-p {
+        p.font-p,
+        ul.font-p {
             font-size: $md-font-p;
             font-weight: 600;
             line-height: 22px;
             color: $mid-grey;
         }
 
+        ul.font-p {
+            list-style-type: none;
+            padding-left: 20px;
+
+            li:before {
+                content: '-';
+                position: absolute;
+                margin-left: -15px;
+            }
+        }
+
         .contact-btn {
             border-radius: 0px;
             height: 60px;
+
         }
     }
 
 
     .contact-details {
+        position: relative;
+        flex: 1;
+
         i {
             color: $brand;
-            padding: 0px 10px 10px 10px;
+            padding: 0px 10px 0px 10px;
+        }
+
+        i::before {
+            font-weight: 700 !important;
         }
 
         span {
@@ -80,11 +70,21 @@
             font-weight: 600;
             font-size: $s-font;
         }
+
+        .d-flex:last-child{
+            position: absolute;
+            bottom: 0px;
+        }
     }
 
     .contact-btn-col {
+        flex: 1;
+        position: relative;
+
         button {
             border-radius: 0px;
+            height: 7.4vh;
+            padding: 0px 30px;
         }
 
         cursor: pointer;
@@ -123,7 +123,8 @@
         text-align: center;
     }
 
-    p.font-p {
+    p.font-p,
+    ul.font-p {
         font-size: $p-font !important;
         line-height: 17px !important;
     }

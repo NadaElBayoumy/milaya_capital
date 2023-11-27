@@ -1,20 +1,20 @@
 <!-- Mission Page -->
 <div class="mission" [ngClass]="{'mobile':isMobile}">
     <app-overview [pageTitle]="'Mission & Vision'"
-        [pageOverviewText]="'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.   Milaya Capital is a dynamic London based venture capital business which has evolved into highly respected mastermind in diverse sectors, as per its acclaimed operations in the UK. Under our investment umbrella we cover various sectors including:'"></app-overview>
-    <div class="spacer-div"  *ngIf="!isMobile"></div>
+        [pageOverviewText]="'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.'"></app-overview>
+    <app-overview [pageOverviewText]="'Milaya Capital is a dynamic London based venture capital business which has evolved into highly respected mastermind in diverse sectors, as per its acclaimed operations in the UK. Under our investment umbrella we cover various sectors including:'"></app-overview>
+
     <div class="row">
         <app-mission-card></app-mission-card>
     </div>
 </div>
 
 
-<div class="spacer-div"  *ngIf="!isMobile"></div>
+<div class="spacer-div" *ngIf="!isMobile"></div>
 <app-clients></app-clients>
 <div class="spacer-div" *ngIf="!isMobile"></div>
 <div class="container">
-    <app-media [mediaType]="'video'"
-        [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
+    <app-media [mediaType]="'video'" [mediaURL]="'../../assets/tom_jerry.mp4'"></app-media>
 </div>
 
 <app-footer> </app-footer>

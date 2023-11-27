@@ -1,23 +1,29 @@
 <!-- Portfolio Details Card section  -->
-<div class="container portfolio-detail-card"  [ngClass]="{'mobile':isMobile}" >
-    <div class="image-side"  [@fadeInFromLeft]>
-        <img class="image-shadow" alt="img" src="../../../assets/portfolio-card.svg" >
+<div class="container portfolio-detail-card" [ngClass]="{'mobile':isMobile}">
+    <div class="image-side" [@fadeInFromLeft]>
+        <!-- <img class="image-shadow" alt="img" src="../../../assets/portfolio-card.svg"> -->
+        <!-- <img class="image-shadow" alt="img" src="../../../assets/portfolio-details-image.svg"> -->
+        <img class="image-shadow" alt="img" src="../../../assets/combinedsvg.svg">
     </div>
     <div class="text-side">
         <div>
             <h2 class="h2-font-big" [@slideFromTop]>MILAYA ENERGY</h2>
-            <p class="font-p " [@fadeInFromRight] [ngClass]="{'container':isMobile}">
+            <p class="font-p" [@fadeInFromRight] [ngClass]="{'container':isMobile}">
                 Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we
                 deliver results you can rely on to enhance productivity, optimize operations, and minimize risk
                 through
                 our advanced services in the industry.
+            </p>
 
-                -Asset Management
-                -Drilling and well Intervention Services
-                -Integrated Support
-                -Project Management
-                -Oil field Supplies services
+            <ul class="font-p" [@fadeInFromRight]>
+                <li> Asset Management </li>
+                <li> Drilling and well Intervention Services</li>
+                <li> Integrated Support</li>
+                <li> Project Management</li>
+                <li> Oil field Supplies services</li>
+            </ul>
 
+            <p class="font-p" [@fadeInFromRight] [ngClass]="{'container':isMobile}">
                 Milaya Energy will be the preferred vendor of rig equipment and materials for onshore and offshore
                 drilling in the Oil and Gas industry. Milaya Energy is more than an extension of your procurement
                 function. We work with you to create a single, unified process one that’s simple, efficient, and
@@ -25,24 +31,22 @@
             </p>
         </div>
         <div class="d-flex contact-button" [@fadeInFromTop1]>
-            <div class="spacer-div"></div>
             <div class="contact-btn-col">
                 <button type="submit" class="btn btn-primary">
                     MILAYAENERGY.COM
                     <i class="bi bi-arrow-up-right"></i>
                 </button>
-                <div class="spacer-div"></div>
             </div>
             <div class="contact-details">
                 <div class="d-flex">
                     <i class="bi bi-geo-alt bold"></i>
                     <span>Lorem ipsum dolor sit amet, 000 UAE </span>
                 </div>
+
                 <div class="d-flex">
-                    <i class="bi bi-envelope bold" ></i>
+                    <i class="bi bi-envelope bold"></i>
                     <span>info@milayacapital.ae</span>
                 </div>
-
             </div>
 
         </div>

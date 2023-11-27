@@ -221,25 +221,6 @@ export const enterFromBottomLeftToTopRight333 = trigger('enterFromBottomLeftToTo
 ]);
 
 
-// export const enterFromBottomLeftToTopRight1 = trigger('enterFromBottomLeftToTopRight1', [
-//     transition(':enter', [
-//         style({ opacity: 0, transform: 'translate(0, 100%)' }),
-//         animate('800ms ease-out', style({ opacity: 1, transform: 'translate(50%, -50%)' })),
-//     ]),
-// ]);
-// export const enterFromBottomLeftToTopRight2 = trigger('enterFromBottomLeftToTopRight2', [
-//     transition(':enter', [
-//         style({ opacity: 0, transform: 'translate(0, 90%)' }),
-//         animate('700ms ease-out', style({ opacity: 1, transform: 'translate(50%, -50%)' })),
-//     ]),
-// ]);
-// export const enterFromBottomLeftToTopRight3 = trigger('enterFromBottomLeftToTopRight3', [
-//     transition(':enter', [
-//         style({ opacity: 0, transform: 'translate(0, 80%)' }),
-//         animate('600ms ease-out', style({ opacity: 1, transform: 'translate(50%, -50%)' })),
-//     ]),
-// ]);
-
 export const enterFromBottomLeftToTopRight1 = trigger('enterFromBottomLeftToTopRight1', [
   state('start', style({
     transform: 'translate(0, 100%)' // Start position at the bottom left
@@ -454,16 +435,9 @@ export const scrollAnimation =
     ]);
 
 
-
-// export const enterFromLeft =
-//     trigger('enterFromLeft', [
-//         state('start', style({
-//             opacity: 0,
-//             transform: 'translateX(-100%)'
-//         })),
-//         state('end', style({
-//             opacity: 1,
-//             transform: 'translateX(0)'
-//         })),
-//         transition('start => end', animate('0.5s ease-in')),
-//     ]);
+export const countUp = trigger('countUp', [
+  transition(':increment', [
+    style({ opacity: 0, transform: 'translateY(-20px)' }),
+    animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+  ])
+]);

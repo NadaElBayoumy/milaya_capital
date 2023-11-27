@@ -3,9 +3,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { fadeInFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-
-
 
 @Component({
   selector: 'app-portfolio-page-slider',
@@ -43,8 +40,6 @@ export class PortfolioPageSliderComponent {
     { id: 7, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
     {},
   ];
-
-
 
   constructor(private el: ElementRef, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {

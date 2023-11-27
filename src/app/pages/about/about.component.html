@@ -18,22 +18,30 @@
         </div>
     </div>
     <div>
-        <div class="spacer-div" ></div>
+        <div class="spacer-div"></div>
         <div class="spacer-div" *ngIf="!isMobile"></div>
         <div class="counter-cards container" [@enterFromTop]="animationStates.enterFromTop">
-            <app-counter-card class="c-card counter-border" [number]="'250+'" [text]="'Clients & Partners Trusted'"></app-counter-card>
-            <app-counter-card class="c-card counter-border" [number]="'250'" [text]="'Awards & Winning Accquired'"></app-counter-card>
-            <app-counter-card class="c-card" [number]="'250+'"  [text]="'Projects Completed on 24 Countries'"></app-counter-card>
+            <app-counter-card class="c-card counter-border" [number]="250"
+                [text]="'Clients & Partners Trusted'"></app-counter-card>
+            <app-counter-card class="c-card counter-border" [number]="210"
+                [text]="'Awards & Winning Accquired'"></app-counter-card>
+            <app-counter-card class="c-card" [number]="280"
+                [text]="'Projects Completed on 24 Countries'"></app-counter-card>
         </div>
         <div class="spacer-div" *ngIf="!isMobile"></div>
         <div class="divider" [@enterFromTop]="animationStates.enterFromTop"></div>
     </div>
-    <div class="spacer-div" ></div>
-
+    <div class="spacer-div"></div>
+</div>
+<div>
     <app-clients></app-clients>
     <div class="spacer-div"></div>
-
-    <app-media [mediaType]="'video'"
-        [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media>
+</div>
+<div class="container">
+    <!-- <app-media [mediaType]="'video'"
+        [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media> -->
+    <app-media [mediaType]="'video'" [mediaURL]="'../../assets/tom_jerry.mp4'"></app-media>
 </div>
 <app-footer> </app-footer>
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5oH9Nr3bKfw?si=Tv9GV9U9hJzOdsgx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->

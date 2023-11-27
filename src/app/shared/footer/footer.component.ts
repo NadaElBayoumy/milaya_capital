@@ -25,19 +25,19 @@ export class FooterComponent {
       this.threshold = 3400;
     }
     else if (this.router?.url == "/about") {
-      this.threshold = 2100;
+      this.threshold = 1800;
     }
     else if (this.router?.url == "/mission" && !this.isMobile) {
-      this.threshold = 1400;
+      this.threshold = 1000;
     }
     else if (this.router?.url == "/mission" && this.isMobile) {
-      this.threshold = 1000;
+      this.threshold = 800;
     }
     else if (this.router?.url == "/portfolio") {
       this.threshold = 600;
     }
     else if (this.router?.url == "/contact") {
-      this.threshold = 450;
+      this.threshold = 200;
     }
 
   }
