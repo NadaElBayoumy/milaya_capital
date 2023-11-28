@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild,HostListener, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, HostListener, AfterViewInit } from '@angular/core';
 import { enterFromTop } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
@@ -18,32 +18,27 @@ export class MediaComponent implements AfterViewInit {
   isMobile: boolean = false;
   // Threshold values as needed
   threshold = 2500;
-  
+
   constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
 
-    
     if (this.router?.url == "/home") {
       this.threshold = 2500;
     }
     else if (this.router?.url == "/about") {
       this.threshold = 1000;
-    } 
+    }
     else if (this.router?.url == "/mission") {
       this.threshold = 110;
     }
-    
   }
 
   ngAfterViewInit(): void {
-   
+
   }
 
-  
-
-  
   pauseVideo(videoplayer: any) {
     if (!videoplayer || !videoplayer.nativeElement) {
       return;
@@ -65,21 +60,15 @@ export class MediaComponent implements AfterViewInit {
     }
     var playPromise = this.videoplayer.nativeElement.play();
     if (playPromise !== undefined) {
-      console.log("play promise",playPromise)
+      console.log("play promise", playPromise)
       playPromise.then((_: any) => {
         this.startedPlay = true;
         this.videoplayer.controls = true;
-        // Automatic playback started!
-        // Show playing UI.
       })
-      .catch((error:any) => {
-        console.log(error)
-        // Auto-play was prevented
-        // Show paused UI.
-      });
+        .catch((error: any) => {
+          console.log(error)
+        });
     }
-
-   
   }
 
   closebutton(videoplayer: any) {
@@ -94,28 +83,7 @@ export class MediaComponent implements AfterViewInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    
     // Check the scroll position and update animation states
     this.animationStates.enterFromTop = window.scrollY > this.threshold ? 'visible' : 'hidden';
-    // setTimeout('', 5000);
-    // this.playVideo();
-
-     // Show loading animation.
-  // var playPromise =  this.videoplayer.nativeElement.play();
-
-  // if (playPromise !== undefined) {
-  //   playPromise.then((_: any) => {
-  //     // Automatic playback started!
-  //     // Show playing UI.
-  //   })
-  //   .catch(() => {
-  //     // console.log(error)
-  //     // Auto-play was prevented
-  //     // Show paused UI.
-  //   });
-  // }
-
-
-    // this.playVideo();
   }
 }

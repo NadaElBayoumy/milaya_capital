@@ -3,11 +3,20 @@
 .home {
     background: $light-grey;
 
+    .we-are-div{
+        position: relative;
+        z-index: 2;//added
+    }
+
     .first-bg {
         background: $light-grey;
         overflow: hidden;
         position: relative;
 
+        .about-com{
+            position: relative;
+            z-index: 3; //added
+        }
     }
 
     .second-bg {
@@ -74,6 +83,7 @@
     .poster-container {
         position: relative;
         margin: 0px 20px 20px 20px;
+        z-index: 4; //added
     }
 
     h1 {

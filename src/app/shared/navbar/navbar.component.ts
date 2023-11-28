@@ -10,12 +10,23 @@ export class NavbarComponent {
   @Input() isHome!: boolean;
   @Input() isContact!: boolean;
   isSticky: boolean = false;
+  lastScrollTop = 0;
+
   constructor(private renderer: Renderer2) {
   }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    this.isSticky = window.scrollY > 100; // Adjust the scroll threshold as needed
+    this.isSticky = window.scrollY > 100; 
+    const currentScrollTop = window.scrollY;
+    
+    if (currentScrollTop < this.lastScrollTop) {
+      document.body.classList.remove('scroll-dwn');
+    } else {
+      document.body.classList.add('scroll-dwn');
+    }
+
+    this.lastScrollTop = currentScrollTop;
   }
 
 

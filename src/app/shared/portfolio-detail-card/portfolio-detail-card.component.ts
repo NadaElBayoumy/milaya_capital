@@ -18,4 +18,9 @@ export class PortfolioDetailCardComponent {
       this.isMobile = result.matches;
     });
   }
+
+  
+  navigateToExternalLink(): void {
+    window.location.href = 'http://milayaenergy.com/';
+  }
 }

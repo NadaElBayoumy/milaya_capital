@@ -1,19 +1,34 @@
 <!-- Main nav section works for only web not mobile  -->
-<div class="main-nav"  [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome , 'sticky':isSticky}">
-  <img class="logo-img"  *ngIf="isContact !== true" src="assets/Milaya-main-logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
-  <img class="logo-img"  *ngIf="isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/>
+<div class="main-nav" [ngClass]="{'contact-navbar': isContact , 'poster-navbar': isHome , 'sticky':isSticky}">
+  <ng-container *ngIf="isSticky == false">
+    <ng-container *ngIf="!isContact">
+      <img class="logo-img" src="assets/Milaya-main-logo.svg" alt="logo" [@slideFromLeft] [routerLink]="'/home'" />
+    </ng-container>
+    <ng-container *ngIf="isContact == true">
+      <img class="logo-img" src="assets/logo-light.svg" alt="logo" [@slideFromLeft] [routerLink]="'/home'" />
+    </ng-container>
+  </ng-container>
 
+  <ng-container *ngIf="isSticky == true">
+    <ng-container *ngIf="isContact == true && !isHome">
+      <img class="logo-img" src="assets/Milaya-main-logo.svg" alt="logo" [@slideFromLeft] [routerLink]="'/home'" />
+    </ng-container>
+    <ng-container *ngIf="isHome == true && !isContact">
+      <img class="logo-img" src="assets/logo-light.svg" alt="logo" [@slideFromLeft] [routerLink]="'/home'" />
+    </ng-container>
+    <ng-container *ngIf="!isHome && !isContact">
+      <img class="logo-img" src="assets/logo-light.svg" alt="logo" [@slideFromLeft] [routerLink]="'/home'" />
+    </ng-container>
+  </ng-container>
 
-    <!-- <img class="logo-img" *ngIf="isHome !== true && isContact !== true" src="assets/logo.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/> -->
-    <!-- <img class="logo-img" *ngIf="isHome == true || isContact == true" src="assets/logo-light.svg" alt="logo"  [@slideFromLeft]   [routerLink]="'/home'"/> -->
-    
-    <nav class="navbar">
-        <a routerLink="/home" routerLinkActive="active" [@slideFromTop4]>Home</a>
-        <a routerLink="/about" routerLinkActive="active" [@slideFromTop3]>About Us</a>
-        <a routerLink="/mission" routerLinkActive="active" [@slideFromTop2]>Mission & Vision</a>
-        <a routerLink="/portfolio" routerLinkActive="active" [@slideFromTop1]>Portfolio</a>
+  <nav class="navbar">
+    <a routerLink="/home" routerLinkActive="active" [@slideFromTop4]>Home</a>
+    <a routerLink="/about" routerLinkActive="active" [@slideFromTop3]>About Us</a>
+    <a routerLink="/mission" routerLinkActive="active" [@slideFromTop2]>Mission & Vision</a>
+    <a routerLink="/portfolio" routerLinkActive="active" [@slideFromTop1]>Portfolio</a>
   </nav>
-  <button type="button" class="btn btn-primary contact-btn"  [@slideFromRight]  [routerLink]="'/contact'">Contact Us</button>
-</div>
 
-  
+  <button type="button" class="btn btn-primary contact-btn" [@slideFromRight] [routerLink]="'/contact'">Contact
+    Us</button>
+
+</div>
