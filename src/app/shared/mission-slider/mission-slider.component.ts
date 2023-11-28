@@ -36,13 +36,14 @@ export class MissionSliderComponent implements AfterViewInit {
   }
 
   slides = [
-    { id: 1, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-1.svg" },
-    { id: 2, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-2.svg" },
-    { id: 3, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-3.svg" },
-    { id: 4, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-4.svg" },
-    { id: 5, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-1.svg" },
-    { id: 6, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-2.svg" },
-    { id: 7, icon: "bi bi-buildings", title: "REAL ESTATE", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-3.svg" },
+    { id: 1, icon: "bi bi-buildings", title: "F&B Management", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-1.svg" },
+    { id: 2, icon: "bi bi-buildings", title: "Real Estate", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-2.svg" },
+    { id: 3, icon: "bi bi-buildings", title: "Construction", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-3.svg" },
+    { id: 4, icon: "bi bi-buildings", title: "Retail Management", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-4.svg" },
+    { id: 5, icon: "bi bi-buildings", title: "Technology & Development", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-1.svg" },
+    { id: 6, icon: "bi bi-buildings", title: "Property Management", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-2.svg" },
+    { id: 7, icon: "bi bi-buildings", title: "Hospitality Management", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-3.svg" },
+    { id: 7, icon: "bi bi-buildings", title: "Energy Services", descr: "real estate agent, rent house, mls listings, land for sale, houses for rent, realtor", img: "../../../assets/mission-4.svg" },
   ];
  
 

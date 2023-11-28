@@ -11,10 +11,13 @@ import { slideFromLeft, slideFromRight} from '../../animations';
 })
 export class PortfolioVerticalCardComponent {
   @Input() imageWay!: string;
-
+  @Input() image!: string;
+  @Input() title!: string;
+  @Input() description!: string;
+  @Input() id!:number;
   
-  navigateToDetailsPage(id:any) {
-    this.router.navigate(['/portfolio-details',{'portfolio-id':'1'}]);
+  navigateToDetailsPage() {
+    this.router.navigate(['/portfolio-details',{'portfolio-id':this.id}]);
   }
 
   isMobile: boolean = false;

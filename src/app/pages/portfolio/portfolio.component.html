@@ -27,12 +27,18 @@
 
 
     <div class="portfolio-vertical-divs" *ngIf="!isMobile && true">
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'"  [@fadeInFromTop3]></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'"  [@fadeInFromTop2] ></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'"  [@fadeInFromTop1] ></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'"  [@fadeInFromTop3] ></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'"  [@fadeInFromTop3] ></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'"  [@fadeInFromTop3] ></app-portfolio-vertical-card>
+       <ng-container *ngFor="let portfolio of portfolios; let i = index;">
+
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [id]="portfolio.id"  [image]="portfolio.image" [title]="portfolio.title" [description]="portfolio.description"
+            [@fadeInFromTop3]></app-portfolio-vertical-card>
+
+       </ng-container>
+<!--        
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop2]></app-portfolio-vertical-card>
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop1]></app-portfolio-vertical-card>
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop3]></app-portfolio-vertical-card>
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop3]></app-portfolio-vertical-card>
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop3]></app-portfolio-vertical-card> -->
     </div>
 
 </div>

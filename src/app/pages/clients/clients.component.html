@@ -2,21 +2,22 @@
 <div class="clients" [ngClass]="{'mobile':isMobile}">
     <span class="breadcrumb" [@enterFromTop]="animationStates.enterFromTop">CLIENTS</span>
     <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Look Closer With Our Beloved Client</h1>
-    
+
     <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1">
-        <div ngxSlickItem *ngFor="let slide1 of slides1;let i = index;" class="slide1">
+        <div ngxSlickItem *ngFor="let slide1 of slides1;let i1 = index;" class="slide1">
             <div class="logo-img">
-                <img [alt]="slide1.name" [src]="slide1.src" (mouseenter)="onMouseEnter(i, 1)"
-                    (mouseleave)="onMouseLeave(i,1)" />
+                <img [alt]="slide1.name" [src]="slide1.src" (mouseenter)="onMouseEnter(slide1.id,i1, 1)"
+                    (mouseleave)="onMouseLeave(slide1.id,i1,1)" />
             </div>
         </div>
     </ngx-slick-carousel>
 
+
     <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2">
-        <div ngxSlickItem *ngFor="let slide2 of slides2;let i = index;" class="slide2">
+        <div ngxSlickItem *ngFor="let slide2 of slides2;let i2 = index;" class="slide2">
             <div class="logo-img">
-                <img [alt]="slide2.name" [src]="slide2.src" (mouseenter)="onMouseEnter(i, 2)"
-                    (mouseleave)="onMouseLeave(i,2)" />
+                <img [alt]="slide2.name" [src]="slide2.src" (mouseenter)="onMouseEnter(slide2.id,i2, 2)"
+                    (mouseleave)="onMouseLeave(slide2.id,i2,2)" />
             </div>
         </div>
     </ngx-slick-carousel>

@@ -87,6 +87,7 @@
         .image-side {
             img {
                 float: none;
+                
             }
         }
         display: block;
@@ -99,4 +100,18 @@
         }
     }
 
+
+}
+
+.portfolio-vertical-card {
+    .image-side{
+        img{
+            border-radius: 20px !important;
+            height: 25vh;
+        }
+    }
+    
+    .text-side{
+        height: 25vh !important;
+    }
 }

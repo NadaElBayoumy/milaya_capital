@@ -514,6 +514,7 @@ app-footer::before {
     background: $brand;
     margin-top: 0px !important;
     border-bottom: solid 0.5px $mid-grey;
+    backdrop-filter: blur(4px); 
     .contact-btn {
         background-color: $white !important;
         color: $brand !important;

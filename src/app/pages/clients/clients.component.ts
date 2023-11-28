@@ -11,31 +11,35 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class ClientsComponent {
   slides1 = [
-    { id: 6, name: "client1", src: "../../../assets/6.svg"},
-    { id: 7, name: "client2", src: "../../../assets/7.svg" },
-    { id: 9, name: "client3", src: "../../../assets/9.svg" },
-    { id: 8, name: "client4", src: "../../../assets/8.svg" },
-    { id: 2, name: "client5", src: "../../../assets/2.svg"},
+    { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
+    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
+    { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
+    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
 
-    { id: 6, name: "client1", src: "../../../assets/6.svg" },
-    { id: 7, name: "client2", src: "../../../assets/7.svg" },
-    { id: 9, name: "client3", src: "../../../assets/9.svg"},
-    { id: 8, name: "client4", src: "../../../assets/8.svg"},
-    { id: 2, name: "client5", src: "../../../assets/2.svg"},
+    { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
+    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
+    { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
+    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+
   ];
 
   slides2 = [
-    { id: 1, name: "client6", src: "../../../assets/1.svg" },
-    { id: 2, name: "client7", src: "../../../assets/2.svg" },
-    { id: 4, name: "client8", src: "../../../assets/4.svg" },
-    { id: 5, name: "client9", src: "../../../assets/5.svg" },
-    { id: 9, name: "client10", src: "../../../assets/9.svg" },
+    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+    { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
+    { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
+    { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
+    { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
 
-    { id: 1, name: "client6", src: "../../../assets/1.svg" },
-    { id: 2, name: "client7", src: "../../../assets/2.svg" },
-    { id: 4, name: "client8", src: "../../../assets/4.svg" },
-    { id: 5, name: "client9", src: "../../../assets/5.svg" },
-    { id: 9, name: "client10", src: "../../../assets/9.svg" },
+    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+    { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
+    { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
+    { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
+    { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
+
   ];
 
   slideConfig1 = {
@@ -43,7 +47,7 @@ export class ClientsComponent {
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: 'linear',
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     infinite: true,
     rtl: true,
@@ -57,7 +61,7 @@ export class ClientsComponent {
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: 'linear',
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     infinite: true,
     pauseOnFocus: false,
@@ -100,19 +104,22 @@ export class ClientsComponent {
     this.animationStates.enterFromTop = window.scrollY > this.threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromTop1 = window.scrollY > this.threshold ? 'visible' : 'hidden';
   }
-  onMouseEnter(index: number, sliderNum: number): void {
+
+  onMouseEnter(id: number, index: number, sliderNum: number): void {
+    console.log(id, sliderNum)
     if (sliderNum == 1) {
-      this.slides1[index].src = "../../../assets/"+ index +"-color.png";
+      this.slides1[index].src = "../../../assets/" + id + "-" + id + ".svg";
     } else if (sliderNum == 2) {
-      this.slides2[index].src = "../../../assets/"+ index +"-color.png";
+      this.slides2[index].src = "../../../assets/" + id + "-" + id + ".svg";
     }
   }
 
-  onMouseLeave(index: number, sliderNum: number): void {
+  onMouseLeave(id: number, index: number, sliderNum: number): void {
+    console.log(id, sliderNum)
     if (sliderNum == 1) {
-      this.slides1[index].src = "../../../assets/"+ index +".svg";
+      this.slides1[index].src = "../../../assets/" + id + "-.svg";
     } else if (sliderNum == 2) {
-      this.slides2[index].src = "../../../assets/"+ index +".svg";
+      this.slides2[index].src = "../../../assets/" + id + "-.svg";
     }
   }
 }

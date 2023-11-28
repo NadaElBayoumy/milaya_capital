@@ -1,6 +1,6 @@
 <!-- Portfolio Card section  -->
 <!-- Works for vertical top positioned images -->
-<div class="portfolio-card left-card" *ngIf="imageWay == 'left'"  (click)="navigateToDetailsPage(1)"
+<div class="portfolio-card left-card" *ngIf="imageWay == 'left'"  (click)="navigateToDetailsPage()"
     [ngClass]="{'mobile':isMobile}">
     <div class="left">
         <div class="image-side">
@@ -16,7 +16,7 @@
 
 
 <div class="portfolio-card right-card" *ngIf="imageWay == 'right'  && !isMobile"
-    (click)="navigateToDetailsPage(2)" [ngClass]="{'mobile':isMobile}">
+    (click)="navigateToDetailsPage()" [ngClass]="{'mobile':isMobile}">
     <div class="right">
         <div class="text-side">
             <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card2.svg'"
@@ -32,16 +32,20 @@
 
 
 
-<div class="portfolio-vertical-card left-card" *ngIf="imageWay == 'top'"  (click)="navigateToDetailsPage(1)"
+<div class="portfolio-vertical-card left-card" *ngIf="imageWay == 'top'"  (click)="navigateToDetailsPage()"
     [ngClass]="{'mobile':isMobile, 'top-card': imageWay == 'top'}">
     <div class="top">
         <div class="image-side">
-            <img alt="portfolio" src="../../../assets/portfolio-card.svg">
+            <!-- <img alt="portfolio" src="../../../assets/portfolio-card.svg"> -->
+            <img alt="portfolio" src="{{image}}">
         </div>
         <div class="text-side">
-            <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card1.svg'"
+            <app-what-we-do-card-2 class="portfolio" backgroundImage="assets/bg-card1.svg"
+            [alignment]="'top'" title="{{title}}"
+            description="{{description}}"></app-what-we-do-card-2>
+            <!-- <app-what-we-do-card-2 class="portfolio" [backgroundImage]="'../../../assets/bg-card1.svg'"
                 [alignment]="'top'" [title]="'MILAYA ENERGY'"
-                [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2>
+                [description]="'Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through our advanced services in the industry.'"></app-what-we-do-card-2> -->
         </div>
     </div>
 </div>
