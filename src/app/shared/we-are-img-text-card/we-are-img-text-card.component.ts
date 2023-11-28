@@ -10,6 +10,7 @@ export class WeAreImgTextCardComponent {
   @Input() WeAreTitleCard!: string;
   @Input() WeAreDescriptionCard!: string;
   isMobile: boolean = false;
+  @Input() image!: string;
   
   constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {

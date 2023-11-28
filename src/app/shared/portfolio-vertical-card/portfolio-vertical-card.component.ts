@@ -15,6 +15,7 @@ export class PortfolioVerticalCardComponent {
   @Input() title!: string;
   @Input() description!: string;
   @Input() id!:number;
+  @Input() backgroundImage!: string;
   
   navigateToDetailsPage() {
     this.router.navigate(['/portfolio-details',{'portfolio-id':this.id}]);

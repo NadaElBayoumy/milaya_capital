@@ -17,11 +17,11 @@
                         <p class="heights-slider-card-title">
                             {{slide.title}}
                         </p>
-                        <p class="heights-slider-card-description">
+                        <p class="heights-slider-card-description" *ngIf="slide.descr">
                             {{slide.descr}}
                         </p>
 
-                        <p class="heights-slider-card-title read-more">
+                        <p class="heights-slider-card-title read-more"  *ngIf="slide.descr">
                             Read more
                             <i class="bi bi-arrow-right"></i>
                         </p>

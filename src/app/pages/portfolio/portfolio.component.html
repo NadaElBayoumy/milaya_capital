@@ -29,7 +29,7 @@
     <div class="portfolio-vertical-divs" *ngIf="!isMobile && true">
        <ng-container *ngFor="let portfolio of portfolios; let i = index;">
 
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [id]="portfolio.id"  [image]="portfolio.image" [title]="portfolio.title" [description]="portfolio.description"
+        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [id]="portfolio.id"  [image]="portfolio.image" [backgroundImage]="portfolio.backgroundImage" [title]="portfolio.title" [description]="portfolio.description"
             [@fadeInFromTop3]></app-portfolio-vertical-card>
 
        </ng-container>
