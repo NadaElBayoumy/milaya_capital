@@ -35,4 +35,21 @@ export class MilayaService {
   getPortfolioById(postId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}posts/${postId}`);
   }
+
+  getFeaturedImageUrl(mediaId: number): Observable<string> {
+    // return this.http.get<any>(`${this.apiBaseUrl}/media/${mediaId}`).pipe(
+    //   map(response => response.source_url)  );
+    return this.http.get<any>(`${this.apiBaseUrl}media/${mediaId}`);
+  }
+
+
+  truncateText(text: string, wordCount: number): string {
+    const words = text.split(' ');
+    const truncatedWords = words.slice(0, wordCount);
+    const truncatedText = truncatedWords.join(' ');
+
+    return truncatedWords.length < words.length ? `${truncatedText}...` : truncatedText;
+  }
+
+  
 }
