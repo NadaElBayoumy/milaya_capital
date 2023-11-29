@@ -18,22 +18,22 @@
     .text-side {
         flex: 1;
 
-        h2.h2-font-big {
+        h2{
             color: $dark-grey;
             font-size: $h2-font-big;
             font-weight: 700;
             line-height: 37px;
         }
 
-        p.font-p,
-        ul.font-p {
+        p,
+        ul{
             font-size: $md-font-p;
             font-weight: 600;
             line-height: 22px;
             color: $mid-grey;
         }
 
-        ul.font-p {
+        ul{
             list-style-type: none;
             padding-left: 20px;
 

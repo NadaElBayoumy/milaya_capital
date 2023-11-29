@@ -34,7 +34,7 @@ export class FooterComponent {
       this.threshold = 800;
     }
     else if (this.router?.url == "/portfolio") {
-      this.threshold = 600;
+      this.threshold = 400;
     }
     else if (this.router?.url == "/contact") {
       this.threshold = 200;

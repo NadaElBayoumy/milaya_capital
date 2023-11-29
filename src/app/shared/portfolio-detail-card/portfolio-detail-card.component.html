@@ -6,14 +6,18 @@
         <img class="image-shadow" alt="img" src="../../../assets/combinedsvg.svg">
     </div>
     <div class="text-side">
-        <div>
+        <!-- <h2 class="h2-font-big" [@slideFromTop] >{{title}}</h2> -->
+
+        <!-- [innerHtml]="content" *ngIf="content" -->
+        <div class="html-inner-content">
+
+            <!-- <h2 class="h2-font-big" [@slideFromTop] >{{title}}</h2> -->
             <h2 class="h2-font-big" [@slideFromTop]>MILAYA ENERGY</h2>
-            
-            
+
+
             <p class="font-p" [@fadeInFromRight] [ngClass]="{'container':isMobile}">
                 Milaya Energy is a leading Energy provider in the Oil & Gas industry from upstream to downstream, we
-                deliver results you can rely on to enhance productivity, optimize operations, and minimize risk
-                through
+                deliver results you can rely on to enhance productivity, optimize operations, and minimize risk through
                 our advanced services in the industry.
             </p>
 
@@ -31,10 +35,11 @@
                 function. We work with you to create a single, unified process one that’s simple, efficient, and
                 generates extra value.
             </p>
+
         </div>
         <div class="d-flex contact-button" [@fadeInFromTop1]>
             <div class="contact-btn-col">
-                <button type="button" class="btn btn-primary"   (click)="navigateToExternalLink()">
+                <button type="button" class="btn btn-primary" (click)="navigateToExternalLink()">
                     MILAYAENERGY.COM
                     <i class="bi bi-arrow-up-right"></i>
                 </button>

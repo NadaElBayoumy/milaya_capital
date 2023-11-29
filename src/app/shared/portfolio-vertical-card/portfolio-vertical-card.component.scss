@@ -99,8 +99,6 @@
             border: none;
         }
     }
-
-
 }
 
 .portfolio-vertical-card {
@@ -108,6 +106,9 @@
         img{
             border-radius: 20px !important;
             height: 25vh;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
         }
     }
     

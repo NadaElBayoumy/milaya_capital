@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ToastrModule } from 'ngx-toastr';
+import { RemoveHtmlTagsPipe } from 'src/remove-html-tags.pipe';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -97,7 +98,8 @@ import { ContactMobileMapComponent } from './shared/contact-mobile-map/contact-m
   ],
   providers: [
     MilayaService,
-    provideAnimations()
+    provideAnimations(),
+    RemoveHtmlTagsPipe
   ],
   bootstrap: [AppComponent]
 })

@@ -521,6 +521,35 @@ app-footer::before {
     }
 }
 
+.html-inner-content{
+    margin-bottom: 10vh;
+    h2{
+        color: $dark-grey;
+        font-size: $h2-font-big;
+        font-weight: 700;
+        line-height: 37px;
+    }
+
+    p,
+    ul{
+        font-size: $md-font-p;
+        font-weight: 600;
+        line-height: 22px;
+        color: $mid-grey;
+    }
+
+    ul{
+        list-style-type: none;
+        padding-left: 20px;
+
+        li:before {
+            content: '-';
+            position: absolute;
+            margin-left: -15px;
+        }
+    }
+}
+
 
 // .scroll-dwn{
 //     .sticky{
