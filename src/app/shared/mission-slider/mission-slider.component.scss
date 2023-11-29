@@ -20,6 +20,9 @@
         font-size: $md-font-p;
         line-height: 26px;
         font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis !important;
+        overflow: hidden;
     }
 
     .mission-card-image {
