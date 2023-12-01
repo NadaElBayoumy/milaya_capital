@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { enterFromTop, enterFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MilayaService } from 'src/app/milaya.service';
+
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
@@ -9,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   animations: [enterFromTop, enterFromTop1]
 })
 
-export class ClientsComponent {
+export class ClientsComponent implements OnInit {
   slides1 = [
     { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
     { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
@@ -73,7 +75,7 @@ export class ClientsComponent {
   // Threshold values as needed
   threshold = 700;
 
-  constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  constructor(private milayaService: MilayaService,private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -87,6 +89,47 @@ export class ClientsComponent {
     else if (this.router?.url == "/mission") {
       this.threshold = 0;
     }
+  }
+
+  
+  ngOnInit() {
+    this.route.queryParams
+      .subscribe(params => {
+        this.milayaService.getClients().subscribe((clients:any) => {
+          // let client_rendered = clients.content.rendered;
+          // this.sanitizedHTMLArray = this.data.map(item =>
+          //   this.sanitizer.bypassSecurityTrustHtml(item.content.rendered)
+          // );
+
+          // let clients_san = this.milayaService.sanitizeHtml(client_rendered)
+          // console.log(clients_san);
+          // client_rendered.forEach(cl:any => {
+            
+          // });
+          
+          
+
+          // portfolios.forEach(portfolio => {
+          //   let tit = this.milayaService.removeHtmlTagsPipe.transform(portfolio.title.rendered);
+          //   let des = this.milayaService.removeHtmlTagsPipe.transform(portfolio.content.rendered);
+          //   des = this.milayaService.truncateText(des,40);
+          //   // let img = this.removeHtmlTagsPipe.transform(portfolio.img)
+          //   let img;
+
+          //   this.route.queryParams.subscribe(params2 => {
+          //     this.milayaService.getFeaturedImageUrl(portfolio.featured_media).subscribe((media_ret: any) => {
+          //       console.log("media returned",media_ret);
+          //       img = media_ret.source_url;
+          //       this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: "assets/clients/tedbaker.svg" });
+          //     });
+          //   });
+          //   console.log(tit, des)
+           
+          // });
+
+        });
+      }
+      );
   }
 
   //For Animations on Scroll

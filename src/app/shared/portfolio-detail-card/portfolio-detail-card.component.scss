@@ -8,9 +8,19 @@
         flex: 1;
         position: relative;
         margin-right: 15px;
+
+        img {
+            width: 100% !important;
+            object-fit: cover;
+            object-position: center center;
+            box-shadow: -33px 33px 0px $dark-grey; 
+            border-radius: 20px;
+            margin-bottom: 33px;
+
+        }
     }
 
-    .contact-button{
+    .contact-button {
         position: absolute;
         bottom: 0px;
     }
@@ -18,7 +28,7 @@
     .text-side {
         flex: 1;
 
-        h2{
+        h2 {
             color: $dark-grey;
             font-size: $h2-font-big;
             font-weight: 700;
@@ -26,14 +36,14 @@
         }
 
         p,
-        ul{
+        ul {
             font-size: $md-font-p;
             font-weight: 600;
             line-height: 22px;
             color: $mid-grey;
         }
 
-        ul{
+        ul {
             list-style-type: none;
             padding-left: 20px;
 
@@ -71,7 +81,7 @@
             font-size: $s-font;
         }
 
-        .d-flex:last-child{
+        .d-flex:last-child {
             position: absolute;
             bottom: 0px;
         }

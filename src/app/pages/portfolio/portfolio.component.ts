@@ -2,9 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 import { fadeInFromTop1, fadeInFromTop2, fadeInFromTop3 } from '../../animations';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 import { MilayaService } from 'src/app/milaya.service';
-import { RemoveHtmlTagsPipe } from '../../../remove-html-tags.pipe';
 
 
 @Component({
@@ -17,7 +15,7 @@ export class PortfolioComponent implements OnInit {
 
   isMobile: boolean = false;
 
-  constructor(private removeHtmlTagsPipe: RemoveHtmlTagsPipe, private sanitizer: DomSanitizer, private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  constructor(  private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -33,10 +31,7 @@ export class PortfolioComponent implements OnInit {
   ];
 
 
-  // New method to sanitize HTML content
-  sanitizeHtml(html: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(html);
-  }
+ 
 
 
 
@@ -47,8 +42,8 @@ export class PortfolioComponent implements OnInit {
           console.log(portfolios)
 
           portfolios.forEach(portfolio => {
-            let tit = this.removeHtmlTagsPipe.transform(portfolio.title.rendered);
-            let des = this.removeHtmlTagsPipe.transform(portfolio.content.rendered);
+            let tit = this.milayaService.removeHtmlTagsPipe.transform(portfolio.title.rendered);
+            let des = this.milayaService.removeHtmlTagsPipe.transform(portfolio.content.rendered);
             des = this.milayaService.truncateText(des,40);
             // let img = this.removeHtmlTagsPipe.transform(portfolio.img)
             let img;
