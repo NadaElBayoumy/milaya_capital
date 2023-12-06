@@ -2,11 +2,12 @@
 <div class="why-choose container" [ngClass]="{'mobile':isMobile}">
     <div class="upper-box">
         <div class="box">
-            <span class="breadcrumb" [@enterFromLeft]="animationStates.enterFromLeft" >WHY CHOOSE MILAYA CAPITAL’S</span>
+            <span class="breadcrumb" [@enterFromLeft]="animationStates.enterFromLeft">WHY CHOOSE MILAYA CAPITAL’S</span>
 
         </div>
         <div class="box">
-            <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Connecting businesses, ideas, and people for greater impact.</h1>
+            <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Connecting businesses, ideas, and people
+                for greater impact.</h1>
         </div>
 
         <div class="spacer-div" *ngIf="!isMobile"></div>
@@ -14,29 +15,37 @@
     <div class="spacer-div" *ngIf="!isMobile"></div>
     <div class="lower-box container ">
         <div class="arrow-div">
-            <img  [@enterFromTop2]="animationStates.enterFromTop2" class="long-arrow" src="../../../assets/long-arrow-right.svg" alt="arrow" />
+            <img [@enterFromTop2]="animationStates.enterFromTop2" class="long-arrow"
+                src="../../../assets/long-arrow-right.svg" alt="arrow" />
         </div>
         <div class="text-div">
-            <h2 class="grey-p-small"  [@enterFromTop3]="animationStates.enterFromTop3">We keep you in interaction with many international corporate
+            <h2 class="grey-p-small" [@enterFromTop3]="animationStates.enterFromTop3" [innerHTML]="whyChooseContent">
+                <!-- We keep you in interaction with many international corporate
                 companies. In this
                 way,
                 communication
-                opportunities increase and we enable access to more portfolios.</h2>
+                opportunities increase and we enable access to more portfolios. -->
+            </h2>
         </div>
     </div>
 
 
     <div class="spacer-div" *ngIf="!isMobile"></div>
     <div class="why-choose-cards-div">
-        <app-why-choose-card  [@enterFromBottom1]="animationStates.enterFromBottom1" [src]="'../../../assets/status-up.svg'" [title]="'Smart Solutions'"
+        <ng-container *ngFor="let slide of why_choose;let i = index">
+            <app-why-choose-card [@enterFromBottom1]="animationStates.enterFromBottom1"
+                [src]="slide.src" [title]="slide.title"
+                [description]="slide.description"></app-why-choose-card>
+        </ng-container>
+        <!-- <app-why-choose-card  [@enterFromBottom1]="animationStates.enterFromBottom1" [src]="'../../../assets/status-up.svg'" [title]="'Smart Solutions'"
             [description]="'All the innovations brought by technology will be with you in your work'"></app-why-choose-card>
         <app-why-choose-card  [@enterFromBottom2]="animationStates.enterFromBottom2" [src]="'../../../assets/chart-line-up.svg'"
             [title]="'High Conversions'"
             [description]="'We will support you to get the best conversions from your investments'"></app-why-choose-card>
         <app-why-choose-card  [@enterFromBottom3]="animationStates.enterFromBottom3" [src]="'../../../assets/status-up.svg'" [title]="'High Conversions'"
-            [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'"></app-why-choose-card>
+            [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'"></app-why-choose-card> -->
     </div>
 
 </div>
 
-<div class="spacer-div"  *ngIf="!isMobile"></div>
+<div class="spacer-div" *ngIf="!isMobile"></div>

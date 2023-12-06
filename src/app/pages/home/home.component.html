@@ -3,7 +3,7 @@
     <div class="first-bg">
         <div class="poster-container">
             <div class="small-spacer-div" *ngIf="!isMobile"></div>
-            <app-main-poster></app-main-poster>
+            <app-main-poster [welcomeContent]="welcomeContent" ></app-main-poster>
             <div class="spacer-div" *ngIf="!isMobile"></div>
         </div>
 
@@ -13,7 +13,7 @@
             <div class="spacer-div"></div>
         </div>
         <div class="we-are-div">
-            <app-we-are-home></app-we-are-home>
+            <app-we-are-home [ourWorkContent]="ourWorkContent"></app-we-are-home>
             <div class="spacer-div"></div>
         </div>
     </div>
@@ -21,13 +21,17 @@
     <div class="second-bg">
         <div class="container first">
             <span class="breadcrumb" [@enterFromLeft]="animationStates.enterFromLeft"> WHAT WE DO</span>
-            <h1 class="grey" [@enterFromLeft2]="animationStates.enterFromLeft2">Milaya Capital’s vision is to create a
+            <h1 class="grey" [@enterFromLeft2]="animationStates.enterFromLeft2" [innerHTML]="whatWeDoContent" >
+                
+                <!-- Milaya Capital’s vision is to create a
                 better tomorrow for the
                 generations to come. A world
                 where we can
                 live in
                 a sustainable future; hence we put all our efforts into being environmentally sustainable throughout our
-                company’s operations.</h1>
+                company’s operations. -->
+            
+            </h1>
         </div>
 
         <div class="spacer-div" *ngIf="!isMobile"></div>
@@ -41,22 +45,22 @@
 
     <div class="third-bg">
         <div class="spacer-div"></div>
-        <app-new-business-heights></app-new-business-heights>
+        <app-new-business-heights [newBusinessHeightsContent]="newBusinessHeightsContent"></app-new-business-heights>
         <div class="spacer-div" *ngIf="!isMobile"></div>
     </div>
 
     <div class="fourth-bg">
         <div class="spacer-div"></div>
-        <app-why-choose></app-why-choose>
+        <app-why-choose [whyChooseContent]="whyChooseContent"></app-why-choose>
         <div class="spacer-div" *ngIf="!isMobile"></div>
         <app-clients></app-clients>
     </div>
 
     <div class="fifth-bg">
         <!-- <div class="layer-light-squares"> </div> -->
+        <!-- [mediaURL]="'https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4'" -->
         <div class="media">
-            <app-media [mediaType]="'video'"
-                [mediaURL]="'https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4'"></app-media>
+            <app-media [mediaType]="'video'" ></app-media>
         </div>
     </div>
 

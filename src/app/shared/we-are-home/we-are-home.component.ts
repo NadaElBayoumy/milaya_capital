@@ -1,4 +1,4 @@
-import { Component,AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 import { fadeInFromLeft, fadeInFromTop, enterFromBottomLeftToTopRight3, enterFromBottomLeftToTopRight2, enterFromBottomLeftToTopRight1, fadeInFromBottom, fadeInFromRight } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -10,17 +10,17 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   animations: [fadeInFromLeft, fadeInFromTop, fadeInFromTop, enterFromBottomLeftToTopRight3, enterFromBottomLeftToTopRight2, enterFromBottomLeftToTopRight1, fadeInFromBottom, fadeInFromRight
   ],
 })
-export class WeAreHomeComponent implements AfterViewInit{
+export class WeAreHomeComponent implements AfterViewInit {
 
   isMobile: boolean = false;
-
+  @Input() ourWorkContent!: any;
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
   }
 
-  ngAfterViewInit (){
+  ngAfterViewInit() {
     const container = document.querySelector('.flex-container');
     // container?.css?.setProperty('--container-margin', '20px'); 
   }

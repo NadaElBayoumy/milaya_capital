@@ -70,7 +70,6 @@ export class FooterComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // console.log(window.scrollY)
     // Check the scroll position and update animation states
     this.animationStates.enterFromTop = window.scrollY > this.threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromTop2 = window.scrollY > this.threshold ? 'visible' : 'hidden';

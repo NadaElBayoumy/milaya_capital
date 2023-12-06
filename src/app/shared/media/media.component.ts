@@ -1,16 +1,17 @@
-import { Component, Input, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, HostListener, OnInit, ChangeDetectorRef } from '@angular/core';
 import { enterFromTop } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
+import { MilayaService } from 'src/app/milaya.service';
 @Component({
   selector: 'app-media',
   templateUrl: './media.component.html',
   styleUrls: ['./media.component.scss'],
   animations: [enterFromTop]
 })
-export class MediaComponent implements AfterViewInit {
+export class MediaComponent implements OnInit {
   @Input() mediaType!: string;
-  @Input() mediaURL!: string;
+  // @Input() mediaURL!: string;
   name = 'Video events';
   @ViewChild('videoPlayer') videoplayer: any;
   startedPlay: boolean = false;
@@ -18,8 +19,9 @@ export class MediaComponent implements AfterViewInit {
   isMobile: boolean = false;
   // Threshold values as needed
   threshold = 2500;
+  mediaURL!: any;
 
-  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
+  constructor(private milayaService: MilayaService, private router: Router, private breakpointObserver: BreakpointObserver, private cdr: ChangeDetectorRef) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -35,8 +37,13 @@ export class MediaComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
-
+  ngOnInit(): void {
+    this.mediaURL = "https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4";
+    this.milayaService.getFeaturedImageUrl(this.milayaService.main_video_id).subscribe((video: any) => {
+      this.mediaURL = this.milayaService.removeHtmlTagsPipe.transform(video?.guid?.rendered);
+      // Manually trigger change detection
+      this.cdr.detectChanges();
+    });
   }
 
   pauseVideo(videoplayer: any) {
@@ -53,20 +60,16 @@ export class MediaComponent implements AfterViewInit {
   }
 
   playVideo() {
-    console.log("in play video")
     if (!this.videoplayer || !this.videoplayer.nativeElement) {
-      console.log("not native element")
       return;
     }
     var playPromise = this.videoplayer.nativeElement.play();
     if (playPromise !== undefined) {
-      console.log("play promise", playPromise)
       playPromise.then((_: any) => {
         this.startedPlay = true;
         this.videoplayer.controls = true;
       })
         .catch((error: any) => {
-          console.log(error)
         });
     }
   }

@@ -14,7 +14,7 @@
         <div class="spacer-div" *ngIf="!isMobile"></div>
     </div>
 
-    <p class="overview-p" [@slideFromTop] [ngClass]="{'mobile': isMobile}">
-        {{pageOverviewText}}
+    <p class="overview-p" [@slideFromTop] [ngClass]="{'mobile': isMobile}" [innerHTML]="pageOverviewText">
+        <!-- {{pageOverviewText}} -->
     </p>
 </div>

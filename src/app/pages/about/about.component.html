@@ -1,30 +1,32 @@
 <!-- About Page -->
 <div class="container about" [ngClass]="{'mobile':isMobile}">
-    <app-overview [pageTitle]="'About Us'"
-        [pageOverviewText]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'"></app-overview>
+    <app-overview [pageTitle]="'About Us'"></app-overview>
+    <!-- [pageOverviewText]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'" -->
     <div class="spacer-div"></div>
-    <app-we-are-card></app-we-are-card>
+    <app-we-are-card [leadersInManagementContent]="leadersInManagementContent"></app-we-are-card>
     <div class="spacer-div"></div>
 
     <div class="we-are-cards container">
         <div [@enterFromTop1]="animationStates.enterFromTop1" class="card1">
             <app-we-are-img-text-card [image]="'../../../assets/we-are-img-card-1.svg'" [WeAreTitleCard]="'WE ARE DYNAMIC'"
-                [WeAreDescriptionCard]="'Being a dynamic, DUBAI based, venture capital business, Milaya Capital owns a portfolio of exciting brands that prosper in the local retail and property industries. Even though relatively young, Milaya Capital’s growth across different sectors has been exponential.'"></app-we-are-img-text-card>
+                [WeAreDescriptionCard]="weAreDynamicContent"></app-we-are-img-text-card>
+                <!-- 'Being a dynamic, DUBAI based, venture capital business, Milaya Capital owns a portfolio of exciting brands that prosper in the local retail and property industries. Even though relatively young, Milaya Capital’s growth across different sectors has been exponential.' -->
         </div>
         <div [@enterFromTop2]="animationStates.enterFromTop2" class="card2">
             <app-we-are-img-text-card [image]="'../../../assets/aboutus-secondimg.jpg'" [WeAreTitleCard]="'OUR VISION'"
-                [WeAreDescriptionCard]="'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.'"></app-we-are-img-text-card>
+                [WeAreDescriptionCard]="ourVisionContent"></app-we-are-img-text-card>
+                <!-- 'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.' -->
         </div>
     </div>
     <div>
         <div class="spacer-div"></div>
         <div class="spacer-div" *ngIf="!isMobile"></div>
         <div class="counter-cards container" [@enterFromTop]="animationStates.enterFromTop">
-            <app-counter-card class="c-card counter-border" [number]="250"
+            <app-counter-card class="c-card counter-border" [number]="clients_partners_trusted"
                 [text]="'Clients & Partners Trusted'"></app-counter-card>
-            <app-counter-card class="c-card counter-border" [number]="210"
+            <app-counter-card class="c-card counter-border" [number]="awards_winning_accquired"
                 [text]="'Awards & Winning Accquired'"></app-counter-card>
-            <app-counter-card class="c-card" [number]="280"
+            <app-counter-card class="c-card" [number]="projects_completed_on_24_countries"
                 [text]="'Projects Completed on 24 Countries'"></app-counter-card>
         </div>
         <div class="spacer-div" *ngIf="!isMobile"></div>
@@ -39,6 +41,7 @@
 <div class="container">
     <!-- <app-media [mediaType]="'video'"
         [mediaURL]="'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'"></app-media> -->
-    <app-media [mediaType]="'video'" [mediaURL]="'https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4'"></app-media>
+        <!-- [mediaURL]="'https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4'" -->
+    <app-media [mediaType]="'video'"></app-media>
 </div>
 <app-footer> </app-footer>

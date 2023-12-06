@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fadeInFromBottomTy20 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute,  Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-poster',
@@ -12,6 +12,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class MainPosterComponent {
   isMobile: boolean = false;
+  @Input() welcomeContent!:string;
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;

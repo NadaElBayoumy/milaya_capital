@@ -17,9 +17,11 @@
         </div>
         <p class="bold" [@fadeInFromBottom]>At Milaya Capital, we are proud to operate successful businesses in three different countries:
         </p>
-        <p [@fadeInFromBottom]>United Kingdom, United Arab Emirates, and Greece. With a commitment to excellence, we run various successful
+        <p [@fadeInFromBottom] [innerHTML]="ourWorkContent" *ngIf="ourWorkContent">
+            <!-- United Kingdom, United Arab Emirates, and Greece. With a commitment to excellence, we run various successful
             businesses and that cater to various aspects of leting and operating of own or leased real estate,
-            hospitality, Oil & Gas Rigs and Aviation Industry.</p>
+            hospitality, Oil & Gas Rigs and Aviation Industry. -->
+        </p>
     </div>
 </div>
 <div class="we-are-right-img" [ngClass]="{'mobile':isMobile, 'container':isMobile}" >

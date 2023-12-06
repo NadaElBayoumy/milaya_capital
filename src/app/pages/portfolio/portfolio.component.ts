@@ -39,7 +39,6 @@ export class PortfolioComponent implements OnInit {
     this.route.queryParams
       .subscribe(params => {
         this.milayaService.getPortfolios().subscribe((portfolios) => {
-          console.log(portfolios)
 
           portfolios.forEach(portfolio => {
             let tit = this.milayaService.removeHtmlTagsPipe.transform(portfolio.title.rendered);
@@ -50,12 +49,10 @@ export class PortfolioComponent implements OnInit {
 
             this.route.queryParams.subscribe(params2 => {
               this.milayaService.getFeaturedImageUrl(portfolio.featured_media).subscribe((media_ret: any) => {
-                console.log("media returned",media_ret);
                 img = media_ret.source_url;
                 this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: "assets/clients/tedbaker.svg" });
               });
             });
-            console.log(tit, des)
            
           });
 

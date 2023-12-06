@@ -1,22 +1,27 @@
-import { Component,HostListener } from '@angular/core';
-import {  enterFromLeft ,enterFromTop1 , enterFromTop2,enterFromTop3 , enterFromBottom1 ,enterFromBottom2, enterFromBottom3} from '../../animations';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { enterFromLeft, enterFromTop1, enterFromTop2, enterFromTop3, enterFromBottom1, enterFromBottom2, enterFromBottom3 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
+import { MilayaService } from 'src/app/milaya.service';
 @Component({
   selector: 'app-why-choose',
   templateUrl: './why-choose.component.html',
   styleUrls: ['./why-choose.component.scss'],
-  animations: [ enterFromLeft ,enterFromTop1 , enterFromTop2,enterFromTop3 , enterFromBottom1 ,enterFromBottom2, enterFromBottom3]
+  animations: [enterFromLeft, enterFromTop1, enterFromTop2, enterFromTop3, enterFromBottom1, enterFromBottom2, enterFromBottom3]
 })
-export class WhyChooseComponent {
+export class WhyChooseComponent implements OnInit {
   isMobile: boolean = false;
-  
-  constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  @Input() whyChooseContent!: any;
+
+  why_choose: any = [];
+
+  constructor(private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
   }
-  
+
+
   //For Animations on Scroll
   animationStates = {
     enterFromLeft: 'hidden',
@@ -27,6 +32,15 @@ export class WhyChooseComponent {
     enterFromBottom2: 'hidden',
     enterFromBottom3: 'hidden'
   };
+
+  ngOnInit() {
+    this.milayaService.getHomeWhyChooseItems().subscribe((why_choose) => {
+      why_choose.forEach(why => {
+        this.why_choose.push({src: "assets/status-up.svg",title: this.milayaService.removeHtmlTagsPipe.transform(why?.title?.rendered) , description: this.milayaService.removeHtmlTagsPipe.transform(why?.content?.rendered)});
+      });
+    });
+  }
+
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

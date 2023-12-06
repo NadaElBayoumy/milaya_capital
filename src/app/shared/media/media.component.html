@@ -2,7 +2,7 @@
 <div class="media container" [ngClass]="{'mobile':isMobile}" >
   <!-- [controls]="startedPlay" -->
   <video *ngIf="mediaType == 'video'" #videoPlayer class="video-player"  controls autoplay  [@enterFromTop]="animationStates.enterFromTop" >
-    <source src="{{mediaURL}}" type="video/mp4">
+    <source [src]="mediaURL" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -16,7 +16,7 @@
   </div> -->
 
   <div *ngIf="mediaType == 'image'" class="image-div"  [@enterFromTop]="animationStates.enterFromTop" >
-    <img alt="img" src="{{mediaURL}}">
+    <img alt="img" [src]="mediaURL">
   </div>
 
 

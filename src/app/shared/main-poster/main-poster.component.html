@@ -10,11 +10,11 @@
     </div>
 
     <div>
-        <p class="desc" [@fadeInFromBottomTy20]>
-            Milaya Capital Limited is a company entirely owned by its management and it is free from any ownership.
+        <p class="desc" [@fadeInFromBottomTy20] [innerHTML] = "welcomeContent" *ngIf="welcomeContent">
+            <!-- Milaya Capital Limited is a company entirely owned by its management and it is free from any ownership.
             Neither is controlled by any banking, financial, or insurance organization. Milaya Capital has built its
             reputation by being fully committed and transparent in its dealings ensuring efficiency and effectiveness in
-            all aspects of today’s business requirements.
+            all aspects of today’s business requirements. -->
         </p>
 
         <button type="button" class="btn btn-primary about-btn" [@fadeInFromBottomTy20]  [routerLink]="'/about'">About Us <i

@@ -48,12 +48,8 @@ export class PortfolioDetailCardComponent implements OnInit {
             this.title = this.post.title.rendered;
             this.content =  this.sanitizeHtml(this.post.content.rendered)
             this.route.queryParams.subscribe(params2 => {
-              // console.log("media",this.post.featured_media)
               this.milayaService.getFeaturedImageUrl(this.post.featured_media).subscribe((media_ret: any) => {
-                // console.log("media returned",media_ret);
                 this.img = media_ret.source_url;
-                console.log(this.img)
-                // this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: "assets/clients/tedbaker.svg" });
               });
             });
           }

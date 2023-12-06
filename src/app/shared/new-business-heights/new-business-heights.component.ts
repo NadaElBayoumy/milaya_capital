@@ -1,4 +1,4 @@
-import { Component,HostListener} from '@angular/core';
+import { Component,HostListener,Input} from '@angular/core';
 import {  enterFromLeft,enterFromTop} from '../../animations';
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NewBusinessHeightsComponent {
   isMobile: boolean = false;
-  
+  @Input() newBusinessHeightsContent!: any;
   constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;

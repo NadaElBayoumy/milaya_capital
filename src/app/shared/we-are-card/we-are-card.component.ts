@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { enterFromLeft0,fadeInFromTop2,fadeInFromRight,slideInFromRight} from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WeAreCardComponent {
   isMobile: boolean = false;
+  @Input() leadersInManagementContent:any;
   
   constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
