@@ -11,6 +11,7 @@ import { RemoveHtmlTagsPipe } from '../remove-html-tags.pipe';
 })
 export class MilayaService {
   private apiBaseUrl = 'http://localhost/milayacapital/wp-json/wp/v2/';
+  private apiMailUrl = 'http://localhost/milayacapital/wp-json/milaya-email/v1/send-email/';
   sanitizedHTMLArray: SafeHtml[] = [];
   sideMenuOpen: boolean;
   isMobile: boolean;
@@ -23,7 +24,7 @@ export class MilayaService {
     welcome: 8
   }
 
-  
+
   page_overview = {
     contact: 43,
     portfolio_details: 40,
@@ -33,13 +34,14 @@ export class MilayaService {
   }
 
   about_page_sections = {
-    leaders_in_management : 44,
-    we_are_dynamic :45,
-    our_vision:46
+    leaders_in_management: 44,
+    we_are_dynamic: 45,
+    our_vision: 46
   }
 
   main_video_id = 37;
   counter_id = 47
+  contact_id = 126;
 
 
   constructor(public removeHtmlTagsPipe: RemoveHtmlTagsPipe, private sanitizer: DomSanitizer, private http: HttpClient, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
@@ -60,12 +62,12 @@ export class MilayaService {
     return this.http.get<any[]>(`${this.apiBaseUrl}page_section?per_page=100`);
   }
 
-  
+
   getAboutPageSections(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiBaseUrl}about_page_sections?per_page=100`);
   }
 
-  
+
   getCounters(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiBaseUrl}counters/47`);
   }
@@ -75,19 +77,19 @@ export class MilayaService {
     return this.http.get<any[]>(`${this.apiBaseUrl}business_heights?per_page=100`);
   }
 
-  
+
   getHomeWhyChooseItems(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiBaseUrl}why_choose?per_page=100`);
   }
 
 
-  
+
   getOverview(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiBaseUrl}page_overview?per_page=100`);
   }
 
   getPortfolios(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiBaseUrl}posts?categories=3&orderby=id&order=asc`);
+    return this.http.get<any[]>(`${this.apiBaseUrl}portfolios?per_page=100&orderby=id&order=asc`);
   }
 
 
@@ -183,7 +185,7 @@ export class MilayaService {
   }
 
   getPortfolioById(postId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiBaseUrl}posts/${postId}`);
+    return this.http.get<any>(`${this.apiBaseUrl}portfolios/${postId}`);
   }
 
   getFeaturedImageUrl(mediaId: number): Observable<string> {
@@ -198,15 +200,17 @@ export class MilayaService {
   }
 
   getMissions(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiBaseUrl}posts?categories=5&orderby=id&order=asc`);
+    return this.http.get<any[]>(`${this.apiBaseUrl}missions?per_page=100&orderby=id&order=asc`);
   }
 
   getMissionById(missionId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}posts/${missionId}`);
   }
 
+  getContactInfo(): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}company_info/${this.contact_id}`);
+  }
 
-  // New method to sanitize HTML content
   sanitizeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
@@ -215,14 +219,15 @@ export class MilayaService {
     const words = text.split(' ');
     const truncatedWords = words.slice(0, wordCount);
     const truncatedText = truncatedWords.join(' ');
-
     return truncatedWords.length < words.length ? `${truncatedText}...` : truncatedText;
   }
 
+  getObjectById(array: any, id: number) {
+    return array.find((obj: any) => obj.id === id);
+  }
 
-  // Function to get object by id
-  getObjectById(array:any , id: number) {
-    return array.find((obj:any) => obj.id === id);
+  sendEmail(emailData: any) {
+    return this.http.post(this.apiMailUrl, emailData);
   }
 
 }

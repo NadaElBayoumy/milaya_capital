@@ -1,8 +1,9 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { enterFromTop, enterFromTop2, enterFromRight, enterFromTop3, enterFromRight2 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MilayaService } from 'src/app/milaya.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,13 +11,17 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./footer.component.scss'],
   animations: [enterFromTop, enterFromTop2, enterFromRight, enterFromTop3, enterFromRight2]
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   userEmail: string = '';
   isMobile: boolean = false;
   // Threshold values as needed
   threshold = 300;
+  address: any;
+  company_email: any;
+  footer_paragraph: any;
 
-  constructor(private toastr: ToastrService, private router: Router, private breakpointObserver: BreakpointObserver) {
+
+  constructor(private milayaService: MilayaService, private toastr: ToastrService, private router: Router, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -40,6 +45,14 @@ export class FooterComponent {
       this.threshold = 200;
     }
 
+  }
+
+  ngOnInit(): void {
+    this.milayaService.getContactInfo().subscribe((contact_info) => {
+      this.address = contact_info.acf?.address;
+      this.company_email = contact_info.acf?.company_email;
+      this.footer_paragraph = contact_info.acf?.footer_paragraph;
+    });
   }
   isEmailInvalid(): boolean {
     if (this.userEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.userEmail)) {

@@ -10,10 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactComponent  {
   isMobile: boolean = false;
   
-  constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  constructor( private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
+
+    
   }
  
 }

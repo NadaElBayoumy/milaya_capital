@@ -149,7 +149,7 @@ export class ClientsComponent implements OnInit {
   }
 
   onMouseEnter(id: number, index: number, sliderNum: number): void {
-    console.log(id, sliderNum)
+    // console.log(id, sliderNum)
     if (sliderNum == 1) {
       this.slides1[index].src = "../../../assets/" + id + "-" + id + ".svg";
     } else if (sliderNum == 2) {
@@ -158,7 +158,7 @@ export class ClientsComponent implements OnInit {
   }
 
   onMouseLeave(id: number, index: number, sliderNum: number): void {
-    console.log(id, sliderNum)
+    // console.log(id, sliderNum)
     if (sliderNum == 1) {
       this.slides1[index].src = "../../../assets/" + id + "-.svg";
     } else if (sliderNum == 2) {

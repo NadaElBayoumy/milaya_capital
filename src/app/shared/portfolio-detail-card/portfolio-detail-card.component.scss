@@ -13,7 +13,7 @@
             width: 100% !important;
             object-fit: cover;
             object-position: center center;
-            box-shadow: -33px 33px 0px $dark-grey; 
+            box-shadow: -33px 33px 0px $dark-grey;
             border-radius: 20px;
             margin-bottom: 33px;
 
@@ -82,14 +82,16 @@
         }
 
         .d-flex:last-child {
-            position: absolute;
-            bottom: 0px;
+            // position: absolute;
+            // bottom: 0px;
         }
     }
 
     .contact-btn-col {
-        flex: 1;
+        flex: 0;
         position: relative;
+        display: inline-block;
+        vertical-align: bottom;
 
         button {
             border-radius: 0px;

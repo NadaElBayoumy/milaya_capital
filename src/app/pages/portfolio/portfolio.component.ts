@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { fadeInFromTop1, fadeInFromTop2, fadeInFromTop3 } from '../../animations';
 import { MilayaService } from 'src/app/milaya.service';
 
-
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -12,10 +11,9 @@ import { MilayaService } from 'src/app/milaya.service';
   animations: [fadeInFromTop1, fadeInFromTop2, fadeInFromTop3]
 })
 export class PortfolioComponent implements OnInit {
-
   isMobile: boolean = false;
 
-  constructor(  private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  constructor(private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -30,36 +28,22 @@ export class PortfolioComponent implements OnInit {
     // { id: 6, title: "TED's GROOMING LONDON", description: "TED's GROOMING LONDON", image: "assets/tedbacker-bg.jpg", backgroundImage: "assets/clients/tedbaker.svg" },
   ];
 
-
- 
-
-
-
   ngOnInit() {
-    this.route.queryParams
-      .subscribe(params => {
-        this.milayaService.getPortfolios().subscribe((portfolios) => {
-
-          portfolios.forEach(portfolio => {
-            let tit = this.milayaService.removeHtmlTagsPipe.transform(portfolio.title.rendered);
-            let des = this.milayaService.removeHtmlTagsPipe.transform(portfolio.content.rendered);
-            des = this.milayaService.truncateText(des,40);
-            // let img = this.removeHtmlTagsPipe.transform(portfolio.img)
-            let img;
-
-            this.route.queryParams.subscribe(params2 => {
-              this.milayaService.getFeaturedImageUrl(portfolio.featured_media).subscribe((media_ret: any) => {
-                img = media_ret.source_url;
-                this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: "assets/clients/tedbaker.svg" });
-              });
-            });
-           
+    this.milayaService.getPortfolios().subscribe((portfolios) => {
+      portfolios.forEach(portfolio => {
+        let tit = this.milayaService.removeHtmlTagsPipe.transform(portfolio.title.rendered);
+        let des = this.milayaService.removeHtmlTagsPipe.transform(portfolio.content.rendered);
+        des = this.milayaService.truncateText(des, 40);
+        let img:any;
+        let background_img:any;
+        this.milayaService.getFeaturedImageUrl(portfolio.featured_media).subscribe((media_ret: any) => {
+          img = media_ret.source_url;
+          this.milayaService.getFeaturedImageUrl(portfolio?.acf?.portfolio_background_image).subscribe((media_ret: any) => {
+            background_img = media_ret.source_url;
+            this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: background_img });
           });
-
         });
-      }
-      );
+      });
+    });
   }
-
-
 }

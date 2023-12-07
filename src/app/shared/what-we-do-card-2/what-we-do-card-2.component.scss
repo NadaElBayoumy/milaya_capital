@@ -32,7 +32,16 @@
     .top-right-img {
         position: absolute;
         top: 0px;
-        right: 0px;
+        overflow: hidden;
+        width: 88%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+            transform: rotate(20deg);
+
+        }
     }
 }
 
@@ -77,8 +86,8 @@
 
     .what-we-do-desc {
         font-weight: 600;
-        font-size: $p-font-sm !important ;
+        font-size: $p-font-sm !important;
         line-height: 19px !important;
-  
+
     }
 }

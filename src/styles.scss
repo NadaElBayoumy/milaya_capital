@@ -1,5 +1,6 @@
 // @import 'variables.scss';
 @import 'variables';
+@import '../node_modules/ngx-toastr/toastr.css';
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -356,22 +357,22 @@ app-footer::before {
 
 
 .toast-container {
-    width: 100% !important;
+    // width: 100% !important;
 
     .toast-success {
-        background-color: $grey;
+        background-color: $brand;
         color: $white;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
+        // margin-right: auto;
+        // margin-left: auto;
+        // text-align: center;
     }
 
     .toast-error {
-        background-color: $error-color;
-        color: $white;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
+        // background-color: $error-color;
+        // color: $white;
+        // margin-right: auto;
+        // margin-left: auto;
+        // text-align: center;
     }
 }
 

@@ -4,8 +4,8 @@
         <div>
             <img class="footer-logo" src="assets/logo-footer.svg" alt="logo"
                 [@enterFromTop]="animationStates.enterFromTop">
-            <p class="footer-description" [@enterFromTop]="animationStates.enterFromTop">
-                Strategic investments, experts in accelerating change for businesses and individuals
+            <p class="footer-description" [@enterFromTop]="animationStates.enterFromTop" [innerHTML]="footer_paragraph" *ngIf="footer_paragraph">
+                <!-- Strategic investments, experts in accelerating change for businesses and individuals -->
             </p>
             <div class="wrap-email-sm" *ngIf="!isMobile">
                 <!-- <div class="input-group mb-3 footer-input" [@enterFromTop2]="animationStates.enterFromTop">
@@ -58,11 +58,15 @@
             <h4 class="title" [@enterFromTop]="animationStates.enterFromTop">Get In Touch</h4>
             <div class="email" [@enterFromTop2]="animationStates.enterFromTop2">
                 <p class="grey-p-small">Email</p>
-                <p class="black-p-small"> {{ 'info@milayacapital.ae' }} </p>
+                <p class="black-p-small" [innerHTML]="company_email" *ngIf="company_email">
+                     <!-- {{ 'info@milayacapital.ae' }} -->
+                </p>
             </div>
             <div class="address" [@enterFromTop3]="animationStates.enterFromTop3">
-                <p class="grey-p-small">Address</p>
-                <p class="black-p-small">Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE</p>
+                <p class="grey-p-small" >Address</p>
+                <p class="black-p-small" [innerHTML]="address" *ngIf="address"> 
+                    <!-- Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE -->
+                </p>
             </div>
         </div>
     </div>

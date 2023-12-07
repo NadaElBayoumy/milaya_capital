@@ -81,8 +81,8 @@
             </div>
             <div class="content">
                 <h5>Head Office</h5>
-                <span class="description-p2">
-                    Second Floor Office , Bugatti Showroam Building, Al Manara - Dubai , UAE
+                <span class="description-p2" [innerHTML]="address" *ngIf="address">
+                    <!-- Second Floor Office , Bugatti Showroam Building, Al Manara - Dubai , UAE -->
                 </span>
             </div>
         </div>
@@ -93,10 +93,11 @@
             </div>
             <div class="content">
                 <h5>E-mail Info</h5>
-                <span class="description-p2">
-                    info@milayacapital.ae
+                <span class="description-p2" [innerHTML]="company_email" *ngIf="company_email">
+                    <!-- info@milayacapital.ae -->
                 </span>
             </div>
         </div>
     </div>
 </div>
+

@@ -22,11 +22,11 @@
         <div class="spacer-div"></div>
         <div class="spacer-div" *ngIf="!isMobile"></div>
         <div class="counter-cards container" [@enterFromTop]="animationStates.enterFromTop">
-            <app-counter-card class="c-card counter-border" [number]="clients_partners_trusted"
+            <app-counter-card class="c-card counter-border" [number]="clients_partners_trusted" *ngIf="clients_partners_trusted"
                 [text]="'Clients & Partners Trusted'"></app-counter-card>
-            <app-counter-card class="c-card counter-border" [number]="awards_winning_accquired"
+            <app-counter-card class="c-card counter-border" [number]="awards_winning_accquired" *ngIf="awards_winning_accquired"
                 [text]="'Awards & Winning Accquired'"></app-counter-card>
-            <app-counter-card class="c-card" [number]="projects_completed_on_24_countries"
+            <app-counter-card class="c-card" [number]="projects_completed_on_24_countries" *ngIf="projects_completed_on_24_countries"
                 [text]="'Projects Completed on 24 Countries'"></app-counter-card>
         </div>
         <div class="spacer-div" *ngIf="!isMobile"></div>
