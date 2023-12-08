@@ -26,11 +26,7 @@ export class WhatWeDoComponent {
     nav: true
   }
 
-  slides:any = [
-    // { id: 1, icon: "bi bi-buildings", title: "Property Letting and Real Estate", description: "In the UK and UAE, we specialize in property leQng and the opera:ons of own or leased real estate. Whether you\'re searching for a new place to call home or seeking professional property management services, our team has you covered. We take pride in helping tenants find their dream proper:es and property owners maximize their investments." },
-    // { id: 2, icon: "bi bi-buildings", title: "Restaurant & Dining", description: "In Dubai and Athens, we have a selection of top-notch restaurants that offer culinary delights from around the world. Our experienced chefs and attentive staff ensure that every dining experience is a memorable one. Whether you\'re looking for fine dining or a casual meal with friends and family, we have the perfect venues. Savor the flavors of the Mediterranean and international cuisine at our restaurants. Our talented chefs use only the freshest, locally sourced ingredients to create a culinary master." },
-    // { id: 3, icon: "bi bi-buildings", title: "Retail", description: "Our successful businesses in the UK provide our customers with quality and quintessential. British style and global exploration service with a wide range of satisfying services to different tastes and preferences, with its 25 locations all in Central London. From trendy fashion barber shops to specialty coffee shops, we provide our customers with high-quality products and a memorable experience. Our coffee shops are cozy havens where you can enjoy exceptional coffee and breakfast in town in a warm ambiance. From your morning caffeine fix to afternoon meetings or relaxation, our coffee shops are your go-to destination in London." },
-  ];
+  slides:any = [];
 
   ngOnInit(): void {
     this.milayaService.getHomePageWhatWeDo().subscribe((what_we_do) => {
@@ -57,7 +53,6 @@ export class WhatWeDoComponent {
   onWindowScroll() {
     // Threshold values as needed
     const threshold = 100;
-    // Check the scroll position and update animation states
     this.animationStates.enterFromBottom1 = window.scrollY > threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromBottom2 = window.scrollY > threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromBottom3 = window.scrollY > threshold ? 'visible' : 'hidden';

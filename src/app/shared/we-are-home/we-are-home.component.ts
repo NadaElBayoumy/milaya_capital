@@ -11,7 +11,6 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   ],
 })
 export class WeAreHomeComponent implements AfterViewInit {
-
   isMobile: boolean = false;
   @Input() ourWorkContent!: any;
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
@@ -22,7 +21,6 @@ export class WeAreHomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const container = document.querySelector('.flex-container');
-    // container?.css?.setProperty('--container-margin', '20px'); 
   }
 
 

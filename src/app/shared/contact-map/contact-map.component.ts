@@ -37,8 +37,6 @@ export class ContactMapComponent implements OnInit {
 
   private initMap(): void {
     const map = L.map('map',{center:[this.lat, this.lng]}).setView([this.lat, this.lng], this.zoom);
-    // var latlng = L.latLng(25.14091142684441, 55.217559581197044);
-
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       maxZoom: this.zoom
     }).addTo(map);
@@ -59,13 +57,10 @@ export class ContactMapComponent implements OnInit {
         popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
       });
     }
-    
-   
 
     // Add a marker with the custom icon
-    L.marker([25.14091142684441, 55.217559581197044], { icon: this.customIcon }).addTo(map)
+    L.marker([this.lat, this.lng], { icon: this.customIcon }).addTo(map)
       .bindPopup('Milaya Capital');
-      // .openPopup();
   }
 
   //For Animations on Scroll
@@ -79,7 +74,6 @@ export class ContactMapComponent implements OnInit {
   onWindowScroll() {
     // Threshold values as needed
     const threshold = 50;
-
     // Check the scroll position and update animation states
     this.animationStates.enterFromTop = window.scrollY > threshold ? 'visible' : 'hidden';
   }

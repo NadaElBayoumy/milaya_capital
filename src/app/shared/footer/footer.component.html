@@ -9,6 +9,7 @@
                 <!-- Strategic investments, experts in accelerating change for businesses and individuals -->
             </p>
             <div class="wrap-email-sm" *ngIf="!isMobile">
+                <!-- Keep this commented feature -->
                 <!-- <div class="input-group mb-3 footer-input" [@enterFromTop2]="animationStates.enterFromTop">
                     <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                         aria-label="Email" aria-describedby="basic-addon1">
@@ -80,6 +81,8 @@
     <div class="f-col" *ngIf="isMobile">
 
         <div class="wrap-email-sm">
+            <!-- Keep this commented feature -->
+
             <!-- <div class="input-group mb-3 footer-input" [@enterFromTop]="animationStates.enterFromTop">
                 <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                     aria-label="Email" aria-describedby="basic-addon1">
@@ -88,9 +91,9 @@
                 </div>
             </div> -->
 
-            <div *ngIf="isEmailInvalid()" class="text-danger">
+            <!-- <div *ngIf="isEmailInvalid()" class="text-danger">
                 Email is not in a valid format
-            </div>
+            </div> -->
 
             <!-- <p class="error">please enter valid email</p> -->
 

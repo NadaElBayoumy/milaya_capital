@@ -22,7 +22,6 @@ export class HeightsSliderComponent implements OnInit {
     });
   }
 
-
   customOptions: OwlOptions = {
     items: 4,
     loop: true,
@@ -40,15 +39,7 @@ export class HeightsSliderComponent implements OnInit {
     }
   }
 
-  slides:any = [
-    // { id: 1, num: "01", icon: "bi bi-arrow-up-right", title: "Project Investment", descr: "", img: "../../../assets/height-1.svg" },
-    // { id: 2, num: "02", icon: "bi bi-arrow-down-right", title: "Management", descr: "", img: "../../../assets/height-2.svg" },
-    // { id: 3, num: "03", icon: "bi bi-arrow-up-right", title: "Residential and Commercial Property Management", descr: "", img: "../../../assets/height-3.svg" },
-    // { id: 4, num: "04", icon: "bi bi-arrow-up-right", title: "Provider: Leading", descr: "", img: "../../../assets/height-4.svg" },
-    // { id: 5, num: "05", icon: "bi bi-arrow-up-right", title: "Provider: Leading", descr: "", img: "../../../assets/height-4.svg" },
-    // { id: 6, num: "06", icon: "bi bi-arrow-up-right", title: "Provider: Leading", descr: "", img: "../../../assets/height-4.svg" },
-  ];
-
+  slides:any = [];
 
   ngOnInit(): void {
     this.milayaService.getHomeBusinessHeightsSlider().subscribe((business_heights) => {

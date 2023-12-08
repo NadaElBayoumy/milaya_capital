@@ -16,14 +16,11 @@ export class PortfolioVerticalCardComponent {
   @Input() description!: string;
   @Input() id!: number;
   @Input() backgroundImage!: string;
+  isMobile: boolean = false;
 
   navigateToDetailsPage() {
-    // this.router.navigate(['/portfolio-details',{'id':this.id}]);
     this.router.navigate(["portfolio-details"], { queryParams: { 'id': this.id } });
-
   }
-
-  isMobile: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {

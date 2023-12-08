@@ -8,7 +8,6 @@ import { ActivatedRoute,  Router } from '@angular/router';
   templateUrl: './main-poster.component.html',
   styleUrls: ['./main-poster.component.scss'],
   animations: [fadeInFromBottomTy20],
-
 })
 export class MainPosterComponent {
   isMobile: boolean = false;

@@ -7,8 +7,6 @@
     @media screen and (max-width: 900px) {
         padding: 20px;
     }
-
-
     .what-we-do-title {
         color: $white;
         text-align: center;
@@ -16,8 +14,6 @@
         font-weight: 700;
         font-size: $h2-font;
         line-height: 24px;
-
-
     }
 
     .what-we-do-desc {
@@ -46,7 +42,6 @@
 }
 
 .what-we-do-card2.left-align {
-
     .what-we-do-title,
     .what-we-do-desc {
         text-align: left;
@@ -55,12 +50,10 @@
 
 .what-we-do-card2.top-align {
     padding: 35px;
-
     .what-we-do-title,
     .what-we-do-desc {
         text-align: left;
     }
-
     .what-we-do-desc {
         font-weight: 600;
         font-size: $p-portfolio !important;
@@ -71,19 +64,16 @@
 .mobile.what-we-do-card2 {
     background: none;
     border: none;
-
     .top-right-img {
         img {
             width: 50%;
         }
     }
-
     .what-we-do-title {
         font-weight: 600;
         font-size: $h2-font !important;
         line-height: 24px !important;
     }
-
     .what-we-do-desc {
         font-weight: 600;
         font-size: $p-font-sm !important;

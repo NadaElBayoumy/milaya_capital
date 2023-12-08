@@ -3,6 +3,7 @@ import { enterFromTop, enterFromTop1, enterFromTop2 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 import { MilayaService } from 'src/app/milaya.service';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -12,11 +13,9 @@ import { MilayaService } from 'src/app/milaya.service';
 
 export class AboutComponent implements OnInit {
   isMobile: boolean = false;
-
   leadersInManagementContent: any;
   weAreDynamicContent: any;
   ourVisionContent: any;
-  // counters: any;
   clients_partners_trusted:any;
   awards_winning_accquired:any;
   projects_completed_on_24_countries:any;

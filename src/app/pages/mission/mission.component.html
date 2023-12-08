@@ -1,8 +1,6 @@
 <!-- Mission Page -->
 <div class="mission" [ngClass]="{'mobile':isMobile}">
-    <!-- [pageOverviewText]="'Milaya Capital’s vision is to create a better tomorrow for the generations to come. A world where we can live in, a sustainable future hence we pay all our efforts in being environmentally sustainable throughout our company’s operations.'" -->
     <app-overview [pageTitle]="'Mission & Vision'" ></app-overview>
-    <!-- <app-overview ></app-overview> -->
     <div class="row">
         <app-mission-card></app-mission-card>
     </div>
@@ -12,7 +10,6 @@
 <app-clients></app-clients>
 <div class="spacer-div" *ngIf="!isMobile"></div>
 <div class="container">
-    <!-- [mediaURL]="'https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4'" -->
     <app-media [mediaType]="'video'" ></app-media>
 </div>
 

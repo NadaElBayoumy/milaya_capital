@@ -14,7 +14,6 @@ import { MilayaService } from 'src/app/milaya.service';
 export class FooterComponent implements OnInit {
   userEmail: string = '';
   isMobile: boolean = false;
-  // Threshold values as needed
   threshold = 300;
   address: any;
   company_email: any;
@@ -22,7 +21,6 @@ export class FooterComponent implements OnInit {
   facebook: any;
   instagram: any;
   twitter: any;
-
 
   constructor(private milayaService: MilayaService, private toastr: ToastrService, private router: Router, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
@@ -47,7 +45,6 @@ export class FooterComponent implements OnInit {
     else if (this.router?.url == "/contact") {
       this.threshold = 200;
     }
-
   }
 
   ngOnInit(): void {

@@ -12,7 +12,6 @@ import { MilayaService } from 'src/app/milaya.service';
 
 export class OverviewComponent implements OnInit {
   @Input() pageTitle!: string;
-  // @Input() pageOverviewText!: string;
   @Input() direction!: string;
   @Input() light!: string;
   isMobile: boolean = false;

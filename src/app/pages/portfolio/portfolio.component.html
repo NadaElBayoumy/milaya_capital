@@ -4,8 +4,8 @@
     <app-overview [pageTitle]="'Latest Portfolio'"      ></app-overview>
         <!-- [pageOverviewText]="'Consulting is a long-term investment in your goal’s future.'" -->
     <div class="spacer-div" *ngIf="!isMobile"></div>
-
-    <div class="portfolio-divs" *ngIf="!isMobile && false">
+    <!-- These comment is needed for the other desgin on portfolio -->
+    <!-- <div class="portfolio-divs" *ngIf="!isMobile && false">
         <app-portfolio-card [imageWay]="'left'"></app-portfolio-card>
         <div class="spacer-div"></div>
         <app-portfolio-card [imageWay]="'right'"></app-portfolio-card>
@@ -13,32 +13,14 @@
         <app-portfolio-card [imageWay]="'left'"></app-portfolio-card>
         <div class="spacer-div"></div>
         <app-portfolio-card [imageWay]="'right'"></app-portfolio-card>
-    </div>
+    </div> -->
 
-    <div class="portfolio-divs" *ngIf="isMobile">
-        <app-portfolio-card [imageWay]="'top'"></app-portfolio-card>
-        <div class="spacer-div"></div>
-        <app-portfolio-card [imageWay]="'top'"></app-portfolio-card>
-        <div class="spacer-div"></div>
-        <app-portfolio-card [imageWay]="'top'"></app-portfolio-card>
-        <div class="spacer-div"></div>
-        <app-portfolio-card [imageWay]="'top'"></app-portfolio-card>
-    </div>
-
-
-
-    <div class="portfolio-vertical-divs" *ngIf="!isMobile && true">
-       <ng-container *ngFor="let portfolio of portfolios; let i = index;">
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [id]="portfolio.id"  [image]="portfolio.image" [backgroundImage]="portfolio.backgroundImage" [title]="portfolio.title" [description]="portfolio.description"
+    <div class="portfolio-divs"  [ngClass]="isMobile == true ? 'portfolio-divs' : 'portfolio-vertical-divs'" >
+        <ng-container *ngFor="let portfolio of portfolios; let i = index;">
+            <app-portfolio-vertical-card class="item" [imageWay]="'top'" [id]="portfolio.id"  [image]="portfolio.image" [backgroundImage]="portfolio.backgroundImage" [title]="portfolio.title" [description]="portfolio.description"
             [@fadeInFromTop3]></app-portfolio-vertical-card>
-       </ng-container>
-    <!--<app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop2]></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop1]></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop3]></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop3]></app-portfolio-vertical-card>
-        <app-portfolio-vertical-card class="item" [imageWay]="'top'" [@fadeInFromTop3]></app-portfolio-vertical-card> -->
+        </ng-container>
     </div>
-
 </div>
 
 <app-footer> </app-footer>

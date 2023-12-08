@@ -17,7 +17,6 @@ export class MobileNavbarComponent {
     milaya.sideMenuOpen = false;
   }
 
-
   toggleMobileMenu() {
     this.sideMenuOpen = !this.sideMenuOpen;
     this.milaya.sideMenuOpen = this.sideMenuOpen;

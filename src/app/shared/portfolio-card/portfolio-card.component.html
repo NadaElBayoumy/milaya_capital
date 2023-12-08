@@ -14,7 +14,6 @@
     </div>
 </div>
 
-
 <div class="portfolio-card right-card" *ngIf="imageWay == 'right'  && !isMobile" [@slideFromRight]
     (click)="navigateToDetailsPage(2)" [ngClass]="{'mobile':isMobile}">
     <div class="right">
@@ -29,8 +28,6 @@
 
     </div>
 </div>
-
-
 
 <div class="portfolio-card left-card" *ngIf="imageWay == 'top'" [@slideFromLeft] (click)="navigateToDetailsPage(1)"
     [ngClass]="{'mobile':isMobile, 'top-card': imageWay == 'top'}">
@@ -48,8 +45,6 @@
 </div>
 
 <!--------------------------- another way TOP ----------------------------------------- -->
-
-
 <!-- <div class="portfolio-card" *ngIf="imageWay == 'top'">
     <div class="row">
         <div class="col image-side">

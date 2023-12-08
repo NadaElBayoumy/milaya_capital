@@ -9,12 +9,10 @@
             <div class="logo-img">
                 <!-- <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1.id,i1, 1)"
                     (mouseleave)="onMouseLeave(slide1.id,i1,1)" /> -->
-
                     <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1,i1)"  (mouseout)="onMouseLeave(slide1,i1)" />
             </div>
         </div>
     </ngx-slick-carousel>
-
 
     <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2">
         <div ngxSlickItem *ngFor="let slide2 of slides2;let i2 = index;" class="slide2">

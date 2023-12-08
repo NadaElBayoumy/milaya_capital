@@ -1,8 +1,6 @@
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
-
 /////////New Animations
-
 export const enterFromTop = trigger('enterFromTop', [
     state('hidden', style({
       opacity: 0,

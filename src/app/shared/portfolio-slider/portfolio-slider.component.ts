@@ -44,15 +44,7 @@ export class PortfolioSliderComponent implements OnInit {
     ]
   };
 
-  slides:any = [
-    // { id: 1, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-    // { id: 2, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-    // { id: 3, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-    // { id: 4, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-    // { id: 5, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-    // { id: 6, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-    // { id: 7, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: "../../../assets/portfolio-detail-img-card.svg" },
-  ];
+  slides:any = [];
 
   constructor(private milayaService:MilayaService, private el: ElementRef, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {

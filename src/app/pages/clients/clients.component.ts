@@ -54,7 +54,7 @@ export class ClientsComponent implements OnInit {
     rtl: true,
     pauseOnFocus: false,
     draggable: false,
-    // pauseOnHover: true
+    pauseOnHover: false
   };
 
   slideConfig2 = {
@@ -67,11 +67,10 @@ export class ClientsComponent implements OnInit {
     infinite: true,
     pauseOnFocus: false,
     draggable: false,
-    // pauseOnHover: true
+    pauseOnHover: false
   };
 
   isMobile: boolean = false;
-  // Threshold values as needed
   threshold = 700;
 
   constructor(private milayaService: MilayaService, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
@@ -89,7 +88,6 @@ export class ClientsComponent implements OnInit {
       this.threshold = 0;
     }
   }
-
 
   ngOnInit() {
     this.milayaService.getClients(1).subscribe((clients1: any) => {
@@ -127,10 +125,6 @@ export class ClientsComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // console.log(window.scrollY)
-    // if(this.router?.url == "/mission"){
-    //   return;
-    // }
     this.animationStates.enterFromTop = window.scrollY > this.threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromTop1 = window.scrollY > this.threshold ? 'visible' : 'hidden';
   }

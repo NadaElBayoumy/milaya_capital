@@ -11,7 +11,6 @@
             color: $mid-grey;
             background-color: $white;
         }
-
         .owl-prev {
             position: absolute !important;
             top: 50% !important;
@@ -19,12 +18,10 @@
         }
     }
 
-
     .portfolio-card {
         margin: 20px;
         border: 1px $mid-grey solid;
         border-radius: 20px;
-        // background: linear-gradient(150.12deg, rgba(217, 217, 217, 0.9) 3.9%, rgba(217, 217, 217, 0.1) 91.59%);
         background: $portfolio-bg-card;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
 
@@ -51,7 +48,6 @@
     }
 }
 
-
 .portfolio-slider::before {
     content: "";
     position: absolute;
@@ -61,5 +57,4 @@
     height: 110%;
     background: url(../../../assets/gallerytxt.svg) right bottom/contain no-repeat;
     z-index: 0;
-
 }

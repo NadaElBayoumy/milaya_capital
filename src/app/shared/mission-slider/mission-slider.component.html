@@ -5,7 +5,6 @@
     <owl-carousel-o class="container" [options]="customOptions">
         <ng-container *ngFor="let slide of missions; let i = index;">
             <ng-template carouselSlide>
-
                 <div class="mission-card" [ngClass]="getAnimationClass(i)">
                     <div class="icon-mission-card">
                         <i [class]="slide.icon"></i>
@@ -16,17 +15,11 @@
                     <div class="mission-card-image">
                         <img alt="mission" [src]="slide.img">
                     </div>
-
                     <p class="mission-card-description">
                         {{slide.descr}}
                     </p>
-
                 </div>
-
-
             </ng-template>
-
         </ng-container>
-
     </owl-carousel-o>
 </div>

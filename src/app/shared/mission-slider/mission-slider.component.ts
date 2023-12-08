@@ -17,9 +17,7 @@ export class MissionSliderComponent implements  OnInit {
   title = 'mission slider';
   isMobile: boolean = false;
   isLoading: boolean = true;
-
-  missions: any[] = [
-  ];
+  missions: any[] = [];
 
   constructor(private removeHtmlTagsPipe: RemoveHtmlTagsPipe, private sanitizer: DomSanitizer, private milayaService: MilayaService, private el: ElementRef, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
@@ -43,16 +41,7 @@ export class MissionSliderComponent implements  OnInit {
     }
   }
 
-  slides = [
-    // { id: 1, icon: "bi bi-buildings", title: "F&B Management", descr: "", img: "assets/mission/FP-scaled.jpg" },
-    // { id: 2, icon: "bi bi-buildings", title: "Real Estate", descr: "", img: "assets/mission/Real-Estate.jpg" },
-    // { id: 3, icon: "bi bi-buildings", title: "Construction", descr: "", img: "assets/mission/Construction-scaled.jpg" },
-    // { id: 4, icon: "bi bi-buildings", title: "Retail Management", descr: "", img: "assets/mission/Retail-scaled.jpg" },
-    // { id: 5, icon: "bi bi-buildings", title: "Technology & Development", descr: "", img: "assets/mission/Technology-Development.jpg" },
-    // { id: 6, icon: "bi bi-buildings", title: "Property Management", descr: "", img: "assets/mission/Property-scaled.jpg" },
-    // { id: 7, icon: "bi bi-buildings", title: "Hospitality Management", descr: "", img: "assets/mission/Hospitalty-scaled.jpg" },
-    // { id: 7, icon: "bi bi-buildings", title: "Energy Services", descr: "", img: "assets/mission/energy.png" },
-  ];
+  slides = [];
 
   ngOnInit() {
     this.milayaService.getMissions().subscribe((missions) => {

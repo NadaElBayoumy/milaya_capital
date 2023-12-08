@@ -11,14 +11,11 @@ import { slideFromLeft, slideFromRight} from '../../animations';
 })
 export class PortfolioCardComponent {
   @Input() imageWay!: string;
-
-  
+  isMobile: boolean = false;
   navigateToDetailsPage(id:any) {
     this.router.navigate(['/portfolio-details',{'portfolio-id':'1'}]);
   }
 
-  isMobile: boolean = false;
-  
   constructor(private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;

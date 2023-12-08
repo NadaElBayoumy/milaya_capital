@@ -3,6 +3,8 @@ import * as L from 'leaflet';
 import { enterFromTop } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
+import { MilayaService } from 'src/app/milaya.service';
+
 @Component({
   selector: 'app-contact-mobile-map',
   templateUrl: './contact-mobile-map.component.html',
@@ -13,25 +15,33 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactMobileMapComponent implements OnInit {
   isMobile: boolean = false;
   customIcon: any;
-  constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  lat:any;
+  lng:any;
+  zoom:any;
+  isLoading: boolean = true;
+
+  constructor(private milayaService: MilayaService,private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
   }
 
   ngOnInit(): void {
-    this.initMap();
+    this.milayaService.getContactInfo().subscribe((contact_info) => {
+      this.lat = contact_info?.acf?.lat;
+      this.lng = contact_info?.acf?.lng;
+      this.zoom = contact_info?.acf?.zoom;
+      
+      this.initMap();
+      this.isLoading = false;
+    });
   }
 
   private initMap(): void {
-    const map = L.map('map', { center: [25.14091142684441, 55.217559581197044] }).setView([25.14091142684441, 55.217559581197044], 15);
-    // var latlng = L.latLng(25.14091142684441, 55.217559581197044);
-
+    const map = L.map('map', { center: [this.lat, this.lng] }).setView([this.lat, this.lng], 15);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       maxZoom: 13
     }).addTo(map);
-
-
     if (!this.isMobile) {
       this.customIcon = L.icon({
         iconUrl: '../../../assets/marker.svg',
@@ -48,12 +58,9 @@ export class ContactMobileMapComponent implements OnInit {
       });
     }
 
-
-
     // Add a marker with the custom icon
-    L.marker([25.14091142684441, 55.217559581197044], { icon: this.customIcon }).addTo(map)
+    L.marker([this.lat, this.lng], { icon: this.customIcon }).addTo(map)
       .bindPopup('Milaya Capital');
-    // .openPopup();
   }
 
   //For Animations on Scroll
@@ -65,10 +72,7 @@ export class ContactMobileMapComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Threshold values as needed
     const threshold = 50;
-
-    // Check the scroll position and update animation states
     this.animationStates.enterFromTop = window.scrollY > threshold ? 'visible' : 'hidden';
   }
 }

@@ -3,15 +3,12 @@
     <div class="background-container">
         <div class="first-bg"></div>
     </div>
-
     <div class="content-container">
         <div class="content container">
             <div class="spacer-div" *ngIf="!isMobile" ></div>
-
             <app-navbar [isContact]="true" *ngIf="!isMobile" ></app-navbar>
             <app-mobile-navbar [isContact]="true" *ngIf="isMobile" ></app-mobile-navbar>
             <app-overview [light]="'yes'" [pageTitle]="'Contact'"  ></app-overview>
-            <!-- [pageOverviewText]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'" -->
             <div class="spacer-div"></div>
         </div>
     </div>
@@ -24,7 +21,5 @@
             <app-contact-mobile-map *ngIf="isMobile"></app-contact-mobile-map>
         </div>
     </div>
-
-
 </div>
 <app-footer> </app-footer>

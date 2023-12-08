@@ -50,7 +50,6 @@ export class ContactFormComponent {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      // console.log(this.contactForm)
       this.sendEmail({
         to: this.contactForm?.value?.email,
         subject: 'From Milaya Capital Website Contact Us Form',
@@ -62,7 +61,6 @@ export class ContactFormComponent {
   sendEmail(emailData:any) {
     this.milayaService.sendEmail(emailData).subscribe(
       (response) => {
-        
         console.log('Email sent successfully:', response);
         this.toastr.success('Contact form submitted successfully', 'Success', {
           positionClass: 'toast-top-right',

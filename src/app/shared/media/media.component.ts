@@ -11,13 +11,11 @@ import { MilayaService } from 'src/app/milaya.service';
 })
 export class MediaComponent implements OnInit {
   @Input() mediaType!: string;
-  // @Input() mediaURL!: string;
   name = 'Video events';
   @ViewChild('videoPlayer') videoplayer: any;
   startedPlay: boolean = false;
   show: boolean = false;
   isMobile: boolean = false;
-  // Threshold values as needed
   threshold = 2500;
   mediaURL!: any;
 
@@ -41,7 +39,6 @@ export class MediaComponent implements OnInit {
     this.mediaURL = "https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4";
     this.milayaService.getFeaturedImageUrl(this.milayaService.main_video_id).subscribe((video: any) => {
       this.mediaURL = this.milayaService.removeHtmlTagsPipe.transform(video?.guid?.rendered);
-      // Manually trigger change detection
       this.cdr.detectChanges();
     });
   }

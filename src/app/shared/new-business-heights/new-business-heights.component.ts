@@ -18,7 +18,6 @@ export class NewBusinessHeightsComponent {
     });
   }
 
-  
   //For Animations on Scroll
   animationStates = {
     enterFromTop: 'hidden',
@@ -27,11 +26,7 @@ export class NewBusinessHeightsComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-  
-    // Threshold values as needed
     const threshold = 1000;
-
-    // Check the scroll position and update animation states
     this.animationStates.enterFromTop = window.scrollY > threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromLeft = window.scrollY > threshold ? 'visible' : 'hidden';
   }

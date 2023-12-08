@@ -1,7 +1,6 @@
 @import '../../../variables';
 .what-we-do {
     display: flex;
-
     app-what-we-do-card {
         flex: 1;
         padding-right: 0px;
@@ -17,7 +16,6 @@
         background: linear-gradient(90deg, #565656 0%, #4f4f4f 35%, #343434 100%);
         border: 1px solid $white;
     }
-
 }
 
 .what-we-do-slider.mobile{
