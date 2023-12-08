@@ -45,6 +45,7 @@ import { MilayaService } from './milaya.service';
 import { PortfolioPageSliderComponent } from './shared/portfolio-page-slider/portfolio-page-slider.component';
 import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card/portfolio-vertical-card.component';
 import { ContactMobileMapComponent } from './shared/contact-mobile-map/contact-mobile-map.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { ContactMobileMapComponent } from './shared/contact-mobile-map/contact-m
     PortfolioPageSliderComponent,
     PortfolioVerticalCardComponent,
     ContactMobileMapComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserAnimationsModule,

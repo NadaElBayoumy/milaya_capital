@@ -12,6 +12,8 @@ import { RemoveHtmlTagsPipe } from '../remove-html-tags.pipe';
 export class MilayaService {
   private apiBaseUrl = 'http://localhost/milayacapital/wp-json/wp/v2/';
   private apiMailUrl = 'http://localhost/milayacapital/wp-json/milaya-email/v1/send-email/';
+  // private apiBaseUrl = 'https://www.milayacapital.ae/test/wp-json/wp/v2/';
+  // private apiMailUrl = 'https://www.milayacapital.ae/test/wp-json/milaya-email/v1/send-email/';
   sanitizedHTMLArray: SafeHtml[] = [];
   sideMenuOpen: boolean;
   isMobile: boolean;
@@ -93,95 +95,8 @@ export class MilayaService {
   }
 
 
-  getClients(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiBaseUrl}posts?categories=3&orderby=id&order=asc`);
-    // this.http.get<any[]>(`${this.apiBaseUrl}pages/52?_embed`).subscribe((clients:any) => {
-    //   let client_rendered = clients.content.rendered;
-    //   // this.sanitizedHTMLArray = client_rendered.map((item: { content: { rendered: string; }; }) =>
-    //   //   this.sanitizer.bypassSecurityTrustHtml(item.content.rendered)
-    //   // );
-    //   // console.log(this.sanitizedHTMLArray)
-    //   // let clients_san = this.sanitizeHtml(client_rendered)
-    //   // console.log(clients_san);
-    // }
-
-
-    // this.http.get<any[]>(`${this.apiBaseUrl}pages`).subscribe(data => {
-    //   // let nnnn = data;
-
-    //   // console.log(nnnn.content.rendered)
-    //   // Sanitize HTML and convert to an array of SafeHtml
-    //   this.sanitizedHTMLArray = data.map(data =>
-    //     this.sanitizer.bypassSecurityTrustHtml(data.content.rendered)
-
-    //   );
-    //   console.log("sanitez", this.sanitizedHTMLArray);
-    // });
-
-
-    // this.http.get<any[]>(`${this.apiBaseUrl}media`).subscribe(data => {
-    //   let returned_object: any = data;
-    //   console.log(returned_object)
-
-    //   this.sanitizedHTMLArray = data.map(post =>
-    //     this.sanitizer.bypassSecurityTrustHtml(returned_object));
-
-    //   console.log(this.sanitizedHTMLArray);
-
-
-    // const segments = returned_object.content.rendered.split('<figure>');
-    // console.log(segments)
-
-    // let searchString = "http://localhost/milayacapital/wp-content/uploads/2023/11";
-    // // const regex = new RegExp(`${searchString}*[^.png]+`, 'g');
-    // // const regex = new RegExp(`/^http*.*.*png*/`, 'g');
-    // const regex = /^figure.*png$/;
-
-
-    // const matches = returned_object.content.rendered.match(regex);
-
-    // console.log("matches",matches)
-    // let result_array:any;
-    // if (matches) {
-    //   result_array = matches.map((match: string) => match.substring(searchString.length));
-    // }
-
-
-
-    // let jsonArray = segments.map((segment: string) => {
-    //   try {
-    //     return JSON.parse(segment);
-    //   } catch (error) {
-    //     console.error('Error parsing JSON:', error);
-    //     return null;
-    //   }
-    // });
-
-    // Filter out null values (failed parsing)
-    // this.jsonArray = this.jsonArray.filter(obj => obj !== null);
-
-
-
-    // Check if posts is an array before using map
-    // if (Array.isArray(data)) {
-    //   // Sanitize HTML and convert to an array of SafeHtml
-    //   this.sanitizedHTMLArray = data.map(post =>
-    //     this.sanitizer.bypassSecurityTrustHtml(post.content.rendered)
-    //   );
-    // } else {
-    //   console.error('Unexpected response format from WordPress API.');
-    // }
-
-    // console.log(this.sanitizedHTMLArray)
-    // });
-
-
-
-
-
-
-
-    // return this.http.get<any[]>(`${this.apiBaseUrl}pages/52?_embed`);
+  getClients(page:number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiBaseUrl}clients?per_page=8&page=${page}`);
   }
 
   getPortfolioById(postId: number): Observable<any> {
@@ -210,6 +125,10 @@ export class MilayaService {
   getContactInfo(): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}company_info/${this.contact_id}`);
   }
+  
+  // getMapInfo(): Observable<any> {
+  //   return this.http.get<any>(`${this.apiBaseUrl}company_info/${this.contact_id}`);
+  // }
 
   sanitizeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);

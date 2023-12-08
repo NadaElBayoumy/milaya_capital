@@ -19,6 +19,9 @@ export class FooterComponent implements OnInit {
   address: any;
   company_email: any;
   footer_paragraph: any;
+  facebook: any;
+  instagram: any;
+  twitter: any;
 
 
   constructor(private milayaService: MilayaService, private toastr: ToastrService, private router: Router, private breakpointObserver: BreakpointObserver) {
@@ -49,9 +52,14 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.milayaService.getContactInfo().subscribe((contact_info) => {
+      console.log(contact_info)
       this.address = contact_info.acf?.address;
       this.company_email = contact_info.acf?.company_email;
       this.footer_paragraph = contact_info.acf?.footer_paragraph;
+
+      this.facebook = contact_info.acf?.facebook;
+      this.twitter = contact_info.acf?.twitter;
+      this.instagram = contact_info.acf?.instagram;
     });
   }
   isEmailInvalid(): boolean {
@@ -64,12 +72,18 @@ export class FooterComponent implements OnInit {
   }
 
   onSendMail(): any {
-    // this.showSuccess();
+    this.toastr.success('Your Email is subscribed sucessfully to Milaya Capital news letter', '');
   }
 
-
-  showSuccess() {
-    this.toastr.success('Your Email is subscribed sucessfully to Milaya Capital news letter', '');
+  navigateToSocialMediaURL(social_media: any) {
+    console.log(social_media)
+    if (social_media == "instagram") {
+      window.location.href = this.instagram;
+    } else if (social_media == "twitter") {
+      window.location.href = this.twitter;
+    } else if (social_media == "facebook") {
+      window.location.href = this.facebook;
+    }
   }
 
   //For Animations on Scroll
@@ -83,6 +97,7 @@ export class FooterComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+
     // Check the scroll position and update animation states
     this.animationStates.enterFromTop = window.scrollY > this.threshold ? 'visible' : 'hidden';
     this.animationStates.enterFromTop2 = window.scrollY > this.threshold ? 'visible' : 'hidden';

@@ -18,6 +18,7 @@ export class ContactFormComponent {
   isMobile: boolean = false;
   address:any;
   company_email:any;
+  isLoading: boolean = true;
 
   constructor(private milayaService: MilayaService, private toastr: ToastrService, private fb: FormBuilder, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.contactForm = this.fb.group({
@@ -36,6 +37,7 @@ export class ContactFormComponent {
     this.milayaService.getContactInfo().subscribe((contact_info) => {
       this.address = contact_info.acf?.address;
       this.company_email = contact_info.acf?.company_email;
+      this.isLoading = false;
     });
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -60,6 +62,7 @@ export class ContactFormComponent {
   sendEmail(emailData:any) {
     this.milayaService.sendEmail(emailData).subscribe(
       (response) => {
+        
         console.log('Email sent successfully:', response);
         this.toastr.success('Contact form submitted successfully', 'Success', {
           positionClass: 'toast-top-right',

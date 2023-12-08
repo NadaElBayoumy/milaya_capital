@@ -12,36 +12,35 @@ import { MilayaService } from 'src/app/milaya.service';
 })
 
 export class ClientsComponent implements OnInit {
-  slides1 = [
-    { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
-    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
-    { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
-    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+  isLoading: boolean = true;
+  slides1: any = [
+    // { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
+    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    // { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
+    // { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
+    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
 
-    { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
-    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
-    { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
-    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
-
+    // { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
+    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    // { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
+    // { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
+    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
   ];
 
-  slides2 = [
-    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
-    { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
-    { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
-    { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
-    { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
+  slides2: any = [
+    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+    // { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
+    // { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
+    // { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
+    // { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
 
-    { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
-    { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
-    { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
-    { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
-    { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
-
+    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
+    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+    // { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
+    // { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
+    // { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
+    // { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
   ];
 
   slideConfig1 = {
@@ -55,7 +54,7 @@ export class ClientsComponent implements OnInit {
     rtl: true,
     pauseOnFocus: false,
     draggable: false,
-    pauseOnHover: true
+    // pauseOnHover: true
   };
 
   slideConfig2 = {
@@ -68,14 +67,14 @@ export class ClientsComponent implements OnInit {
     infinite: true,
     pauseOnFocus: false,
     draggable: false,
-    pauseOnHover: true
+    // pauseOnHover: true
   };
 
   isMobile: boolean = false;
   // Threshold values as needed
   threshold = 700;
 
-  constructor(private milayaService: MilayaService,private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  constructor(private milayaService: MilayaService, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -91,45 +90,33 @@ export class ClientsComponent implements OnInit {
     }
   }
 
-  
+
   ngOnInit() {
-    this.route.queryParams
-      .subscribe(params => {
-        this.milayaService.getClients().subscribe((clients:any) => {
-          // let client_rendered = clients.content.rendered;
-          // this.sanitizedHTMLArray = this.data.map(item =>
-          //   this.sanitizer.bypassSecurityTrustHtml(item.content.rendered)
-          // );
-
-          // let clients_san = this.milayaService.sanitizeHtml(client_rendered)
-          // console.log(clients_san);
-          // client_rendered.forEach(cl:any => {
-            
-          // });
-          
-          
-
-          // portfolios.forEach(portfolio => {
-          //   let tit = this.milayaService.removeHtmlTagsPipe.transform(portfolio.title.rendered);
-          //   let des = this.milayaService.removeHtmlTagsPipe.transform(portfolio.content.rendered);
-          //   des = this.milayaService.truncateText(des,40);
-          //   // let img = this.removeHtmlTagsPipe.transform(portfolio.img)
-          //   let img;
-
-          //   this.route.queryParams.subscribe(params2 => {
-          //     this.milayaService.getFeaturedImageUrl(portfolio.featured_media).subscribe((media_ret: any) => {
-          //       console.log("media returned",media_ret);
-          //       img = media_ret.source_url;
-          //       this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: "assets/clients/tedbaker.svg" });
-          //     });
-          //   });
-          //   console.log(tit, des)
-           
-          // });
-
+    this.milayaService.getClients(1).subscribe((clients1: any) => {
+      clients1.forEach((client: any) => {
+        this.milayaService.getFeaturedImageUrl(client.featured_media).subscribe((media_ret: any) => {
+          let img_colored = media_ret.source_url;
+          this.milayaService.getFeaturedImageUrl(client?.acf?.grey_scale_image).subscribe((media_ret: any) => {
+            let img_grey = media_ret.source_url;
+            this.slides1.push({ id: client.id, name: client.title?.rendered, src: img_colored, img_grey: img_grey, current: img_grey });
+            this.isLoading = false;
+          });
         });
-      }
-      );
+      });
+    });
+
+    this.milayaService.getClients(2).subscribe((clients2: any) => {
+      clients2.forEach((client: any) => {
+        this.milayaService.getFeaturedImageUrl(client.featured_media).subscribe((media_ret: any) => {
+          let img_colored = media_ret.source_url;
+          this.milayaService.getFeaturedImageUrl(client?.acf?.grey_scale_image).subscribe((media_ret: any) => {
+            let img_grey = media_ret.source_url;
+            this.slides2.push({ id: client.id, name: client.title?.rendered, src: img_colored, img_grey: img_grey, current: img_grey });
+            this.isLoading = false;
+          });
+        });
+      });
+    });
   }
 
   //For Animations on Scroll
@@ -148,22 +135,12 @@ export class ClientsComponent implements OnInit {
     this.animationStates.enterFromTop1 = window.scrollY > this.threshold ? 'visible' : 'hidden';
   }
 
-  onMouseEnter(id: number, index: number, sliderNum: number): void {
-    // console.log(id, sliderNum)
-    if (sliderNum == 1) {
-      this.slides1[index].src = "../../../assets/" + id + "-" + id + ".svg";
-    } else if (sliderNum == 2) {
-      this.slides2[index].src = "../../../assets/" + id + "-" + id + ".svg";
-    }
+  onMouseEnter(slide: any, index: any): void {
+    slide.current = slide.src;
   }
 
-  onMouseLeave(id: number, index: number, sliderNum: number): void {
-    // console.log(id, sliderNum)
-    if (sliderNum == 1) {
-      this.slides1[index].src = "../../../assets/" + id + "-.svg";
-    } else if (sliderNum == 2) {
-      this.slides2[index].src = "../../../assets/" + id + "-.svg";
-    }
+  onMouseLeave(slide: any, index: any): void {
+    slide.current = slide.img_grey;
   }
 }
 

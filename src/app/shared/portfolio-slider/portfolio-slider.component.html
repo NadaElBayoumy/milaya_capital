@@ -1,4 +1,5 @@
-<div class="portfolio-slider" [@fadeInFromTop1] [ngClass]="{'mobile':isMobile}">
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="portfolio-slider" [@fadeInFromTop1] [ngClass]="{'mobile':isMobile}"  *ngIf="!isLoading">
   <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
     <div ngxSlickItem *ngFor="let slide of slides;let i = index;" class="slide">
       <div class="portfolio-card">

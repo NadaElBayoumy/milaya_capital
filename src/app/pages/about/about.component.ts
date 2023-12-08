@@ -20,6 +20,7 @@ export class AboutComponent implements OnInit {
   clients_partners_trusted:any;
   awards_winning_accquired:any;
   projects_completed_on_24_countries:any;
+  isLoading: boolean = true;
 
   constructor( private cdr: ChangeDetectorRef,private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
@@ -37,17 +38,17 @@ export class AboutComponent implements OnInit {
 
       let ourVision = this.milayaService.getObjectById(about_page_sections, this.milayaService.about_page_sections.our_vision);
       this.ourVisionContent = this.milayaService.removeHtmlTagsPipe.transform(ourVision?.content?.rendered);
+      this.isLoading = false;
     });
 
     this.milayaService.getCounters().subscribe((counters: any) => {
       let ret_counters = counters?.acf;
-      console.log(ret_counters.clients_partners_trusted)
       // Manually trigger change detection
       this.cdr.detectChanges();
-
       this.clients_partners_trusted = ret_counters.clients_partners_trusted;
       this.awards_winning_accquired = ret_counters.awards_winning_accquired;
       this.projects_completed_on_24_countries = ret_counters.projects_completed_on_24_countries;
+      this.isLoading = false;
       
     });
   }

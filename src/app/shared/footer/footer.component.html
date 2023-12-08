@@ -4,7 +4,8 @@
         <div>
             <img class="footer-logo" src="assets/logo-footer.svg" alt="logo"
                 [@enterFromTop]="animationStates.enterFromTop">
-            <p class="footer-description" [@enterFromTop]="animationStates.enterFromTop" [innerHTML]="footer_paragraph" *ngIf="footer_paragraph">
+            <p class="footer-description" [@enterFromTop]="animationStates.enterFromTop" [innerHTML]="footer_paragraph"
+                *ngIf="footer_paragraph">
                 <!-- Strategic investments, experts in accelerating change for businesses and individuals -->
             </p>
             <div class="wrap-email-sm" *ngIf="!isMobile">
@@ -26,11 +27,16 @@
 
                 <div class="social-media-wrapper">
                     <img src="../../../assets/social-media-insta.svg" alt="insta"
-                        [@enterFromRight]="animationStates.enterFromRight">
+                        [@enterFromRight]="animationStates.enterFromRight"
+                        (click)="navigateToSocialMediaURL('instagram');">
+
                     <img src="../../../assets/social-media-x.svg" alt="x"
-                        [@enterFromRight]="animationStates.enterFromRight">
+                        [@enterFromRight]="animationStates.enterFromRight"
+                        (click)="navigateToSocialMediaURL('twitter');">
+
                     <img src="../../../assets/social-media-fb.svg" alt="fb"
-                        [@enterFromRight]="animationStates.enterFromRight">
+                        [@enterFromRight]="animationStates.enterFromRight"
+                        (click)="navigateToSocialMediaURL('facebook');">
                 </div>
 
                 <p class="footer-copy-rights" [@enterFromRight2]="animationStates.enterFromRight2"
@@ -59,12 +65,12 @@
             <div class="email" [@enterFromTop2]="animationStates.enterFromTop2">
                 <p class="grey-p-small">Email</p>
                 <p class="black-p-small" [innerHTML]="company_email" *ngIf="company_email">
-                     <!-- {{ 'info@milayacapital.ae' }} -->
+                    <!-- {{ 'info@milayacapital.ae' }} -->
                 </p>
             </div>
             <div class="address" [@enterFromTop3]="animationStates.enterFromTop3">
-                <p class="grey-p-small" >Address</p>
-                <p class="black-p-small" [innerHTML]="address" *ngIf="address"> 
+                <p class="grey-p-small">Address</p>
+                <p class="black-p-small" [innerHTML]="address" *ngIf="address">
                     <!-- Second Floor Office , Bugatti Showroom Building Al Manara, Dubai , UAE -->
                 </p>
             </div>
@@ -73,7 +79,7 @@
 
     <div class="f-col" *ngIf="isMobile">
 
-        <div class="wrap-email-sm" >
+        <div class="wrap-email-sm">
             <!-- <div class="input-group mb-3 footer-input" [@enterFromTop]="animationStates.enterFromTop">
                 <input type="email" class="form-control" placeholder="Enter Your Email" [(ngModel)]="userEmail"
                     aria-label="Email" aria-describedby="basic-addon1">
@@ -90,11 +96,13 @@
 
             <div class="social-media-wrapper">
                 <img src="../../../assets/social-media-insta.svg" alt="insta"
-                    [@enterFromRight]="animationStates.enterFromRight">
-                <img src="../../../assets/social-media-x.svg" alt="x"
-                    [@enterFromRight]="animationStates.enterFromRight">
+                    [@enterFromRight]="animationStates.enterFromRight" (click)="navigateToSocialMediaURL('instagram');">
+
+                <img src="../../../assets/social-media-x.svg" alt="x" [@enterFromRight]="animationStates.enterFromRight"
+                    (click)="navigateToSocialMediaURL('twitter');">
+
                 <img src="../../../assets/social-media-fb.svg" alt="fb"
-                    [@enterFromRight]="animationStates.enterFromRight">
+                    [@enterFromRight]="animationStates.enterFromRight" (click)="navigateToSocialMediaURL('facebook');">
             </div>
             <p class="footer-copy-rights" [@enterFromRight2]="animationStates.enterFromRight2"
                 [ngClass]="{'mobile':isMobile}">

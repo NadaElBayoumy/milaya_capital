@@ -1,5 +1,6 @@
 <!-- Portfolio Page -->
-<div class="container portfolio" [ngClass]="{'mobile':isMobile}">
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="container portfolio" [ngClass]="{'mobile':isMobile}"  *ngIf="!isLoading">
     <app-overview [pageTitle]="'Latest Portfolio'"      ></app-overview>
         <!-- [pageOverviewText]="'Consulting is a long-term investment in your goal’s future.'" -->
     <div class="spacer-div" *ngIf="!isMobile"></div>

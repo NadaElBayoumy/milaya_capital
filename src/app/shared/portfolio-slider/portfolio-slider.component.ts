@@ -13,6 +13,8 @@ import { MilayaService } from 'src/app/milaya.service';
 export class PortfolioSliderComponent implements OnInit {
   title = 'ng-carousel-demo';
   isMobile: boolean = false;
+  isLoading: boolean = true;
+
 
   slideConfig = {
     centerMode: true,
@@ -64,12 +66,10 @@ export class PortfolioSliderComponent implements OnInit {
           let media_urls = portfolio.acf?.media_urls.split(",");
           media_urls.forEach((media_url:any) => {
             this.slides.push( { id: 1, icon: "bi bi-buildings", title: "Lorem ipsum dolor sit amet ", descr: "2023-2024", img: media_url });
+            this.isLoading = false;
           });
          })
       });
   }
-
-
-
 }
 

@@ -3,6 +3,7 @@ import * as L from 'leaflet';
 import { enterFromTop } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
+import { MilayaService } from 'src/app/milaya.service';
 @Component({
   selector: 'app-contact-map',
   templateUrl: './contact-map.component.html',
@@ -12,22 +13,34 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactMapComponent implements OnInit {
   isMobile: boolean = false;
   customIcon:any;
-  constructor(private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  lat:any;
+  lng:any;
+  zoom:any;
+  isLoading: boolean = true;
+
+  constructor(private milayaService: MilayaService,private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
   }
   
   ngOnInit(): void {
-    this.initMap();
+    this.milayaService.getContactInfo().subscribe((contact_info) => {
+      this.lat = contact_info?.acf?.lat;
+      this.lng = contact_info?.acf?.lng;
+      this.zoom = contact_info?.acf?.zoom;
+      
+      this.initMap();
+      this.isLoading = false;
+    });
   }
 
   private initMap(): void {
-    const map = L.map('map',{center:[25.14091142684441, 55.217559581197044]}).setView([25.14091142684441, 55.217559581197044], 15);
+    const map = L.map('map',{center:[this.lat, this.lng]}).setView([this.lat, this.lng], this.zoom);
     // var latlng = L.latLng(25.14091142684441, 55.217559581197044);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 13
+      maxZoom: this.zoom
     }).addTo(map);
 
     

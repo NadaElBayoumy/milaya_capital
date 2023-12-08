@@ -1,5 +1,6 @@
 <!-- Contact Form Section With error handling and submit button -->
-<div class="contact-form container"  [ngClass]="{'mobile':isMobile}" >
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="contact-form container"  [ngClass]="{'mobile':isMobile}"  *ngIf="!isLoading">
     <div class="send-message-section">
         
         <h2 [@slideInFromRight]>Send us a message</h2>

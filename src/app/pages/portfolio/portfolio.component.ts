@@ -12,6 +12,7 @@ import { MilayaService } from 'src/app/milaya.service';
 })
 export class PortfolioComponent implements OnInit {
   isMobile: boolean = false;
+  isLoading: boolean = true;
 
   constructor(private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
@@ -41,6 +42,7 @@ export class PortfolioComponent implements OnInit {
           this.milayaService.getFeaturedImageUrl(portfolio?.acf?.portfolio_background_image).subscribe((media_ret: any) => {
             background_img = media_ret.source_url;
             this.portfolios.push({ id: portfolio.id, title: tit, description: des, image: img, backgroundImage: background_img });
+            this.isLoading = false;
           });
         });
       });
