@@ -145,7 +145,7 @@ $big-spacer : 135px;
         background: none !important;
 
         i {
-            font-size: 22px;
+            font-size: 27px !important;
         }
     }
 }
@@ -153,61 +153,6 @@ $big-spacer : 135px;
 .heights-slider.mobile {
     .owl-nav {
         right: 0px;
-    }
-}
-
-
-.portfolio-slider {
-    .owl-carousel {
-        position: relative;
-    }
-
-    .owl-prev,
-    .owl-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: $white !important;
-        color: #333 !important;
-        padding: 10px 15px;
-        border: solid 1px grey;
-        cursor: pointer;
-    }
-
-    .owl-prev {
-        left: 0px;
-    }
-
-    .owl-next {
-        right: 0px;
-    }
-
-    .owl-prev:hover,
-    .owl-next:hover {
-        background-color: #555;
-    }
-
-    .owl-item:not(:first-child):not(:last-child) {
-        opacity: 1;
-    }
-
-    .owl-item:first-child:not(:active),
-    .owl-item:last-child:not(:active) {
-        opacity: 0.5;
-        transition: opacity 0.3s ease;
-    }
-
-    .owl-item.active {
-        opacity: 1 !important;
-    }
-
-    .owl-item:last-child {
-        display: none;
-    }
-
-    .owl-stage {
-        margin-right: 15%;
-        margin-left: 11%;
     }
 }
 
@@ -390,10 +335,12 @@ app-footer::before {
             border: 1px solid rgba(128, 128, 128, 0.1411764706);
             box-shadow: 0 0 10px $white;
             background: $white;
-            margin: 10px;
             position: absolute;
             top: 40%;
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .nxt::before,
@@ -402,13 +349,14 @@ app-footer::before {
             font-size: 20px;
             line-height: 1;
             opacity: .75;
-            margin: 12px;
             color: $placeholder-grey;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             border: 1px solid $placeholder-grey;
             border-radius: 10px;
             padding: 5px;
+
+            
         }
 
         .prv {
@@ -515,16 +463,22 @@ app-footer::before {
     background: $brand;
     margin-top: 0px !important;
     border-bottom: solid 0.5px $mid-grey;
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px);
+
     .contact-btn {
         background-color: $white !important;
         color: $brand !important;
     }
 }
 
-.html-inner-content{
-    margin-bottom: 10vh;
-    h2{
+.html-inner-content {
+    // margin-bottom: 10vh;
+    max-height: 48vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    h2 {
         color: $dark-grey;
         font-size: $h2-font-big;
         font-weight: 700;
@@ -532,14 +486,14 @@ app-footer::before {
     }
 
     p,
-    ul{
+    ul {
         font-size: $md-font-p;
         font-weight: 600;
         line-height: 22px;
         color: $mid-grey;
     }
 
-    ul{
+    ul {
         list-style-type: none;
         padding-left: 20px;
 

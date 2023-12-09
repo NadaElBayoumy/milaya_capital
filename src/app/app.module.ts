@@ -42,7 +42,6 @@ import { WhyChooseCardComponent } from './shared/why-choose-card/why-choose-card
 import { MobileNavbarComponent } from './shared/mobile-navbar/mobile-navbar.component';
 import { WhatWeDoCard2Component } from './shared/what-we-do-card-2/what-we-do-card-2.component';
 import { MilayaService } from './milaya.service';
-import { PortfolioPageSliderComponent } from './shared/portfolio-page-slider/portfolio-page-slider.component';
 import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card/portfolio-vertical-card.component';
 import { ContactMobileMapComponent } from './shared/contact-mobile-map/contact-mobile-map.component';
 import { LoaderComponent } from './shared/loader/loader.component';
@@ -82,7 +81,6 @@ import { LoaderComponent } from './shared/loader/loader.component';
     WhyChooseCardComponent,
     MobileNavbarComponent,
     WhatWeDoCard2Component,
-    PortfolioPageSliderComponent,
     PortfolioVerticalCardComponent,
     ContactMobileMapComponent,
     LoaderComponent,

@@ -1,7 +1,6 @@
 // src/app/remove-html-tags.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
 @Pipe({
   name: 'removeHtmlTags',
 })

@@ -36,9 +36,9 @@ export class MediaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mediaURL = "https://milayacapital.ae/wp-content/uploads/2023/05/Milaya-Web-Video.mp4";
-    this.milayaService.getFeaturedImageUrl(this.milayaService.main_video_id).subscribe((video: any) => {
-      this.mediaURL = this.milayaService.removeHtmlTagsPipe.transform(video?.guid?.rendered);
+    this.milayaService.getContactInfo().subscribe((info) => {
+      console.log(info.acf?.main_media_url)
+      this.mediaURL = info.acf?.main_media_url;
       this.cdr.detectChanges();
     });
   }

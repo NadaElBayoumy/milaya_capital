@@ -4,7 +4,29 @@
     <span class="breadcrumb" [@enterFromTop]="animationStates.enterFromTop">CLIENTS</span>
     <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Look Closer With Our Beloved Client</h1>
 
-    <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1" *ngIf="slides1">
+    <!-- (initialized)="onCarouselInitialized($event)" -->
+    <!-- <owl-carousel-o dir="rtl" [options]="customOptions" >
+        <ng-container  *ngFor="let slide of slides1;let i1 = index;">
+          <ng-template carouselSlide [id]="slide.id"  >
+            <img [src]="slide.current" [alt]="slide.name" [title]="slide.name"  [ngStyle]="getSlideStyle(i1)" 
+            (mouseenter)="onMouseEnter1(i1)" 
+            (mouseleave)="onMouseLeave1()">
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+      <owl-carousel-o  [options]="customOptions22" >
+        <ng-container  *ngFor="let slide of slides1;let i1 = index;">
+          <ng-template carouselSlide [id]="slide.id"  >
+            <img [src]="slide.current" [alt]="slide.name" [title]="slide.name"  [ngStyle]="getSlideStyle(i1)" 
+            (mouseenter)="onMouseEnter1(i1)" 
+            (mouseleave)="onMouseLeave1()">
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o> -->
+
+
+    <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1" *ngIf="slides1"  (init)="slickInit($event)">
         <div ngxSlickItem *ngFor="let slide1 of slides1;let i1 = index;" class="slide1">
             <div class="logo-img">
                 <!-- <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1.id,i1, 1)"
@@ -14,7 +36,7 @@
         </div>
     </ngx-slick-carousel>
 
-    <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2">
+    <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2"  (init)="slickInit($event)">
         <div ngxSlickItem *ngFor="let slide2 of slides2;let i2 = index;" class="slide2">
             <div class="logo-img">
                 <!-- <img [alt]="slide2.name" [src]="slide2.current" (mouseenter)="onMouseEnter(slide2.id,i2, 2)"

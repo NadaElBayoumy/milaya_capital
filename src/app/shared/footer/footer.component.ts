@@ -49,7 +49,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.milayaService.getContactInfo().subscribe((contact_info) => {
-      console.log(contact_info)
       this.address = contact_info.acf?.address;
       this.company_email = contact_info.acf?.company_email;
       this.footer_paragraph = contact_info.acf?.footer_paragraph;
@@ -73,7 +72,6 @@ export class FooterComponent implements OnInit {
   }
 
   navigateToSocialMediaURL(social_media: any) {
-    console.log(social_media)
     if (social_media == "instagram") {
       window.location.href = this.instagram;
     } else if (social_media == "twitter") {

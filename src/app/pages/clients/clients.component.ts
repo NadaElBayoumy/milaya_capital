@@ -1,8 +1,9 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener , ViewChild} from '@angular/core';
 import { enterFromTop, enterFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MilayaService } from 'src/app/milaya.service';
+import { OwlOptions,CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-clients',
@@ -12,39 +13,44 @@ import { MilayaService } from 'src/app/milaya.service';
 })
 
 export class ClientsComponent implements OnInit {
+  // @ViewChild(CarouselComponent, { static: true }) owlCarousel: CarouselComponent | undefined;
   isLoading: boolean = true;
-  slides1: any = [
-    // { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
-    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    // { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
-    // { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
-    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
+  slides1: any = [];
+  slides2: any = [];
+  isMobile: boolean = false;
+  threshold = 700;
 
-    // { id: 1, name: "Ted Baker", src: "../../../assets/1-.svg" },
-    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    // { id: 3, name: "Mileo Jets", src: "../../../assets/3-.svg" },
-    // { id: 4, name: "Mileo Hotels", src: "../../../assets/4-.svg" },
-    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
-  ];
-
-  slides2: any = [
-    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
-    // { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
-    // { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
-    // { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
-    // { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
-
-    // { id: 2, name: "Black Penny", src: "../../../assets/2-.svg" },
-    // { id: 5, name: "Oxotech", src: "../../../assets/5-.svg" },
-    // { id: 6, name: "Dbone", src: "../../../assets/6-.svg" },
-    // { id: 7, name: "Skull head", src: "../../../assets/7-.svg" },
-    // { id: 8, name: "Milaya Energy", src: "../../../assets/8-.svg" },
-    // { id: 3, name: "Milaya Jets", src: "../../../assets/3-.svg" },
-  ];
+  // customOptions22: OwlOptions = {
+  //   autoplaySpeed : 5000, 
+  //   lazyLoad:true,
+  //   nav : false,
+  //   slideTransition : 'linear',
+  
+  // }
+  // customOptions: OwlOptions = {
+  //   skip_validateItems:true,
+  //   // navSpeed: 10,
+  //   rewind:false,
+  //   smartSpeed:10,
+  //   center: true,
+  //   items:6,
+  //   loop:true,
+  //   margin:30,
+  //   nav:false,
+  //   dots:false,
+  //   autoplay: true,
+  //   autoplayTimeout: 100,
+  //   slideTransition: 'linear',
+  //   autoplaySpeed: 5000,
+  //   autoplayHoverPause: false,
+  //   touchDrag: false,
+  //   pullDrag: false,
+  //   freeDrag: false,
+  //   rtl:true
+  // }
 
   slideConfig1 = {
-    speed: 5000,
+    speed: 7000,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: 'linear',
@@ -70,8 +76,10 @@ export class ClientsComponent implements OnInit {
     pauseOnHover: false
   };
 
-  isMobile: boolean = false;
-  threshold = 700;
+  slickInit(event: Event|any) {
+    console.log(event);
+    // Additional initialization logic if needed
+  }
 
   constructor(private milayaService: MilayaService, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
@@ -88,7 +96,24 @@ export class ClientsComponent implements OnInit {
       this.threshold = 0;
     }
   }
+  // onCarouselInitialized(carousel: any) {
 
+  //   console.log(carousel)
+  //   this.owlCarousel = carousel;
+    
+  //   this.startAutoplay();
+  // }
+
+  // private startAutoplay() {
+  //   if (this.owlCarousel) {
+  //     setInterval(() => {
+  //       if(this.owlCarousel){
+  //         this.owlCarousel.to('next');
+
+  //       }
+  //     }, 3000);
+  //   }
+  // }
   ngOnInit() {
     this.milayaService.getClients(1).subscribe((clients1: any) => {
       clients1.forEach((client: any) => {
@@ -135,6 +160,53 @@ export class ClientsComponent implements OnInit {
 
   onMouseLeave(slide: any, index: any): void {
     slide.current = slide.img_grey;
+  }
+
+
+  // divStyle = {
+  //   color: 'blue',
+  //   'font-size': '16px',
+  //   'text-align': 'center',
+  //   padding: '10px',
+  //   border: '1px solid #ccc',
+  // };
+  // hoveredSlideIndex: number | null = null;
+
+  // // Hover styles
+  // hoverStyle = {
+  //   background: '#f0f0f0',
+  //   cursor: 'pointer',
+  // };
+
+  // Event handlers
+  onMouseEnter1(i:any) {
+    // this.hoveredSlideIndex = i;
+    this.slides1[i].current = this.slides1[i].src;
+  }
+  // getSlideStyle(index: number) {
+  //   return this.hoveredSlideIndex === index
+  //     ? { 
+  //       transform: 'scale(1.1)'
+      
+  //     }  // Apply styles for the hovered slide
+  //     : { 
+        
+  //       transform: 'scale(1)'
+      
+  //     };   // Reset styles for non-hovered slides
+  // }
+  onMouseLeave1() {
+    // Reset to the initial styles when leaving hover
+    this.slides1.forEach((slide:any) => {
+      slide.current = slide.img_grey;
+    });
+    // this.divStyle = {
+    //   color: 'blue',
+    //   'font-size': '16px',
+    //   'text-align': 'center',
+    //   padding: '10px',
+    //   border: '1px solid #ccc',
+    // };
   }
 }
 

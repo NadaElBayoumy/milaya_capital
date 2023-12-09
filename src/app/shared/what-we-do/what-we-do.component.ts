@@ -14,6 +14,7 @@ export class WhatWeDoComponent {
   isMobile: boolean = false;
 
   customOptions: OwlOptions = {
+    skip_validateItems:true,
     items: 3,
     dots: false,
     navSpeed: 200,

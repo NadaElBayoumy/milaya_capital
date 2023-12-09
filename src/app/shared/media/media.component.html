@@ -1,5 +1,5 @@
 <!-- Multimedia section Should work for both video and images media  -->
-<div class="media container" [ngClass]="{'mobile':isMobile}" >
+<div class="media container" [ngClass]="{'mobile':isMobile}" *ngIf="mediaURL">
   <!-- [controls]="startedPlay" -->
   <video *ngIf="mediaType == 'video'" #videoPlayer class="video-player"  controls autoplay  [@enterFromTop]="animationStates.enterFromTop" >
     <source [src]="mediaURL" type="video/mp4">

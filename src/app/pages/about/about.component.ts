@@ -12,15 +12,17 @@ import { MilayaService } from 'src/app/milaya.service';
 })
 
 export class AboutComponent implements OnInit {
+  //Variables
   isMobile: boolean = false;
+  isLoading: boolean = true;
+  
   leadersInManagementContent: any;
   weAreDynamicContent: any;
   ourVisionContent: any;
   clients_partners_trusted:any;
   awards_winning_accquired:any;
   projects_completed_on_24_countries:any;
-  isLoading: boolean = true;
-
+  
   constructor( private cdr: ChangeDetectorRef,private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
@@ -51,6 +53,7 @@ export class AboutComponent implements OnInit {
       
     });
   }
+  
   //For Animations on Scroll
   animationStates = {
     enterFromTop: 'hidden',

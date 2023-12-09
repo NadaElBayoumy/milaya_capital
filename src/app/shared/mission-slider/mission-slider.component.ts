@@ -25,6 +25,7 @@ export class MissionSliderComponent implements  OnInit {
     });
   }
   customOptions: OwlOptions = {
+    skip_validateItems:true,
     items: 4,
     loop: true,
     dots: false,

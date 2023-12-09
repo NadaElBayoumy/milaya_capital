@@ -20,13 +20,9 @@
         }
     }
 
-    .contact-button {
-        position: absolute;
-        bottom: 0px;
-    }
-
     .text-side {
         flex: 1;
+        position: relative;
 
         h2 {
             color: $dark-grey;
@@ -57,13 +53,31 @@
         .contact-btn {
             border-radius: 0px;
             height: 60px;
+        }
 
+        .contact-button {
+            position: absolute;
+            bottom: 0px;
         }
     }
 
     .contact-details {
         position: relative;
         flex: 1;
+
+        .d-flex {
+            span {
+                overflow: hidden;
+                max-height: 20px;
+
+            }
+
+            span:hover {
+                overflow: visible;
+                max-height: 20px;
+                font-size: 10px;
+            }
+        }
 
         i {
             color: $brand;
@@ -90,7 +104,7 @@
 
         button {
             border-radius: 0px;
-            height: 7.4vh;
+            height: 100%;
             padding: 0px 30px;
         }
 
@@ -102,18 +116,6 @@
 
 .mobile.portfolio-detail-card {
     display: block;
-
-    .image-side::before {
-        content: "";
-        position: absolute;
-        top: 30%;
-        left: 0;
-        width: 80%;
-        height: 65%;
-        background: $shadow;
-        border-radius: 20px;
-    }
-
 
     .image-shadow {
         border-radius: 20px;
@@ -139,6 +141,10 @@
     .d-flex.contact-button {
         display: block !important;
         text-align: center;
+
+        // margin-top: 10px;
+        // padding-top: 10px;
+        // border-top: solid 0.1px grey;
     }
 
     .contact-details {

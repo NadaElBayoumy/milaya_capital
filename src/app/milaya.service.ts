@@ -41,10 +41,8 @@ export class MilayaService {
     our_vision: 46
   }
 
-  main_video_id = 37;
   counter_id = 47
   contact_id = 126;
-
 
   constructor(public removeHtmlTagsPipe: RemoveHtmlTagsPipe, private sanitizer: DomSanitizer, private http: HttpClient, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.sideMenuOpen = false;

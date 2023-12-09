@@ -21,7 +21,7 @@ export class PortfolioDetailCardComponent implements OnInit {
   location: any;
   website: any;
   isLoading: boolean = true;
-  
+
   constructor(private sanitizer: DomSanitizer, private milayaService: MilayaService, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
@@ -37,14 +37,11 @@ export class PortfolioDetailCardComponent implements OnInit {
       .subscribe(params => {
         this.id = params['id'];
         this.milayaService.getPortfolioById(this.id).subscribe((post) => {
-          console.log(post.acf)
           this.email = post.acf?.email;
           this.location = post.acf?.location;
           this.website = post.acf?.website;
-
           if (post?.title?.rendered) {
             this.title = post.title?.rendered;
-
             this.content = this.milayaService.sanitizeHtml(post.content.rendered)
             this.route.queryParams.subscribe(params2 => {
               this.milayaService.getFeaturedImageUrl(post.featured_media).subscribe((media_ret: any) => {
@@ -54,7 +51,6 @@ export class PortfolioDetailCardComponent implements OnInit {
             });
           }
         });
-      }
-      );
+      });
   }
 }
