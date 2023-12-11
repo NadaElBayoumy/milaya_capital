@@ -1,48 +1,29 @@
 <!-- Clients Page -->
 <app-loader [isLoading]="isLoading"></app-loader>
-<div class="clients" [ngClass]="{'mobile':isMobile}"  *ngIf="!isLoading">
-    <span class="breadcrumb" [@enterFromTop]="animationStates.enterFromTop">CLIENTS</span>
-    <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Look Closer With Our Beloved Client</h1>
+<div class="clients" [ngClass]="{'mobile':isMobile}" *ngIf="!isLoading">
+  <span class="breadcrumb" [@enterFromTop]="animationStates.enterFromTop">CLIENTS</span>
+  <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Look Closer With Our Beloved Client</h1>
 
-    <!-- (initialized)="onCarouselInitialized($event)" -->
-    <!-- <owl-carousel-o dir="rtl" [options]="customOptions" >
-        <ng-container  *ngFor="let slide of slides1;let i1 = index;">
-          <ng-template carouselSlide [id]="slide.id"  >
-            <img [src]="slide.current" [alt]="slide.name" [title]="slide.name"  [ngStyle]="getSlideStyle(i1)" 
-            (mouseenter)="onMouseEnter1(i1)" 
-            (mouseleave)="onMouseLeave1()">
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o>
-
-      <owl-carousel-o  [options]="customOptions22" >
-        <ng-container  *ngFor="let slide of slides1;let i1 = index;">
-          <ng-template carouselSlide [id]="slide.id"  >
-            <img [src]="slide.current" [alt]="slide.name" [title]="slide.name"  [ngStyle]="getSlideStyle(i1)" 
-            (mouseenter)="onMouseEnter1(i1)" 
-            (mouseleave)="onMouseLeave1()">
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o> -->
-
-
-    <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1" *ngIf="slides1"  (init)="slickInit($event)">
-        <div ngxSlickItem *ngFor="let slide1 of slides1;let i1 = index;" class="slide1">
-            <div class="logo-img">
-                <!-- <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1.id,i1, 1)"
+  <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1" *ngIf="slides1"  (afterChange)="afterChange($event)"    >
+    <div ngxSlickItem *ngFor="let slide1 of slides1;let i1 = index;" class="slide1 slick-item">
+      <div class="logo-img" [id]="slide1.id">
+        <!-- <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1.id,i1, 1)"
                     (mouseleave)="onMouseLeave(slide1.id,i1,1)" /> -->
-                    <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1,i1)"  (mouseout)="onMouseLeave(slide1,i1)" />
-            </div>
-        </div>
-    </ngx-slick-carousel>
+        <img  [id]="slide1.id"  [alt]="slide1.name" class="c1_imgs" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1,i1)"
+          (mouseout)="onMouseLeave(slide1,i1)" />
 
-    <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2"  (init)="slickInit($event)">
-        <div ngxSlickItem *ngFor="let slide2 of slides2;let i2 = index;" class="slide2">
-            <div class="logo-img">
-                <!-- <img [alt]="slide2.name" [src]="slide2.current" (mouseenter)="onMouseEnter(slide2.id,i2, 2)"
+      </div>
+    </div>
+  </ngx-slick-carousel>
+
+  <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2"    >
+    <div ngxSlickItem *ngFor="let slide2 of slides2;let i2 = index;" class="slide2">
+      <div class="logo-img">
+        <!-- <img [alt]="slide2.name" [src]="slide2.current" (mouseenter)="onMouseEnter(slide2.id,i2, 2)"
                     (mouseleave)="onMouseLeave(slide2.id,i2,2)" /> -->
-                    <img [alt]="slide2.name" [src]="slide2.current" (mouseenter)="onMouseEnter(slide2,i2)"  (mouseout)="onMouseLeave(slide2,i2)"/>
-            </div>
-        </div>
-    </ngx-slick-carousel>
+        <img [alt]="slide2.name" [src]="slide2.current"  class="c2_imgs" (mouseenter)="onMouseEnter(slide2,i2)"
+          (mouseout)="onMouseLeave(slide2,i2)" />
+      </div>
+    </div>
+  </ngx-slick-carousel>
 </div>

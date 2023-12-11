@@ -26,7 +26,6 @@ export class MilayaService {
     welcome: 8
   }
 
-
   page_overview = {
     contact: 43,
     portfolio_details: 40,

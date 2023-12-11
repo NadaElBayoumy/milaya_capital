@@ -46,7 +46,6 @@ import { PortfolioVerticalCardComponent } from './shared/portfolio-vertical-card
 import { ContactMobileMapComponent } from './shared/contact-mobile-map/contact-mobile-map.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

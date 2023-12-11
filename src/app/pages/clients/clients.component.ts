@@ -1,9 +1,11 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { enterFromTop, enterFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MilayaService } from 'src/app/milaya.service';
 import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
+import { ChangeDetectorRef } from '@angular/core';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-clients',
@@ -13,41 +15,12 @@ import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
 })
 
 export class ClientsComponent implements OnInit {
-  // @ViewChild(CarouselComponent, { static: true }) owlCarousel: CarouselComponent | undefined;
+  @ViewChildren('slickItem') slickItems: any;
   isLoading: boolean = true;
   slides1: any = [];
   slides2: any = [];
   isMobile: boolean = false;
   threshold = 700;
-
-  // customOptions22: OwlOptions = {
-  //   autoplaySpeed : 5000, 
-  //   lazyLoad:true,
-  //   nav : false,
-  //   slideTransition : 'linear',
-
-  // }
-  // customOptions: OwlOptions = {
-  //   skip_validateItems:true,
-  //   // navSpeed: 10,
-  //   rewind:false,
-  //   smartSpeed:10,
-  //   center: true,
-  //   items:6,
-  //   loop:true,
-  //   margin:30,
-  //   nav:false,
-  //   dots:false,
-  //   autoplay: true,
-  //   autoplayTimeout: 100,
-  //   slideTransition: 'linear',
-  //   autoplaySpeed: 5000,
-  //   autoplayHoverPause: false,
-  //   touchDrag: false,
-  //   pullDrag: false,
-  //   freeDrag: false,
-  //   rtl:true
-  // }
 
   slideConfig1 = {
     speed: 7000,
@@ -76,12 +49,7 @@ export class ClientsComponent implements OnInit {
     pauseOnHover: false
   };
 
-  slickInit(event: Event | any) {
-    console.log(event);
-    // Additional initialization logic if needed
-  }
-
-  constructor(private milayaService: MilayaService, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
+  constructor(private cdr: ChangeDetectorRef, private renderer: Renderer2, private el: ElementRef, private milayaService: MilayaService, private router: Router, private route: ActivatedRoute, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
@@ -96,24 +64,35 @@ export class ClientsComponent implements OnInit {
       this.threshold = 0;
     }
   }
-  // onCarouselInitialized(carousel: any) {
 
-  //   console.log(carousel)
-  //   this.owlCarousel = carousel;
 
-  //   this.startAutoplay();
-  // }
+  afterChange(changeEvent: any) {
+    let last_src :any;
+    if (changeEvent?.event?.target) {
+      const elements = changeEvent.event.target.getElementsByClassName("slick-cloned") as HTMLElement[];
+      for (const element of elements) {
+        if (!element.classList.contains('listen')) {
+          element.classList.add('listen')
+          element.addEventListener('mouseenter', (clickEvent: any) => {
+            let slide_should_be = (clickEvent?.toElement?.attributes["data-slick-index"]?.value - this.slides1.length);
+            this.slides1[slide_should_be].current = this.slides1[slide_should_be].src;
+            let targetImage = clickEvent.currentTarget.getElementsByClassName('logo-img');
+            targetImage = targetImage[0].querySelector("img");
+            last_src = targetImage.getAttribute("src");
+            targetImage.setAttribute("src", this.slides1[slide_should_be].src);
+          });
 
-  // private startAutoplay() {
-  //   if (this.owlCarousel) {
-  //     setInterval(() => {
-  //       if(this.owlCarousel){
-  //         this.owlCarousel.to('next');
+          element.addEventListener('mouseleave', (clickEvent: any) => {
+            let targetImage = clickEvent.currentTarget.getElementsByClassName('logo-img');
+            targetImage = targetImage[0].querySelector("img");
+            targetImage.setAttribute("src", last_src);
+          });
+        }
+      }
+    }
 
-  //       }
-  //     }, 3000);
-  //   }
-  // }
+  }
+
   ngOnInit() {
     this.milayaService.getAllClients().subscribe((clients1: any) => {
       clients1.forEach((client: any) => {
@@ -146,58 +125,14 @@ export class ClientsComponent implements OnInit {
   }
 
   onMouseEnter(slide: any, index: any): void {
+    console.log(index)
     slide.current = slide.src;
   }
 
   onMouseLeave(slide: any, index: any): void {
+    console.log(index)
     slide.current = slide.img_grey;
   }
 
-
-  // divStyle = {
-  //   color: 'blue',
-  //   'font-size': '16px',
-  //   'text-align': 'center',
-  //   padding: '10px',
-  //   border: '1px solid #ccc',
-  // };
-  // hoveredSlideIndex: number | null = null;
-
-  // // Hover styles
-  // hoverStyle = {
-  //   background: '#f0f0f0',
-  //   cursor: 'pointer',
-  // };
-
-  // Event handlers
-  onMouseEnter1(i: any) {
-    // this.hoveredSlideIndex = i;
-    this.slides1[i].current = this.slides1[i].src;
-  }
-  // getSlideStyle(index: number) {
-  //   return this.hoveredSlideIndex === index
-  //     ? { 
-  //       transform: 'scale(1.1)'
-
-  //     }  // Apply styles for the hovered slide
-  //     : { 
-
-  //       transform: 'scale(1)'
-
-  //     };   // Reset styles for non-hovered slides
-  // }
-  onMouseLeave1() {
-    // Reset to the initial styles when leaving hover
-    this.slides1.forEach((slide: any) => {
-      slide.current = slide.img_grey;
-    });
-    // this.divStyle = {
-    //   color: 'blue',
-    //   'font-size': '16px',
-    //   'text-align': 'center',
-    //   padding: '10px',
-    //   border: '1px solid #ccc',
-    // };
-  }
 }
 
