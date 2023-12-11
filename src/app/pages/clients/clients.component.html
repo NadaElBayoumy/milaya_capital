@@ -4,7 +4,7 @@
   <span class="breadcrumb" [@enterFromTop]="animationStates.enterFromTop">CLIENTS</span>
   <h1 class="black" [@enterFromTop1]="animationStates.enterFromTop1"> Look Closer With Our Beloved Client</h1>
 
-  <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1" *ngIf="slides1"  (afterChange)="afterChange($event)"    >
+  <ngx-slick-carousel dir="rtl" class="carousel c1" #slickModal="slick-carousel" [config]="slideConfig1" *ngIf="slides1"  (afterChange)="afterChange($event)">
     <div ngxSlickItem *ngFor="let slide1 of slides1;let i1 = index;" class="slide1 slick-item">
       <div class="logo-img" [id]="slide1.id">
         <!-- <img [alt]="slide1.name" [src]="slide1.current" (mouseenter)="onMouseEnter(slide1.id,i1, 1)"
@@ -16,12 +16,12 @@
     </div>
   </ngx-slick-carousel>
 
-  <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2"    >
+  <ngx-slick-carousel class="carousel c2" #slickModal="slick-carousel" [config]="slideConfig2" *ngIf="slides2"   (afterChange)="afterChange($event)">
     <div ngxSlickItem *ngFor="let slide2 of slides2;let i2 = index;" class="slide2">
-      <div class="logo-img">
+      <div class="logo-img" [id]="slide2.id">
         <!-- <img [alt]="slide2.name" [src]="slide2.current" (mouseenter)="onMouseEnter(slide2.id,i2, 2)"
                     (mouseleave)="onMouseLeave(slide2.id,i2,2)" /> -->
-        <img [alt]="slide2.name" [src]="slide2.current"  class="c2_imgs" (mouseenter)="onMouseEnter(slide2,i2)"
+        <img [id]="slide2.id"  [alt]="slide2.name" [src]="slide2.current"  class="c2_imgs" (mouseenter)="onMouseEnter(slide2,i2)"
           (mouseout)="onMouseLeave(slide2,i2)" />
       </div>
     </div>
