@@ -97,13 +97,16 @@ export class MilayaService {
     return this.http.get<any[]>(`${this.apiBaseUrl}clients?per_page=8&page=${page}`);
   }
 
+  
+  getAllClients(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiBaseUrl}clients?per_page=100`);
+  }
+
   getPortfolioById(postId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}portfolios/${postId}`);
   }
 
   getFeaturedImageUrl(mediaId: number): Observable<string> {
-    // return this.http.get<any>(`${this.apiBaseUrl}/media/${mediaId}`).pipe(
-    //   map(response => response.source_url)  );
     return this.http.get<any>(`${this.apiBaseUrl}media/${mediaId}`);
   }
 
@@ -123,10 +126,6 @@ export class MilayaService {
   getContactInfo(): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}company_info/${this.contact_id}`);
   }
-  
-  // getMapInfo(): Observable<any> {
-  //   return this.http.get<any>(`${this.apiBaseUrl}company_info/${this.contact_id}`);
-  // }
 
   sanitizeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);

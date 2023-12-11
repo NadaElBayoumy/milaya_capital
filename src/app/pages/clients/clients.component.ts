@@ -1,9 +1,9 @@
-import { Component, OnInit, HostListener , ViewChild} from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { enterFromTop, enterFromTop1 } from '../../animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MilayaService } from 'src/app/milaya.service';
-import { OwlOptions,CarouselComponent } from 'ngx-owl-carousel-o';
+import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-clients',
@@ -25,7 +25,7 @@ export class ClientsComponent implements OnInit {
   //   lazyLoad:true,
   //   nav : false,
   //   slideTransition : 'linear',
-  
+
   // }
   // customOptions: OwlOptions = {
   //   skip_validateItems:true,
@@ -76,7 +76,7 @@ export class ClientsComponent implements OnInit {
     pauseOnHover: false
   };
 
-  slickInit(event: Event|any) {
+  slickInit(event: Event | any) {
     console.log(event);
     // Additional initialization logic if needed
   }
@@ -100,7 +100,7 @@ export class ClientsComponent implements OnInit {
 
   //   console.log(carousel)
   //   this.owlCarousel = carousel;
-    
+
   //   this.startAutoplay();
   // }
 
@@ -115,26 +115,17 @@ export class ClientsComponent implements OnInit {
   //   }
   // }
   ngOnInit() {
-    this.milayaService.getClients(1).subscribe((clients1: any) => {
+    this.milayaService.getAllClients().subscribe((clients1: any) => {
       clients1.forEach((client: any) => {
         this.milayaService.getFeaturedImageUrl(client.featured_media).subscribe((media_ret: any) => {
           let img_colored = media_ret.source_url;
           this.milayaService.getFeaturedImageUrl(client?.acf?.grey_scale_image).subscribe((media_ret: any) => {
             let img_grey = media_ret.source_url;
-            this.slides1.push({ id: client.id, name: client.title?.rendered, src: img_colored, img_grey: img_grey, current: img_grey });
-            this.isLoading = false;
-          });
-        });
-      });
-    });
-
-    this.milayaService.getClients(2).subscribe((clients2: any) => {
-      clients2.forEach((client: any) => {
-        this.milayaService.getFeaturedImageUrl(client.featured_media).subscribe((media_ret: any) => {
-          let img_colored = media_ret.source_url;
-          this.milayaService.getFeaturedImageUrl(client?.acf?.grey_scale_image).subscribe((media_ret: any) => {
-            let img_grey = media_ret.source_url;
-            this.slides2.push({ id: client.id, name: client.title?.rendered, src: img_colored, img_grey: img_grey, current: img_grey });
+            if (client.acf?.which_slider == "First Slider") {
+              this.slides1.push({ id: client.id, name: client.title?.rendered, src: img_colored, img_grey: img_grey, current: img_grey });
+            } else if (client.acf?.which_slider == "Second Slider") {
+              this.slides2.push({ id: client.id, name: client.title?.rendered, src: img_colored, img_grey: img_grey, current: img_grey });
+            }
             this.isLoading = false;
           });
         });
@@ -179,7 +170,7 @@ export class ClientsComponent implements OnInit {
   // };
 
   // Event handlers
-  onMouseEnter1(i:any) {
+  onMouseEnter1(i: any) {
     // this.hoveredSlideIndex = i;
     this.slides1[i].current = this.slides1[i].src;
   }
@@ -187,17 +178,17 @@ export class ClientsComponent implements OnInit {
   //   return this.hoveredSlideIndex === index
   //     ? { 
   //       transform: 'scale(1.1)'
-      
+
   //     }  // Apply styles for the hovered slide
   //     : { 
-        
+
   //       transform: 'scale(1)'
-      
+
   //     };   // Reset styles for non-hovered slides
   // }
   onMouseLeave1() {
     // Reset to the initial styles when leaving hover
-    this.slides1.forEach((slide:any) => {
+    this.slides1.forEach((slide: any) => {
       slide.current = slide.img_grey;
     });
     // this.divStyle = {
