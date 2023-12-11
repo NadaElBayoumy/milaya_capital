@@ -125,12 +125,10 @@ export class ClientsComponent implements OnInit {
   }
 
   onMouseEnter(slide: any, index: any): void {
-    console.log(index)
     slide.current = slide.src;
   }
 
   onMouseLeave(slide: any, index: any): void {
-    console.log(index)
     slide.current = slide.img_grey;
   }
 
