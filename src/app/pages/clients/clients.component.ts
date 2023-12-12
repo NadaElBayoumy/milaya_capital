@@ -73,6 +73,7 @@ export class ClientsComponent implements OnInit {
       for (const element of elements) {
         if (!element.classList.contains('listen')) {
           element.classList.add('listen')
+          
           element.addEventListener('mouseenter', (clickEvent: any) => {
             let slide_should_be = (clickEvent?.toElement?.attributes["data-slick-index"]?.value - this.slides1.length);
             this.slides1[slide_should_be].current = this.slides1[slide_should_be].src;
@@ -90,7 +91,6 @@ export class ClientsComponent implements OnInit {
         }
       }
     }
-
   }
 
   ngOnInit() {
